@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "mworld.monash"
+        version   = "0.0.1">
+
+    <name>Mworld App</name>
+
+    <description>
+        This is beta version of uvmate mobile app for iPad.
+    </description>
+
+    <author href="http://www.uvmate.com" email="jeuelc@gmail.com">
+        Jeuel Condahan
+    </author>
+    
+    <preference name="orientation" value="landscape" />
+</widget>
