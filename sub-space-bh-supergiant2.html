@@ -1,0 +1,105 @@
+<!-- i-C-a -->
+<div id="supergiant2" data-role="page">
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>Supergiant Stars</h1></div>
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <div id="eal1short-oag">
+          <p><a id="sgiant" href='#' data-transition="slide"><img src="css/images/5-8/Space/Black_Holes/Where_BH_Come/supergiantbtn.png"></a></p>
+        </div>
+      </div>
+      <div id="node-content-half">
+        <div id="psbutton2">
+          <div id="audiobuttonholder2"><a href="#" id="start2"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio2" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-body-holder" style="margin-top:-20px;">
+          <div id="node-body-minoans"></div>
+        </div>
+      </div>
+      
+      <div data-role="popup" id="imongnawong" data-position-to="window" data-overlay-theme="a" style="text-align:center;">
+        <div id="psbuttonpop">
+          <div id="audiobuttonholderpop"><a href="#" id="startpop"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudiopop" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-pop"></div>
+      </div>
+    </div><!--end of content-->
+    <div class="v-spacer"></div>
+      <div id="foot-band" style="margin-top:58px;padding:0 15px;">
+        <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+        <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
+        <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home2.html" id="homelinkbh-supergiant"><img src="css/images/5-8/Space/bottomhome.png"></a></div>
+      </div>
+  </div><!--/spacechar-->
+  <script>
+    sound = new Audio(); // 'sound' is now an audio object
+    soundpop = new Audio(); // 'sound' is now an audio object
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=36";
+     $.getJSON( url, function( data ) {
+            $('#node-body-minoans').html(data[0].Body);
+            if(sound.canPlayType('audio/mpeg')) {
+              /*sound.src = data[0].Audio;*/
+              $('#psbutton2').show();
+              $('#actualaudio2').html('<audio controls preload id="supergiantaudio" onpause="pausedaudio()" onplay="pausebg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton2').html('Your system does not support HTML5 Audio.');
+              $('#psbutton2').show();
+            }
+         
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];
+            $('#sgiant').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'See how big a supergiant can be');")
+         });
+    
+      $("#supergiant2").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    $('#homelinkbh-supergiant').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause();bgsoundbh.currentTime = 0; });
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=37";
+     $.getJSON( url, function( data ) {
+            $('#node-pop').html(data[0].Body);
+            if(sound.canPlayType('audio/mpeg')) {
+              /*sound.src = data[0].Audio;*/
+              $('#psbuttonpop').show();
+              $('#actualaudiopop').html('<audio controls preload id="supergiant2audio" onpause="pausedaudio()" onplay="pausebg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbuttonpop').html('Your system does not support HTML5 Audio.');
+              $('#psbuttonpop').show();
+            }
+         });
+    })();
+    
+    $('#start2').on('click', function() {
+    	$('#actualaudio2').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio2').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    
+    $('#startpop').on('click', function() {
+    	$('#actualaudiopop').show();
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-space-bh-comefrom2.html");
+    }
+    
+    function pausedaudio() {
+      bgsoundbh.play();
+    }
+    
+    function pausebg() {
+      bgsoundbh.pause();
+    }
+  </script>
+</div>

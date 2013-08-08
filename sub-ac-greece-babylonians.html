@@ -1,0 +1,161 @@
+<!-- i-C-a -->
+<div data-role="page" id="babylonians">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <div id="anisold"><div id="animatedsoldier"></div>
+    <div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>The Babylonians</h1></div>
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="babart1link" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/babart1.jpg', 'An example of Babylonian art, from a reconstruction of the Ishtar Gate');">click here</a>
+        <a id="babart2link" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/babart2.jpg', 'The Lion of Babylon, a symbol used to represent the Babylonian King');">click here</a>
+        <a id="claytab2link" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/claytab2.jpg', 'Clay writing tablet, showing the cuneiform script used by the Sumerians and the Babylonians');">click here</a>
+        <div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/babart1pol.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:100px;top:270px;">
+            <img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/babart2pol.jpg" alt="" />
+          </div>
+          <div id="pol3"class="pPiece" style="left:100px;top:270px;">
+            <img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/claytab2pol.jpg" alt="" />
+          </div>
+          <div id="pol4"class="pPiece" style="left:100px;top:270px;">
+            <img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/hearinbabpol.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      <div id="node-content-half">
+          <!--<div id="psbutton-babylonians">
+            <div id="audiobuttonholder-babylonians"><a href="#" id="start-babylonians"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+            <div id="actualaudio-babylonians" style="display: none;">
+            </div>
+          </div><!-- end of psbutton -->
+          <div id="node-body-holder" style="margin-top:-20px;height:320px;">
+            <div id="node-body" style="margin-top:-20px;">
+              <p>The Babylonians lived in the region of the Euphrates River, in what is today southern Iraq. Their capital, Babylon, was one of the most famous cities of the ancient world. </p>
+              <p>The Babylonians were influenced in all aspects of their lives by the Sumerians, who had settled in the same region more than 7,000 years ago!</p>
+              <p>The Babylonians eventually conquered the Sumerians, but continued to revere Sumerian beliefs and tales. The most famous of them is the tale of Gilgamesh.  Gilgamesh was the brave king of Uruk who fought terrible monsters like <a href="#humbaba" data-rel="popup">Humbaba</a> and tried to find the secret of everlasting life.</p>
+              <p>The story of Gilgamesh is known by the discovery of stone and clay tablets from ancient times.  Some of the tablets are more than 3,000 years old!  There are translations of the story in many libraries and bookstores.  Why don't you see if you can find it?  You can read a cool story from long ago and find out what happened to Gilgamesh!</p>
+              <p>The last Babylonian king was defeated by the Persians and the country became part of the vast Persian Empire.  Later, the Greeks under Alexander the Great reached Babylon and wondered at the beauty of the city. </p>
+            </div>
+          </div>
+          <!--<p style="width:350px;margin:auto;">
+            <a href="sub-ac-greece-gilgamesh.html" data-role="button" data-transition="slide">Hear the story of Gilgamesh...<br>in the ancient language of the Babylonians!</a>
+          </p>-->
+        </div>
+        <div data-role="popup" id="humbaba" data-position-to="window" data-overlay-theme="a" style="text-align:center;">
+          <div id="node-pop">
+            In the tale of Gilgamesh, Humbaba was the monster guardian of the Cedar Forest.  He was part lion, part bull, part snake and part vulture!
+          </div>
+        </div>
+    </div> <!-- end content -->  
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:-170px;padding:0 10px;">
+      <!--div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div-->
+      <div style="width:253px;height:2px;color:#0071bc;margin:54px auto -15px;"><a href="home.html" id="homelinkag-babylonians"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div></div><!--/anisold-->
+  <script>
+    sound = new Audio(); // 'sound' is now an audio object
+    
+    (function() {
+      $('div#pol1').css("z-index", 3);
+      $('div#pol2').css("z-index", 2);
+      $('div#pol3').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-5deg)");
+      $('div#pol4 > img').css("-webkit-transform", "rotate(8deg)");
+    
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=97";
+     $.getJSON( url, function( data ) {
+            //$('#node-body').html(data[0].Body);
+            
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#babylonianart1').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Babylonian art');")
+            
+            if(sound.canPlayType('audio/mpeg')) {
+              $('#psbutton-babylonians').show();
+              $('#actualaudio-babylonians').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton-babylonians').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-babylonians').show();
+            }
+         });
+    
+      $("#babylonians").swipe( { swipeRight:goBack, allowPageScroll:"auto" } );
+    
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=98";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#babylonianart2').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Babylonian art');")
+         });
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=99";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#claytab1').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Clay tablet');")
+         });
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=100";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#claytab2').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Clay tablet');")
+         });
+    })();
+    
+    $('#start-babylonians').on('click', function() {
+      $('#actualaudio-babylonians').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio-babylonians').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece-aroundag.html");
+    }
+    $('#homelinkag-babylonians').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+    
+    $("#pol4").on('tap', function() {
+      $.mobile.changePage("sub-ac-greece-gilgamesh.html");
+    });
+    
+    $("#pol3").on('tap', function() {
+      $('#claytab2link')[0].click();
+    });
+    
+    $("#pol2").on('tap', function() {
+      $('#babart2link')[0].click();
+    });
+    
+    $("#pol1").on('tap', function() {
+      $('#babart1link')[0].click();
+    });
+  </script>
+  <script src="js/fourcardLogic.js"></script>
+</div> <!--//home-->

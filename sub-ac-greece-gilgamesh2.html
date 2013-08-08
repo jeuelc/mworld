@@ -1,0 +1,97 @@
+<!-- i-C-a -->
+<div id="gilgamesh2" data-role="page">
+  <div id="anisold"><div id="animatedsoldier"></div>
+  <div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>Gilgamesh</h1></div>
+      <div class="v-spacer"></div>
+      
+      <div class="sidebarleft-half">
+        <p style="width:350px;margin:auto;">
+          <a href="#" data-role="button" id="gilgababy">Hear the story of Gilgamesh...<br>in the language of the Babylonians!</a>
+          <br><div id="actualaudio-gilgababy" style="display: none;margin:-26px auto 0 auto;text-align:center;"></div>
+        </p>
+        <p style="width:350px;margin:auto;">
+          <a href="#" data-role="button" id="gilgaeng">Hear part of the story of Gilgamesh...<br>in English</a>
+          <br><div id="actualaudio-gilgaeng" style="display: none;margin:-26px auto 0 auto;text-align:center;"></div>
+        </p>
+      </div>
+      
+      <div id="node-content-half">
+        <div id="psbutton-hittites">
+          <div id="audiobuttonholder-hittites"><a href="#" id="start-hittites"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio-hittites" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-body-holder" style="margin-top:-20px;">
+          <div id="node-body-hittites"></div>
+        </div>
+      </div>
+    </div><!-- end of content -->
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:156px;padding:0 10px;">
+      <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
+      <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home2.html" id="homelinkag-gilgamesh"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div></div><!--/anisold-->
+  
+  <script>
+    gilgab = new Audio(); // 'sound' is now an audio object
+    gilgae = new Audio(); // 'sound' is now an audio object
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=101";
+     $.getJSON( url, function( data ) {
+            
+            $('#node-body-hittites').html(data[0].Body);
+            
+         });
+    
+      $("#gilgamesh2").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    
+    })();
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=109";
+     $.getJSON( url, function( data ) {
+            if(gilgab.canPlayType('audio/mpeg')) {
+              $('#actualaudio-gilgababy').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            }
+         });
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=110";
+     $.getJSON( url, function( data ) {
+            if(gilgae.canPlayType('audio/mpeg')) {
+              $('#actualaudio-gilgaeng').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            }
+         });
+    })();
+    
+    $('#gilgababy').on('click', function() {
+      $('#actualaudio-gilgababy').show();
+      agsoundbg.pause();
+    });
+    
+    $('#gilgaeng').on('click', function() {
+      $('#actualaudio-gilgaeng').show();
+      agsoundbg.pause();
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece-babylonians2.html");
+      gilgab.pause();
+      gilgae.pause();
+      agsoundbg.play();
+    }
+
+    
+    /*$('#start-hittites').on('click', function() {
+    	$('#actualaudio-hittites').show();
+    });*/
+    $('#homelinkag-gilgamesh').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+  </script>
+</div>

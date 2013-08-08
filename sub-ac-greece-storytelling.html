@@ -1,0 +1,174 @@
+<!-- i-C-a -->
+<div id="storytelling" data-role="page">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <div id="anisold"><div id="animatedsoldier"></div><div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>Greek Story Telling</h1></div>
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f1_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/hearagpol.jpg" alt="" />
+            </div>
+            <div id="backofcard" class="back face center">
+              <p>Here are two verses of the Odyssey in the language of the Ancient Greeks.  Translated to English, it would mean something like... "Narrate to me, Muse, about the man of many ways who wandered a lot and to many places after the holy citadel of Troy fell".</p>
+              <div id="psbutton-oddysey">
+                <div id="audiobuttonholder-oddysey"><a href="#" id="start-oddysey"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+                <div id="actualaudio-oddysey" style="display: none;">
+                </div>
+              </div>
+              <p>no audio file available yet</p>
+            </div>
+          </div><!--/f1+card-->
+        </div>
+        <div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/iliadpol.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:100px;top:270px;">
+            <img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/odysseypol.jpg" alt="" />
+          </div>
+          <div id="pol3"class="pPiece" style="left:100px;top:270px;">
+              <img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/hearagpol.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      <div id="node-content-half">
+        <!--<div id="psbutton-storytelling">
+          <div id="audiobuttonholder-storytelling"><a href="#" id="start-storytelling"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio-storytelling" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-body-holder" style="margin-top:-20px;height:345px;">
+          <div id="node-body-minoans" style="margin-top:-20px;">
+            <p>You know, of course, that ancient civilisations did not have modern technologies like computers, TVs, and movie theatres.  They had their own ways to have fun - playing music, attending live theatre, and by telling stories...</p>
+            <p>Ancient Greek stories were told by singing verses of poetry.  The singers of the stories were very skilful - they could remember thousands of verses without any written records or notes!</p>
+            <p>Stories were told to educate children, record histories and legends, to inspire and bind communities together, and just to entertain.</p>
+            <p>The most famous Greek poet and story teller was <a href="#imongnawong" data-rel="popup">Homer</a>.  Homer is credited with writing the Iliad and the Odyssey, but historians think he may not have composed all of them by himself... each of them contain more than 13,000 verses!</p>
+            <p>Even today, nearly 3,000 years later, they're pretty cool stories... !</p>
+          </div>
+        </div>
+      </div>
+      <div data-role="popup" id="imongnawong" data-position-to="window" data-overlay-theme="a" style="text-align:center;">
+        <div id="psbuttonpop">
+          <div id="audiobuttonholderpop"><a href="#" id="startpop"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudiopop" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-pop"></div>
+      </div>
+    </div><!--end of content-->
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:-120px;padding:0 10px;">
+      <!--div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div-->
+      <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home.html" id="homelinkag-storytelling"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div></div><!--/anisold-->
+  <script>
+    sound = new Audio();
+    soundpop = new Audio(); // 'sound' is now an audio object
+    (function() {
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-5deg)");
+      $('#f1_container').css({"visibility":"hidden", "z-index":0});
+      
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=75";
+     $.getJSON( url, function( data ) {
+            //$('#node-body-minoans').html(data[0].Body);
+            if(sound.canPlayType('audio/mpeg')) {
+              $('#psbutton-storytelling').show();
+              $('#actualaudio-storytelling').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton-storytelling').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-storytelling').show();
+            }
+         });
+    
+    $("#storytelling").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=62";
+     $.getJSON( url, function( data ) {
+            $('#node-pop').html(data[0].Body);
+            if(soundpop.canPlayType('audio/mpeg')) {
+              $('#psbuttonpop').show();
+              $('#actualaudiopop').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              soundpop.src = null;
+              $('#psbuttonpop').html('Your system does not support HTML5 Audio.');
+              $('#psbuttonpop').show();
+            }
+         });
+    })();
+    
+    $('#start-storytelling').on('click', function() {
+      $('#actualaudio-storytelling').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio-storytelling').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    
+    $('#odysseylink').on('click', function() {      
+    	startodysseyaudiobg();
+      pauseagbg();
+    });
+    
+    $('#iliadlink').on('click', function() {      
+    	startiliadaudiobg();
+      pauseagbg();
+    });
+    
+    $('#startpop').on('click', function() {
+    	$('#actualaudiopop').show();
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece-lifeinag.html");
+    }
+    $('#homelinkag-storytelling').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+    
+    $("#f1_container").on('tap', function() {
+      $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"transform": "rotateY(0deg)"});
+      setTimeout(function() {
+        $("#pol3").css({"visibility":"visible", "z-index":3});
+        $('#f1_container').css({"visibility":"hidden", "z-index":0});
+      }, 1000);
+    });
+    
+    $("#pol3").on('tap', function() {
+      $('#f1_container').css({"visibility":"visible", "z-index":10});
+      $(this).css({"visibility":"hidden"});
+      $('#f1_card').css({"-webkit-transform": "rotateY(180deg)", "-webkit-box-shadow" : "-5px 5px 5px #aaa;"});
+      $('#f1_card').css({"-moz-transform": "rotateY(180deg)", "-moz-box-shadow" : "-5px 5px 5px #aaa;"});
+      $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"transform": "rotateY(180deg)", "box-shadow" : "-5px 5px 5px #aaa;"});
+    });
+    
+    $("#pol2").on('tap', function() {
+      startodysseyaudiobg();
+      pauseagbg();
+      $.mobile.changePage("sub-ac-greece-odyssey.html");
+    });
+    
+    $("#pol1").on('tap', function() {
+      startiliadaudiobg();
+      pauseagbg();
+      $.mobile.changePage("sub-ac-greece-iliad.html");
+    });
+  </script>
+  <script src="js/threecardLogic.js"></script>
+</div>

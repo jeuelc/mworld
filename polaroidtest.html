@@ -1,0 +1,55 @@
+<!-- i-C-a -->
+<div data-role="page" id="polaroidtest">  
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <div data-role="content">
+    <div id="wrapper">
+      
+      <div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:140px;top:250px;">
+             <img src="css/images/polaroid/1.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:140px;top:250px;">
+             <img src="css/images/polaroid/2.jpg" alt="" />
+          </div>
+          <div id="pol3" class="pPiece" style="left:140px;top:250px;">
+             <img src="css/images/polaroid/3.jpg" alt=""  />
+          </div>
+          <div id="pol4" class="pPiece" style="left:140px;top:250px;">
+             <img src="css/images/polaroid/4.jpg" alt="" />
+          </div>
+          <div id="pol5" class="pPiece" style="left:140px;top:250px;">
+             <img src="css/images/polaroid/5.jpg" alt="" />
+          </div>
+          <div id="pol6" class="pPiece" style="left:140px;top:250px;">
+             <img src="css/images/polaroid/6.jpg" alt="" />
+          </div>
+          <div id="pol7" class="pPiece" style="left:140px;top:250px;">
+             <img src="css/images/polaroid/7.jpg" alt="" />
+          </div>
+          <div id="pol8" class="pPiece" style="left:140px;top:250px;">
+             <img src="css/images/polaroid/8.jpg" alt="" />
+          </div>
+      </div><!--/zoomwrapper-->
+    </div>
+    
+  </div> <!-- end content -->  
+  <script>
+    $(function() {
+      $('div#pol1 > img').css("-webkit-transform", "rotate(8deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(-8deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      $('div#pol4 > img').css("-webkit-transform", "rotate(3deg)");
+      $('div#pol5 > img').css("-webkit-transform", "rotate(10deg)");
+      $('div#pol6 > img').css("-webkit-transform", "rotate(-10deg)");
+      $('div#pol7 > img').css("-webkit-transform", "rotate(5deg)");
+    
+      $("#polaroidtest").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    });
+    
+    function goBack() {
+      $.mobile.changePage("home.html");
+    }
+  </script>
+  <script src="js/polaroidLogic.js"></script>
+</div>

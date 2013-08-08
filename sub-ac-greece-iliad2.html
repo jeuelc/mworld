@@ -1,0 +1,89 @@
+<!-- i-C-a -->
+<div id="iliad" data-role="page">
+  <div id="anisold">
+    <div data-role="content" class="kidzcontent">
+      <div id="node-content-kinghatpray" style="margin-top:0px;">
+        <div id="psbutton-iliad" style="margin-top:350px;">
+          <div id="audiobuttonholder-iliad"><a href="#" id="start-iliad"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio-iliad" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-body-holder" style="margin-top:-20px;height:150px;color:#000000;">
+          <div id="node-body"></div>
+        </div>
+        <p><a href="#" data-role="button" id="greekiliad">Hear the Iliad in ancient Greek</a></p>
+      </div>
+      
+      <div data-role="popup" id="achilles" data-position-to="window" data-overlay-theme="a" style="text-align:center;">
+        <div id="node-pop">Do you know which part of your body is named after the famous Greek warrior Achilles? Why?</div>
+      </div>
+    </div> <!-- end content -->  
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:-83px;padding:0 10px;">
+      <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
+      <div style="width:253px;height:2px;color:#0071bc;margin:54px auto -15px;"><a href="home2.html" id="homelinkag-iliad"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div><!--/anisold-->
+  <script>
+    sound = new Audio();
+    soundiliad = new Audio();
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=76";
+      $.getJSON( url, function( data ) {
+            /*$('#titleb-holder').html("<h1>"+ data[0].node_title +"</h1>");*/
+            $('#node-body').html(data[0].Body);
+            if(sound.canPlayType('audio/mpeg')) {
+              $('#psbutton-iliad').show();
+              $('#actualaudio-iliad').html('<audio controls preload onpause="playiliad()" onplay="pauseiliad()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton-iliad').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-iliad').show();
+            }
+      });
+    
+    $("#iliad").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    
+    })();
+    
+    (function() { 
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=108";
+      $.getJSON( url, function( data ) {
+        if(soundiliad.canPlayType('audio/mpeg')) {
+              soundiliad.src = data[0].Audio;
+            }
+      });
+    })();
+    
+    $('#start-iliad').on('click', function() {
+      $('#actualaudio-iliad').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio-iliad').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    
+    $('#greekiliad').on('click', function() {
+      soundiliad.play();
+      iliadaudiobg.pause();
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece-storytelling2.html");
+      iliadaudiobg.pause();
+      agsoundbg.play();
+      soundiliad.pause();
+    }
+    
+    function pauseiliad() {
+      iliadaudiobg.pause();
+    }
+    
+    function playiliad() {
+      //iliadaudiobg.play();
+    }
+    $('#homelinkag-iliad').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+  </script>
+</div>

@@ -1,0 +1,89 @@
+<!-- i-C-a -->
+<div data-role="page" id="xenophon2">
+  <div id="anisold"><div id="animatedsoldier"></div><div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+        <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>Persian Education</h1></div>
+        <div class="v-spacer"></div>
+        <div class="sidebarleft-half">
+        <div id="eal1short-oag">
+          <p><a href='#' id="horseback"><img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/horsebackbtn.png"></a></p>
+        </div>
+        <div id="eal2short-oag">
+          <p><a href='#' id="kingxenophon"><img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/xenophonbtn.png"></a></p>
+        </div>
+      </div>
+      
+      <div id="node-content-half">
+        <div id="psbutton-xenophon">
+          <div id="audiobuttonholder-xenophon"><a href="#" id="start-xenophon"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio-xenophon" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-body-holder" style="height:345px;margin-top:-20px;">
+          <div id="node-body"></div>
+        </div>
+      </div>
+      
+    </div> <!-- end content -->  
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:-58px;padding:0 10px;">
+      <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
+      <div style="width:253px;height:2px;color:#0071bc;margin:54px auto -15px;"><a href="home2.html" id="homelinkag-xenophon"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div></div><!--/anisold-->
+  <script>
+    sound = new Audio(); // 'sound' is now an audio object
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=87";
+     $.getJSON( url, function( data ) {
+            $('#node-body').html(data[0].Body);
+            
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#kingxenophon').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'A statue of Xenophon, in fron of the parliament in the Austrian capital of Vienna');")
+            
+            if(sound.canPlayType('audio/mpeg')) {
+              $('#psbutton-xenophon').show();
+              $('#actualaudio-xenophon').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton-xenophon').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-xenophon').show();
+            }
+         });
+    
+    $("#xenophon2").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=88";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#horseback').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Image of a Persian King on horseback');")
+         });
+    })();
+    
+    $('#start-xenophon').on('click', function() {
+      $('#actualaudio-xenophon').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio-xenophon').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece-persians2.html");
+    }
+    
+    $('#homelinkag-xenophon').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+  </script>
+</div> <!--//home-->

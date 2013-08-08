@@ -1,0 +1,71 @@
+<!-- i-C-a -->
+<div data-role="page" id="ancientgreece"> <script src="js/hammer.js"></script>  <script src="js/jquery.hammer.js"></script>  <div id="tbcspace" class="taskbarcontainer" style="top:300px;">    <div id="tbwspace" class="greecetaskbarwick">&nbsp;</div>	<!--Rhomar 07-31-13-->	<!--div id="tbshiphead"></div>	<div id="tbshiptail"></div-->	<div id="hercules"></div>	    <div id="tbpspace" class="taskbarpanel">  	   <a href="#" data-transition="slide"><img src="css/images/hercules/home.png"></a>      <a href="controlpanel.html" data-transition="slide"><img src="css/images/hercules/2.png"></a>      <a href="#" data-transition="slide"><img src="css/images/hercules/3.png"></a>      <a href="#" data-transition="slide"><img src="css/images/hercules/4.png"></a>	  <!--end-->	      </div>	</div>
+  <div id="anisold"><div id="animatedsoldier"></div>
+    <div id="acgreecechar">&nbsp;	
+    <div data-role="content" class="kidzcontent">
+      <div class="sidebarleft">
+        <div id="eal2" style="margin-top:100px;">
+          <p><a href="sub-ac-greece-origins.html" data-transition="slide"><img src="css/images/5-8/Ancient_Civilizations/Greece/oagb.png"></a></p>
+        </div>
+        <div id="eal1">
+          <p><a href="sub-ac-greece-lifeinag.html" data-transition="slide" ><img src="css/images/5-8/Ancient_Civilizations/Greece/lifeagb.png"></a></p>
+        </div>
+      </div>
+      <div class="sidebarright">
+        <div id="legacy" style="margin-top:100px;">
+          <p><a href="sub-ac-greece-legacy.html" data-transition="slide" ><img src="css/images/5-8/Ancient_Civilizations/Greece/legacyb.png"></a></p>
+        </div>
+        <div id="waag">
+          <p><a href="sub-ac-greece-aroundag.html" data-transition="slide" ><img src="css/images/5-8/Ancient_Civilizations/Greece/waagbtnb.png"></a></p>
+        </div>
+      </div>
+      <div id="node-content" style="margin-top:40px;">
+          <div id="titleb-holder"><h1>Ancient Greece</h1></div>
+          <div id="node-body-holder" style="margin-top:20px;">
+            <div id="node-body" style="margin-top:-20px;"><p>Welcome to Ancient Greece!</p>
+              <p>The story of a famous civilisation awaits you... warriors, artists, poets and more!</p>
+              <p>Read about Homer, Achilles, and Odysseus.</p>
+              <p>If you're lucky you might hear their stories in Ancient Greek.</p>
+              <p>You might even hear the story of the famous Babylonian King Gilgamesh... in the 3,000 year old language of the Babylonians!</p>
+            </div>
+          </div>
+        </div>
+    </div> <!-- end content -->  
+    <div class="v-spacer"></div>
+    <!--div id="foot-band" style="margin-top:-40px;padding:0 10px;">
+      <div style="width:253px;height:2px;color:#0071bc;margin:54px auto -15px;"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div-->
+  </div></div><!--/anisold-->
+  <script>
+    sound = new Audio(); // 'sound' is now an audio object
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=2";
+     $.getJSON( url, function( data ) {
+            if(sound.canPlayType('audio/mpeg')) {
+              /*sound.src = data[0].Audio;*/
+              $('#psbutton').show();
+              //$('#actualaudio').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton').html('Your system does not support HTML5 Audio.');
+              $('#psbutton').show();
+            }
+         });
+    
+      $("#ancientgreece").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+
+    $('#start').on('click', function() {
+    	$('#actualaudio').show();
+    });
+    
+    function goBack() {/*
+      $.mobile.changePage("sub-ancient.html");
+      ancientsoundbg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; */
+    }
+    $('#homelinkag').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });				/*$(function(){		var getcss = $('.taskbarcontainer element.style').css('left');				  if( getcss <= "-90px"){					//$('#hercules').css({'background':'url(css/images/hercules/forward/pb3.png) no-repeat 0 0'});			 $("#hercules").css('background-image', 'url(css/images/hercules/forward/pb3.png)');			 $("#hercules").css('background-repeat', 'no-repeat');			 $("#hercules").css('background-position', '0px 0px');			}	});*/			/*Rhomar 07-31-13*/	/*	$(function() {	  spacecrafthead = setTimeout(moveSpaceHead, 1200);	  spacecrafttail = setTimeout(moveSpaceTail, 200);	        });				 function moveSpaceHead() {      $('#tbshiphead').css('background-position', '-124px');      setTimeout(function() {$('#tbshiphead').css('background-position', '-124px center')}, 1250);      setTimeout(function() {$('#tbshiphead').css('background-position', '-59px center')}, 1500);      setTimeout(function() {$('#tbshiphead').css('background-position', '0px center')}, 1750);      spacecrafthead = setTimeout(moveSpaceHead, 3000);    }		function moveSpaceTail() {      $('#tbshiptail').css('background-position', '-147px');      setTimeout(function() {$('#tbshiptail').css('background-position', '-147px center')}, 250);     setTimeout(function() {$('#tbshiptail').css('background-position', '-75px center')}, 500);      setTimeout(function() {$('#tbshiptail').css('background-position', '0px center')}, 750);      spacecrafttail = setTimeout(moveSpaceTail, 1000);    }	*//*Rhomar end*/			
+  </script><script type="text/javascript" src="js/hercules.js"></script>
+</div> <!--//home-->

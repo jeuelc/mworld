@@ -1,0 +1,105 @@
+<!-- i-C-a -->
+<div id="storytelling2" data-role="page">
+  <div id="anisold"><div id="animatedsoldier"></div><div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>Story Telling</h1></div>
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <div id="eal3short">
+          <p><a href="sub-ac-greece-iliad2.html" data-transition="slide" id="iliadlink"><img src="css/images/5-8/Ancient_Civilizations/Greece/Life_in_Ancient_Greece/iliadbtn.png"></a></p>
+        </div>
+        <div id="eal2short">
+          <p><a href="sub-ac-greece-odyssey2.html" data-transition="slide" id="odysseylink"><img src="css/images/5-8/Ancient_Civilizations/Greece/Life_in_Ancient_Greece/odysseybtn.png"></a></p>
+        </div>
+      </div>
+      <div id="node-content-half">
+        <div id="psbutton-storytelling">
+          <div id="audiobuttonholder-storytelling"><a href="#" id="start-storytelling"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio-storytelling" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-body-holder" style="margin-top:-20px;height:265px;">
+          <div id="node-body-minoans"></div>
+        </div>
+      </div>
+      <div data-role="popup" id="imongnawong" data-position-to="window" data-overlay-theme="a" style="text-align:center;">
+        <div id="psbuttonpop">
+          <div id="audiobuttonholderpop"><a href="#" id="startpop"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudiopop" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-pop"></div>
+      </div>
+    </div><!--end of content-->
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:172px;padding:0 10px;">
+      <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
+      <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home2.html" id="homelinkag-storytelling"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div></div><!--/anisold-->
+  <script>
+    sound = new Audio();
+    soundpop = new Audio(); // 'sound' is now an audio object
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=75";
+     $.getJSON( url, function( data ) {
+            $('#node-body-minoans').html(data[0].Body);
+            if(sound.canPlayType('audio/mpeg')) {
+              $('#psbutton-storytelling').show();
+              $('#actualaudio-storytelling').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton-storytelling').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-storytelling').show();
+            }
+         });
+    
+    $("#storytelling2").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=62";
+     $.getJSON( url, function( data ) {
+            $('#node-pop').html(data[0].Body);
+            if(soundpop.canPlayType('audio/mpeg')) {
+              $('#psbuttonpop').show();
+              $('#actualaudiopop').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              soundpop.src = null;
+              $('#psbuttonpop').html('Your system does not support HTML5 Audio.');
+              $('#psbuttonpop').show();
+            }
+         });
+    })();
+    
+    $('#start-storytelling').on('click', function() {
+      $('#actualaudio-storytelling').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio-storytelling').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    
+    $('#odysseylink').on('click', function() {      
+    	startodysseyaudiobg();
+      pauseagbg();
+    });
+    
+    $('#iliadlink').on('click', function() {      
+    	startiliadaudiobg();
+      pauseagbg();
+    });
+    
+    $('#startpop').on('click', function() {
+    	$('#actualaudiopop').show();
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece-lifeinag2.html");
+    }
+    $('#homelinkag-storytelling').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+  </script>
+</div>

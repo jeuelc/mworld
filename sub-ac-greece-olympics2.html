@@ -1,0 +1,74 @@
+<!-- i-C-a -->
+<div id="olympics2" data-role="page">
+  <div id="anisold"><div id="animatedsoldier"></div><div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>The Olympic Games</h1></div>
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <div id="eal3short">
+          <div id="vidlinkholder"><a href="#">Image - collage of images of the following modern Olympic sports - discus, javelin, wrestling, long jump, and marathon [graphic designer to develop]</a><br>Modern Olympic sports... all of which originated in the Olympic Games of the Ancient Greeks!
+</div>
+        </div>
+      </div>
+      <div id="node-content-half">
+        <div id="psbutton-olympics">
+          <div id="audiobuttonholder-olympics"><a href="#" id="start-olympics"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio-olympics" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-body-holder" style="margin-top:-20px;">
+          <div id="node-body-minoans"></div>
+        </div>
+      </div>
+    </div><!--end of content-->
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:52px;padding:0 10px;">
+      <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
+      <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home2.html" id="homelinkag-olympics"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div></div><!--/anisold-->
+  <script>
+    sound = new Audio(); // 'sound' is now an audio object
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=22";
+     $.getJSON( url, function( data ) {
+            $('#node-body-minoans').html(data[0].Body);
+            if(sound.canPlayType('audio/mpeg')) {
+              $('#psbutton-olympics').show();
+              $('#actualaudio-olympics').html('<audio controls preload onpause="playolympics()" onplay="pauseolympics()><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton-olympics').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-olympics').show();
+            }
+         });
+    
+    $("#olympics2").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    
+    })();
+    $('#start-olympics').on('click', function() {
+      $('#actualaudio-olympics').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio-olympics').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    
+    function playolympics() {
+      olympicsaudiobg.pause();
+    }
+    
+    function playolympics() {
+      olympicsaudiobg.play();
+    }
+    
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece-lifeinag2.html");
+      olympicsaudiobg.pause();
+      agsoundbg.play();
+    }
+    $('#homelinkag-olympics').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+  </script>
+</div>

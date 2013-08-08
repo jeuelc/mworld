@@ -1,0 +1,141 @@
+<!-- i-C-a -->
+<div id="tribesofgreece2" data-role="page">
+  <div id="anisold"><div id="animatedsoldier"></div><div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>The Greek Tribes</h1></div>
+      <div class="v-spacer"></div>
+      
+      <div class="sidebarleft-half">
+        <div id="eal1short-oag">
+          <p><a href='sub-ac-greece-temples2.html' data-transition="slide"><img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/parthenonbtn.png"></a></p>
+        </div>
+        <div id="eal2short-oag">
+          <p><a href='#' id="sappho"><img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/sapphobtn.png"></a></p>
+        </div>
+        <div id="eal3short-oag">
+          <p><a href='sub-ac-greece-spartans2.html' data-transition="slide" ><img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/leonidasbtn.png"></a></p>
+        </div>
+      </div>
+      
+      <div id="node-content-half">
+        <div id="psbutton-tribes1">
+          <div id="audiobuttonholder-tribes1"><a href="#" id="start-tribes1"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio-tribes1" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-body-holder1" style="height:120px;margin-top:-20px;margin-bottom:6px;">
+          <div id="node-body-oag"></div>
+        </div>
+        <div id="psbutton-tribes2">
+          <div id="audiobuttonholder-tribes2"><a href="#" id="start-tribes2"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio-tribes2" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-body-holder2" style="height:120px;margin-top:-20px;margin-bottom:5px;">
+          <div id="node-body-oag2"></div>
+        </div>
+        <div id="psbutton-tribes3">
+          <div id="audiobuttonholder-tribes3"><a href="#" id="start-tribes3"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio-tribes3" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-body-holder3" style="height:120px;margin-top:-20px;">
+          <div id="node-body-oag3"></div>
+        </div>
+        
+      </div>
+    </div> <!--end of content-->
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:-26px;padding:0 10px;">
+      <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
+      <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home2.html" id="homelinkag-tribes"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div></div><!--/anisold-->
+  <script>
+    sound1 = new Audio(); // 'sound' is now an audio object
+    sound2 = new Audio(); // 'sound' is now an audio object
+    sound3 = new Audio(); // 'sound' is now an audio object
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=66";
+        $.getJSON( url, function( data ) {
+            $('#node-body-oag').html(data[0].Body);
+            if(sound1.canPlayType('audio/mpeg')) {
+              $('#psbutton-tribes1').show();
+              $('#actualaudio-tribes1').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound1.src = null;
+              $('#psbutton-tribes1').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-tribes1').show();
+            }
+         });
+      
+      var url2 = "http://back.uvmate.com/jeuel_services/educ.json?nid=67";
+        $.getJSON( url2, function( data ) {
+            $('#node-body-oag2').html(data[0].Body);
+            if(sound2.canPlayType('audio/mpeg')) {
+              $('#psbutton-tribes2').show();
+              $('#actualaudio-tribes2').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound1.src = null;
+              $('#psbutton-tribes2').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-tribes2').show();
+            }
+         });
+         
+       var url3 = "http://back.uvmate.com/jeuel_services/educ.json?nid=68";
+        $.getJSON( url3, function( data ) {
+            $('#node-body-oag3').html(data[0].Body);
+            if(sound3.canPlayType('audio/mpeg')) {
+              $('#psbutton-tribes3').show();
+              $('#actualaudio-tribes3').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound3.src = null;
+              $('#psbutton-tribes3').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-tribes3').show();
+            }
+         });
+    
+    $("#tribesofgreece2").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=70";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];
+            $('#sappho').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Image of the Aeolian poet Sappho');")
+         });
+    })();
+    
+    $('#start-tribes1').on('click', function() {
+    	$('#actualaudio-tribes1').show();
+      var oldHeight = $('#node-body-holder1').height();
+      var newHeight = oldHeight - $('#actualaudio-tribes1').height();
+      $('#node-body-holder1').height(newHeight);
+    });
+    
+    $('#start-tribes2').on('click', function() {
+    	$('#actualaudio-tribes2').show();
+      var oldHeight = $('#node-body-holder2').height();
+      var newHeight = oldHeight - $('#actualaudio-tribes2').height();
+      $('#node-body-holder2').height(newHeight);
+    });
+    
+    $('#start-tribes3').on('click', function() {
+    	$('#actualaudio-tribes3').show();
+      var oldHeight = $('#node-body-holder3').height();
+      var newHeight = oldHeight - $('#actualaudio-tribes3').height();
+      $('#node-body-holder3').height(newHeight);
+    });
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece-origins2.html");
+    }
+    $('#homelinkag-tribes').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+  </script>
+</div>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .current { border:solid 1px #000000; }
+</style>
+    
+</head>
+
+<body>
+<link href='css/museumstyle.css' rel='stylesheet' type='text/css'>
+<div id="zoomwrapper1">
+    <div id="zoom1" class="zoomProps current" >
+        <div id="rect1" class="polaroid">
+            <img src="pic1.jpg" alt="" width="200" height="200" />
+        </div>
+    </div>
+    <div id="zoom2" class="zoomProps" >
+        <div id="rect2" class="polaroid">
+            <img src="pic1.jpg" alt="" width="200" height="200" />
+        </div>
+    </div>
+    <div id="zoom3" class="zoomProps" >
+        <div id="rect3" class="polaroid">
+            <img src="pic1.jpg" alt="" width="200" height="200" />
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/hammer.min.js"></script>
+<script src="js/jquery.hammer.min.js"></script>
+<script src="js/myLogicSimple.js"></script>
+<script>
+  $('.zoomProps').on('tap', function() {
+    var elementid = $(this).attr("id");
+    //alert("agay "+elementid);
+    $('.zoomProps').removeClass().addClass("zoomProps");
+    $(this).removeClass().addClass("zoomProps current");
+  });
+</script>
+</html>

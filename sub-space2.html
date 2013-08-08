@@ -1,0 +1,43 @@
+<!-- i-C-a -->
+<div data-role="page" id="space2">
+  <div id="spacechar">
+    <div data-role="content">
+      <div id="titleb-holder"><h1 style="margin-top:184px;">Space</h1></div>
+      
+      <div style="width:90%;margin:auto;">
+        <!--<div class="aclink"><a href="sub-space-bh.html" data-transition="slide"><img src="css/images/9-12/Space/blackholesbtn.png"></a></div>-->
+        <div class="aclink"><a href="preblackhole2.html" id="bhmovielink" data-prefetch><img src="css/images/9-12/Space/blackholesbtn.png"></a></div>
+        <div class="aclink"><a href="#" data-transition="slide"><img src="css/images/9-12/Space/missiontomarsbtn.png"></a></div>
+        <div class="aclink"><a href="#" data-transition="slide"><img src="css/images/9-12/Space/bigbangbtn.png"></a></div>
+        <div class="aclink"><a href="#" data-transition="slide"><img src="css/images/9-12/Space/galaxiesbtn.png"></a></div><br>
+        <div class="aclink"><a href="#" data-transition="slide"><img src="css/images/9-12/Space/spacetravelbtn.png"></a></div>
+        <div class="aclink"><a href="#" data-transition="slide"><img src="css/images/9-12/Space/caambtn.png"></a></div>
+        <div class="aclink"><a href="#" data-transition="slide"><img src="css/images/9-12/Space/moontrekbtn.png"></a></div>
+        <div class="aclink"><a href="#" data-transition="slide"><img src="css/images/9-12/Space/closeststarbtn.png"></a></div>
+      </div>
+      <div class="v-spacer"></div>
+    </div> <!-- end content -->  
+    <div id="foot-band" style="margin-top:-7px;padding:0 15px;">
+      <div style="float:left;width:150px;color:#0071bc;margin:-8px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
+      <div style="width:253px;height:2px;color:#0071bc;margin:34px auto -15px;"><a href="home2.html" id="homelinkspace"><img src="css/images/9-12/Space/bottomhome.png"></a></div>
+    </div>
+  </div><!--end of spacechar-->
+  <script>
+    $(function() {
+      $("#space2").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    });
+        
+    function goBack() {
+      $.mobile.changePage("home2.html");
+      mainaudiobg.play();
+      spacesoundbg.pause(); spacesoundbg.currentTime = 0;
+    }
+    
+    $('#homelinkspace').on('tap', function() { 
+      mainaudiobg.play(); spacesoundbg.pause(); spacesoundbg.currentTime = 0; 
+    });
+    
+    $('#bhmovielink').on('tap', function() { spacesoundbg.pause(); spacesoundbg.currentTime = 0; });
+			</script>
+</div>

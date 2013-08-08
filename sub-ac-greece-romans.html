@@ -1,0 +1,142 @@
+<!-- i-C-a -->
+<div data-role="page" id="romans">
+ <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+
+  <div id="anisold"><div id="animatedsoldier"></div><div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+        <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>The Romans</h1></div>
+        <div class="v-spacer"></div>
+        <!--div class="sidebarleft-half">
+        <div id="eal1short-oag">
+          <p><a href='#' id="rome"><img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/ancientromebtn.png"></a></p>
+        </div>
+      </div-->
+	  
+	  
+	  <div class="sidebarleft-half">
+        <a id="rome" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/rome.jpg', 'Remains of Ancient Rome in the city of… modern Rome!');">click here</a>
+        <a id="Taormina" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/taormina.jpg', 'Ancient Roman ruins on the coast of Sicily');">click here</a>
+        <a id="Paestum" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/paestum_3.jpg', 'Remains of an Ancient Greek temple at Paestum, in southern Italy');">click here</a>
+        <div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/romepol.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:100px;top:270px;">
+            <img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/taorminapol.jpg" alt="" />
+          </div>
+          <div id="pol3"class="pPiece" style="left:100px;top:270px;">
+            <img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/paestum_3pol.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+	  
+	  
+	  
+      
+      <div id="node-content-half">
+        <!--div id="psbutton-romans">
+          <div id="audiobuttonholder-romans"><a href="#" id="start-romans"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio-romans" style="display: none;">
+          </div>
+        </div00><!-- end of psbutton -->
+        <div id="node-body-holder" style="height:345px;margin-top:-20px;">
+          <div id="node-body" style="margin-top:-20px;">
+		  <p>The Romans emerged from the federation of small muddy villages in central Italy in the 8th century BCE. Their early culture was heavily influenced by their neighbours, the <a href="#etruscans" data-rel="popup">Etruscans</a>, who ruled the Romans for many years. Eventually, the Romans expelled the Etruscans, and began to develop their own power and influence.</p>
+		<p>The Romans also came into contact with the ancient Greeks, who established numerous cities in southern Italy and Sicily. Although the Romans eventually conquered the Greeks, the Greeks also ‘captured’ the Romans since their culture had a huge influence on the Romans.</p>
+		<p>You see, ancient civilisations influenced each other in many ways – trade, technology, and war, even sometimes when they lost the war!</p>
+		  </div>
+        </div>
+      </div>
+      <div data-role="popup" id="etruscans" data-position-to="window" data-overlay-theme="a" style="text-align:center;">
+        <div id="node-pop-etruscans"></div>
+      </div>
+    </div> <!-- end content -->  
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:-170px;padding:0 10px;">
+      <!--div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div-->
+      <div style="width:253px;height:2px;color:#0071bc;margin:54px auto -15px;"><a href="home.html" id="homelinkag-romans"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div></div><!--/anisold-->
+  <script>
+    sound = new Audio(); // 'sound' is now an audio object
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=82";
+     $.getJSON( url, function( data ) {
+           /* $('#node-body').html(data[0].Body);
+            
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#rome').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Remains of Ancient Rome in the city of... modern Rome!');")
+            
+            if(sound.canPlayType('audio/mpeg')) {
+              $('#psbutton-romans').show();
+              $('#actualaudio-romans').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton-romans').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-romans').show();
+            }*/
+         });
+    
+    $("#romans").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    
+    })();
+    
+    (function() {
+		$('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-5deg)");
+	
+	
+	
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=83";
+     $.getJSON( url, function( data ) {
+            $('#node-pop-etruscans').html(data[0].Body);
+         });
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=80";
+     $.getJSON( url, function( data ) {
+            $('#node-pop-delphic').html(data[0].Body);
+         });
+    })();
+    
+    $('#start-romans').on('click', function() {
+      $('#actualaudio-romans').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio-romans').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece-aroundag.html");
+    }
+    $('#homelinkag-romans').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+	
+	$("#pol3").on('tap', function() {
+      $('#Paestum')[0].click();
+    });
+    
+    $("#pol2").on('tap', function() {
+      $('#Taormina')[0].click();
+    });
+    
+    $("#pol1").on('tap', function() {
+      $('#rome')[0].click();
+    });
+	
+	
+  </script>
+  
+  <script src="js/threecardLogic.js"></script>
+</div> <!--//home-->

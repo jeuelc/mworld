@@ -1,0 +1,124 @@
+<!-- i-C-a -->
+<div data-role="page" id="babylonians2">
+  <div id="anisold"><div id="animatedsoldier"></div>
+    <div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="sidebarleft">
+        <div id="eal2" style="margin-top:100px;">
+          <p><a href="#" id="babylonianart1"><img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/babylonianart1btn.png"></a></p>
+        </div>
+        <div id="eal1">
+          <p><a href="#" id="babylonianart2"><img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/babylonianart2btn.png"></a></p>
+        </div>
+      </div>
+      <div class="sidebarright">
+        <div id="legacy" style="margin-top:100px;">
+          <p><a href="#" id="claytab1"><img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/claytab1btn.png"></a></p>
+        </div>
+        <div id="waag">
+          <p><a href="#" id="claytab2"><img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/claytab2btn.png"></a></p>
+        </div>
+      </div>
+      <div id="node-content" style="margin-top:0px;">
+          <div id="titleb-holder"><h1>The Babylonians</h1></div>
+          <div id="psbutton-babylonians">
+            <div id="audiobuttonholder-babylonians"><a href="#" id="start-babylonians"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+            <div id="actualaudio-babylonians" style="display: none;">
+            </div>
+          </div><!-- end of psbutton -->
+          <div id="node-body-holder" style="margin-top:-20px;height:320px;">
+            <div id="node-body"></div>
+          </div>
+          <p style="width:350px;margin:auto;">
+            <a href="sub-ac-greece-gilgamesh2.html" data-role="button" data-transition="slide">Hear the story of Gilgamesh...<br>in the ancient language of the Babylonians!</a>
+          </p>
+        </div>
+        <div data-role="popup" id="humbaba" data-position-to="window" data-overlay-theme="a" style="text-align:center;">
+          <div id="node-pop">
+            In the tale of Gilgamesh, Humbaba was the monster guardian of the Cedar Forest.  He was part lion, part bull, part snake and part vulture!
+          </div>
+        </div>
+    </div> <!-- end content -->  
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:77px;padding:0 10px;">
+      <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
+      <div style="width:253px;height:2px;color:#0071bc;margin:54px auto -15px;"><a href="home2.html" id="homelinkag-babylonians"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div></div><!--/anisold-->
+  <script>
+    sound = new Audio(); // 'sound' is now an audio object
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=97";
+     $.getJSON( url, function( data ) {
+            $('#node-body').html(data[0].Body);
+            
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#babylonianart1').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Babylonian art');")
+            
+            if(sound.canPlayType('audio/mpeg')) {
+              $('#psbutton-babylonians').show();
+              $('#actualaudio-babylonians').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton-babylonians').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-babylonians').show();
+            }
+         });
+    
+      $("#babylonians2").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=98";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#babylonianart2').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Babylonian art');")
+         });
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=99";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#claytab1').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Clay tablet');")
+         });
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=100";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#claytab2').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Clay tablet');")
+         });
+    })();
+    
+    $('#start-babylonians').on('click', function() {
+      $('#actualaudio-babylonians').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio-babylonians').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece-aroundag2.html");
+    }
+    $('#homelinkag-babylonians').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0;
+    });
+  </script>
+</div> <!--//home-->

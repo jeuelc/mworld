@@ -1,0 +1,37 @@
+<!-- i-C-a -->
+<div data-role="page" id="kid" >
+  <div class="v-spacer"></div>
+  <div data-role="content" style="padding:0 !important;">
+    <div class="row-1">
+			<a class="space" id="spacelink" href="sub-space.html" data-transition="slide" data-prefetch><img alt="Space" src="css/images/5-8/Home_Screen/space.png"></a>
+			<a class="natural-world" href="sub-test-save.html" id="testlink-save"><img alt="The Natural World" src="css/images/5-8/Home_Screen/the_natural_world.png"></a>
+		</div>
+		<div class="row-2">
+			<a class="people_and_places" href="game-ag3.html" id="testlink"><img alt="Peaple and Places" src="css/images/5-8/Home_Screen/people_and_places.png">
+			<a class="ancient_civilization" href="sub-ancient.html" data-transition="slide" data-prefetch id="ancientlink"><img alt="Ancient Civilization" src="css/images/5-8/Home_Screen/ancient_civilization.png">
+		</div>
+		<div class="row-3">
+			<a class="language_and_culture" id="cphomelink" href="controlpanel.html" data-transition="slide"><img alt="Language and Culture" src="css/images/5-8/Home_Screen/language_and_culture.png">
+			<a class="wonder_of_science" href="game-ag2.html"><img alt="Wonder of Science" src="css/images/5-8/Home_Screen/wonder_of_science.png">
+			<a class="human_body" href="game-ag1.html"><img alt="The Human Body" src="css/images/5-8/Home_Screen/human_body.png">
+			<a class="art_and_music" href="test1.html" id="test1link" data-transition="slide"><img alt="Art and Music" src="css/images/5-8/Home_Screen/art_and_music.png">
+		</div>
+		<div class="row-4">
+			<a class="animals" href="game-bh2.html"><img alt="Animals" src="css/images/5-8/Home_Screen/animal.png">
+			<a class="modern_world" href="game-bh1.html" id="jigsawlink"><img alt="Modern World" src="css/images/5-8/Home_Screen/modern_world.png">
+		</div>
+  </div> <!-- end content --> 
+  <script>
+    $('#spacelink').on('tap', function() { spacesoundbg.play(); mainaudiobg.pause(); mainaudiobg.currentTime = 0; });
+   // $('#test1link').on('tap', function() { spacesoundbg.play(); mainaudiobg.pause(); });
+    $('#ancientlink').on('tap', function() { ancientsoundbg.play(); mainaudiobg.pause(); mainaudiobg.currentTime = 0; });
+    $('#indexlink').on('tap', function() { mainaudiobg.pause(); mainaudiobg.currentTime = 0;});
+    $('#testlink').on('tap', function() { mainaudiobg.pause(); mainaudiobg.currentTime = 0;});
+    $('#testlink-save').on('tap', function() { mainaudiobg.pause(); mainaudiobg.currentTime = 0;});
+    $('#jigsawlink').on('tap', function() { mainaudiobg.pause(); mainaudiobg.currentTime = 0;});
+    $('.animals').on('tap', function() { mainaudiobg.pause(); mainaudiobg.currentTime = 0;});
+    $('.human_body').on('tap', function() { mainaudiobg.pause(); mainaudiobg.currentTime = 0;});
+    $('.wonder_of_science').on('tap', function() { mainaudiobg.pause(); mainaudiobg.currentTime = 0;});
+    $('#cphomelink').on('tap', function() { mainaudiobg.pause(); mainaudiobg.currentTime = 0;});
+  </script>
+</div>

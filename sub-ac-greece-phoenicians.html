@@ -1,0 +1,150 @@
+<!-- i-C-a -->
+<div data-role="page" id="phoenicians">
+ <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <div id="anisold"><div id="animatedsoldier"></div><div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+    <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>The Phoenicians</h1></div>
+    <div class="v-spacer"></div>
+	  <div class="sidebarleft-half">
+        <a id="sidon1" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/sidon1.jpg', 'The ancient Phoenician city of Sidon, now the modern city of Sidon in Lebanon.  Many modern cities have a connection to the ancient world!');">click here</a>
+        <a id="carthage2" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/carthage2.jpg', 'Remains of the famous Phoenician civilisation at Carthage');">click here</a>
+        <a id="carthage1" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/carthage1.jpg', 'The city of Carthage as it is today… not much remains!');">click here</a>
+        <div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/sidon1pol.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:100px;top:270px;">
+            <img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/carthage2pol.jpg" alt="" />
+          </div>
+          <div id="pol3"class="pPiece" style="left:100px;top:270px;">
+            <img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/carthage1pol.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+	  
+	  
+      <div id="node-content-half">
+          <!--<div id="psbutton-phoenicians">
+            <div id="audiobuttonholder-phoenicians"><a href="#" id="start-phoenicians"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+            <div id="actualaudio-phoenicians" style="display: none;">
+            </div>
+          </div><!-- end of psbutton -->
+          <div id="node-body-holder" style="margin-top:-20px;">
+            <div id="node-body" style="margin-top:-20px;">
+			<p>The Phoenicians were an ancient civilisation, which arose in the coastal areas of the eastern Mediterranean.  Their name comes from the Greek word Phoinikes, which refers to the purple coloured dye which the Phoenicians extracted from a type of sea snail.  This might sound strange, but the Phoenicians used it to produce beautiful purple clothes!</p>
+				<p>The Phoenicians were maritime traders.  Their culture and technologies influenced the whole Mediterranean region.  They founded trading posts and colonies across the entire Mediterranean, including the city of Carthage on the north coast of Africa.</p>
+				<p>In Carthage the Phoenicians mixed with the local people to produce a powerful culture which would later rival the Romans.  Have you heard of Hannibal?  Hannibal was a Carthaginian general who fought fiercely against the Romans for many years.  In the end, the Romans defeated his army and destroyed Carthage.</p>
+				<p>The Phoenicians also developed an alphabet system, that was adopted by the Greeks.  This is the same alphabet used in most European languages today!</p>
+				
+			</div>
+          </div>
+        </div>
+    </div> <!-- end content -->  
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:-170px;padding:0 10px;">
+      <!--div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div-->
+      <div style="width:253px;height:2px;color:#0071bc;margin:54px auto -15px;"><a href="home.html" id="homelinkag-phoenicians"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div></div><!--/anisold-->
+  <script>
+    sound = new Audio(); // 'sound' is now an audio object
+    
+    (function() {
+	
+	  $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-5deg)");
+	
+	
+	
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=93";
+     $.getJSON( url, function( data ) {
+            /*$('#node-body').html(data[0].Body);
+            
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#sidon1').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'The Phoenician City of Sidon');")
+         */
+            if(sound.canPlayType('audio/mpeg')) {
+              $('#psbutton-phoenicians').show();
+              $('#actualaudio-phoenicians').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton-phoenicians').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-phoenicians').show();
+            }
+         });
+    
+    $("#phoenicians").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    
+    })();
+    
+   /* (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=94";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#sidon2').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'The Phoenician City of Sidon');")
+         });
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=95";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#carthage1').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'The city of Carthage as it is today');")
+         });
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=96";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#carthage2').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'The city of Carthage as it is today');")
+         });
+    })();*/
+    
+    $('#start-phoenicians').on('click', function() {
+      $('#actualaudio-phoenicians').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio-phoenicians').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece-aroundag.html");
+    }
+    $('#homelinkag-phoenicians').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+	
+	$("#pol3").on('tap', function() {
+      $('#carthage1')[0].click();
+    });
+    
+    $("#pol2").on('tap', function() {
+      $('#carthage2')[0].click();
+    });
+    
+    $("#pol1").on('tap', function() {
+      $('#sidon1')[0].click();
+    });
+	
+	
+  </script>
+    <script src="js/threecardLogic.js"></script>
+</div> <!--//home-->

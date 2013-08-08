@@ -1,0 +1,154 @@
+<!-- i-C-a -->
+<div data-role="page" id="persians">
+ <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <div id="anisold"><div id="animatedsoldier"></div><div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+        <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>The Persians</h1></div>
+        <div class="v-spacer"></div>
+        <!--div class="sidebarleft-half">
+        <div id="eal1short-oag">
+          <p><a href='#' id="persianwar"><img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/persianwarbtn.png"></a></p>
+        </div>
+        <div id="eal2short-oag">
+          <p><a href='#' id="persopolis"><img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/persopolisbtn.png"></a></p>
+        </div>
+        <div id="eal3short-oag">
+          <p><a href='#' id="humabird"><img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/humabirdbtn.png"></a></p>
+        </div>
+      </div-->
+	  
+	  <div class="sidebarleft-half">
+        <a id="persianwarrior" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/persianwarrior.jpg', 'The famous Persian city of Persepolis as it looks today');">click here</a>
+        <a id="persepolis" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/persopolis.jpg', 'Illustration of Persian soldier from the Achaemenid Empire');">click here</a>
+         <a id="card" style="visibility:hidden;" href="#">click here</a>
+      
+		  <div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/persianwarriorpol.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:100px;top:270px;">
+            <img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/persepolispol.jpg" alt="" />
+          </div>
+
+			<div id="pol3"class="pPiece" style="left:100px;top:270px;">
+            <img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/persianeducpol.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+	  
+	  
+      
+      <div id="node-content-half">
+        <!--<div id="psbutton-persians">
+          <div id="audiobuttonholder-persians"><a href="#" id="start-persians"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio-persians" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-body-holder" style="height:345px;margin-top:-20px;">
+          <div id="node-body" style="margin-top:-20px;">
+      		  <p>The name Persia comes from the province of Persis, called Fars in Iran today.  The Greeks used the name Persia to refer to the whole land occupied by Iranian tribes who formed a famous and powerful empire, the Achaemenid Empire.</p>
+      			<p>The Achaemenid Empire fought a series of major wars with the Ancient Greeks.  Their culture and customs also had a large influence on the Ancient Greeks.  The Persians developed an advanced system of government and administration, which included a postal system and road systems. They also adopted an official language, called Aramaic, throughout their empire.</p>
+      			<p>Darius I, the third Achaemenid King, was defeated by the Greeks at the battle of Marathon in 490 BCE. After that, the Persian Empire was gradually weakened. The last Achaemenid king was defeated by Alexander the Great, but other Persian dynasties arose after that.  Persian culture, language, and society have remained influential  since then.</p>
+          </div>
+        </div>
+        
+        <!--<p style="margin-top:20px;">
+          <a href="sub-ac-greece-xenophon.html" data-role="button" data-transition="slide">Hear the story of Xenophon <br>and the education of the Persian King!</a>
+        </p>-->
+      </div>
+      
+    </div> <!-- end content -->  
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:-170px;padding:0 10px;">
+      <!--div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div-->
+      <div style="width:253px;height:2px;color:#0071bc;margin:54px auto -15px;"><a href="home.html" id="homelinkag-persians"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div></div><!--/anisold-->
+  <script>
+    sound = new Audio(); // 'sound' is now an audio object
+    
+    (function() {
+	
+	$('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-5deg)");
+	
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=84";
+     $.getJSON( url, function( data ) {
+            /*$('#node-body').html(data[0].Body);
+            
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#persianwar').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Persian soldier from the Achaemenid Empire');")
+            */
+            if(sound.canPlayType('audio/mpeg')) {
+              $('#psbutton-persians').show();
+              $('#actualaudio-persians').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton-persians').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-persians').show();
+            }
+         });
+    
+    $("#persians").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    
+    })();
+    
+     /*  (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=85";
+     $.getJSON( url, function( data ) {
+         var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#persopolis').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'The famous Persian City of Persopolis as it looks today... not much remains after 2,500 years!');")
+         });
+    })();*/
+    
+   /* (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=86";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#humabird').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'A statue at Persopolis of the Huma Birds, a legendary bird from Persian mythology');")
+        });
+    })(); */
+    
+    $('#start-persians').on('click', function() {
+      $('#actualaudio-persians').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio-persians').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece-aroundag.html");
+    }
+    $('#homelinkag-persians').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+	
+	$("#pol1").on('tap', function() {
+      $('#persianwarrior')[0].click();
+    });
+    
+    $("#pol2").on('tap', function() {
+      $('#persepolis')[0].click();
+    });
+	
+	$("#pol3").on('tap', function() {
+    $.mobile.changePage("sub-ac-greece-persian-education.html");
+  });
+	
+  </script>
+   <script src="js/threecardLogic.js"></script>
+</div> <!--//home-->

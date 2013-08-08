@@ -1,0 +1,109 @@
+<!-- i-C-a -->
+<div id="templesofgreece" data-role="page">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <div id="anisold"><div id="animatedsoldier"></div><div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>Greek Temples</h1></div>
+      <div class="v-spacer"></div>
+      
+      <div class="sidebarleft-half">
+        <a id="parthenonlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/parthenon.jpg', 'The beautiful Parthenon and its Doric columns');">click here</a>
+        <a id="acropolislink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/acropolis.jpg', 'Night time view of the Parthenon in Athens today');">click here</a>
+        <div id="zoomwrapper">  
+          <div id="polb1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/parthenon2pol.jpg" alt="" />
+          </div>
+          <div id="polb2"class="pPiece" style="left:100px;top:270px;">
+            <img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/acropolispol.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+      
+      <div id="node-content-half">
+        <!--<div id="psbutton-temples">
+          <div id="audiobuttonholder-temples"><a href="#" id="start-temples"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio-temples" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-body-holder" style="height:262px;margin-top:-20px;">
+          <div id="node-body-oag" style="margin-top:-20px;">
+            <p>Temples were very important in ancient Greece as the location for people to worship their gods and to meet with each other. Ancient Greeks believed in many deities, but mainly in the 12 gods of Mount Olympus. Zeus was their king and, according to Homer, he was regarded as "the father of gods and mortals".</p>
+            <p>Greek gods were expected to punish those who offended them and reward those who honoured them with rich sacrifices. Zeus often sat at the top of Mount Olympus and watched over humans.  If anyone dared to doubt his power or offended the gods, he would  hurl upon them his terrible thunderbolt!</p>
+            <p>Greek temple designs had two main styles, called orders - the Doric order and the Ionian order.  Doric order was simple and strict, a bit like the military culture of the Dorians (Spartans). Ionian order was more stylised. </p>
+            <p>Although the Athenians claimed to be of Ionian origin, they built their main temple, the Parthenon, in Doric order because they wanted to send a message to the Spartans that they were worthy soldiers too.  You see - rivalry, jealousy and fear are emotions that go back many thousands of years!</p>
+          </div>
+        </div>
+      </div>
+      
+      
+    </div> <!--end of content-->
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:-135px;padding:0 10px;">
+      <!--div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div-->
+      <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home.html" id="homelinkag-temples"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div></div><!--/anisold-->
+  <script>
+    sound = new Audio(); // 'sound' is now an audio object
+    (function() {
+      $('div#polb1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#polb1').css("z-index", 1);
+      $('div#polb2 > img').css("-webkit-transform", "rotate(5deg)");;
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=71";
+        $.getJSON( url, function( data ) {
+            //$('#node-body-oag').html(data[0].Body);
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];
+            $('#parthenonnight').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Night time view of the Perthenon');")
+         
+            if(sound.canPlayType('audio/mpeg')) {
+              $('#psbutton-temples').show();
+              $('#actualaudio-temples').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton-temples').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-temples').show();
+            }
+         });
+    
+    $("#templesofgreece").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=69";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];
+            $('#parthenon').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'The beautiful Parthenon and its Doric columns');")
+         });
+    })();
+    
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece-tribes.html");
+    }
+    
+    $('#start-temples').on('click', function() {
+    	$('#actualaudio-temples').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio-temples').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    $('#homelinkag-temples').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+    $("#polb1").on('tap', function() {
+      $('#parthenonlink')[0].click();
+    });
+    $("#polb2").on('tap', function() {
+      $('#acropolislink')[0].click();
+    });
+  </script>
+  <script src="js/twocardLogicb.js"></script>
+</div>

@@ -1,0 +1,79 @@
+<!-- i-C-a -->
+<div id="whatisbh" data-role="page">
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>What is a black hole?</h1></div>
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <div id="eal3short">
+          <div id="vidlinkholder"><a href="JavaScript:html5Lightbox.showLightbox(2, 'http://back.uvmate.com/sites/default/files/videos/original/bheatinggas.mp4', 'See a blackhole sucking in a gas cloud', 480, 270);" id="vidbtn"><img src="css/images/5-8/Space/Black_Holes/What_is_BH/vidicon.png">
+            </a>See a blackhole sucking in a gas cloud</div>
+        </div>
+        <div id="eal1short-oag">
+          <p><a href='sub-space-bh-gravity.html' data-transition="slide" id="gravitylnk"><img src="css/images/5-8/Space/Black_Holes/What_is_BH/gravitybtn.png"></a></p>
+        </div>
+      </div>
+      <div id="node-content-half">
+        <div id="psbutton2">
+          <div id="audiobuttonholder2"><a href="#" id="start2"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio2" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-body-holder" style="margin-top:-20px;height:400px;">
+          <div id="node-body-minoans"></div>
+        </div>
+      </div>
+      
+      <div class="v-spacer"></div>
+      <div id="foot-band" style="margin-top:-4px;padding:0 15px;">
+        <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+        <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
+        <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home.html" id="homelinkbh-whatisbh"><img src="css/images/5-8/Space/bottomhome.png"></a></div>
+      </div>
+    </div><!--end of content-->
+  </div><!--/spacechar-->
+  <script>
+    sound = new Audio(); // 'sound' is now an audio object
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=33";
+     $.getJSON( url, function( data ) {
+            $('#node-body-minoans').html(data[0].Body);
+            if(sound.canPlayType('audio/mpeg')) {
+              /*sound.src = data[0].Audio;*/
+              $('#psbutton2').show();
+              $('#actualaudio2').html('<audio controls preload id="whatisbhaudio" onpause="pausedaudio()" onplay="pausebg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton2').html('Your system does not support HTML5 Audio.');
+              $('#psbutton2').show();
+            }
+         });
+         
+      $("#whatisbh").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    
+    })();
+    $('#homelinkbh-whatisbh').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause(); bgsoundbh.currentTime = 0;});
+    $('#start2').on('click', function() {
+    	$('#actualaudio2').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio2').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    
+    $('#vidbtn').on('tap', function() { bgsoundbh.pause(); });
+    $('#html5-lightbox-overlay').on('tap', function() { bgsoundbh.play(); });
+    $('#html5-close').on('tap', function() { bgsoundbh.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-space-bh.html");
+    }
+    
+    function pausedaudio() {
+      bgsoundbh.play();
+    }
+    
+    function pausebg() {
+      bgsoundbh.pause();
+    }
+  </script>
+</div>

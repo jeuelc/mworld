@@ -1,0 +1,116 @@
+<!-- i-C-a -->
+<div data-role="page" id="phoenicians2">
+  <div id="anisold"><div id="animatedsoldier"></div>
+    <div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="sidebarleft">
+        <div id="eal2" style="margin-top:100px;">
+          <p><a href="#" id="sidon1"><img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/sidon1btn.png"></a></p>
+        </div>
+        <div id="eal1">
+          <p><a href="#" id="sidon2"><img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/sidon2btn.png"></a></p>
+        </div>
+      </div>
+      <div class="sidebarright">
+        <div id="legacy" style="margin-top:100px;">
+          <p><a href="#" id="carthage1"><img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/carthage1btn.png"></a></p>
+        </div>
+        <div id="waag">
+          <p><a href="#" id="carthage2"><img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/carthage2btn.png"></a></p>
+        </div>
+      </div>
+      <div id="node-content" style="margin-top:0px;">
+          <div id="titleb-holder"><h1>The Phoenicians</h1></div>
+          <div id="psbutton-phoenicians">
+            <div id="audiobuttonholder-phoenicians"><a href="#" id="start-phoenicians"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+            <div id="actualaudio-phoenicians" style="display: none;">
+            </div>
+          </div><!-- end of psbutton -->
+          <div id="node-body-holder" style="margin-top:-20px;">
+            <div id="node-body"></div>
+          </div>
+        </div>
+    </div> <!-- end content -->  
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:77px;padding:0 10px;">
+      <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
+      <div style="width:253px;height:2px;color:#0071bc;margin:54px auto -15px;"><a href="home2.html" id="homelinkag-phoenicians"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div></div><!--/anisold-->
+  <script>
+    sound = new Audio(); // 'sound' is now an audio object
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=93";
+     $.getJSON( url, function( data ) {
+            $('#node-body').html(data[0].Body);
+            
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#sidon1').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'The Phoenician City of Sidon');")
+         
+            if(sound.canPlayType('audio/mpeg')) {
+              $('#psbutton-phoenicians').show();
+              $('#actualaudio-phoenicians').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton-phoenicians').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-phoenicians').show();
+            }
+         });
+    
+    $("#phoenicians2").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=94";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#sidon2').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'The Phoenician City of Sidon');")
+         });
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=95";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#carthage1').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'The city of Carthage as it is today');")
+         });
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=96";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#carthage2').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'The city of Carthage as it is today');")
+         });
+    })();
+    
+    $('#start-phoenicians').on('click', function() {
+      $('#actualaudio-phoenicians').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio-phoenicians').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece-aroundag2.html");
+    }
+    $('#homelinkag-phoenicians').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+  </script>
+</div> <!--//home-->

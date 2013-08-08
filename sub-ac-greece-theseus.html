@@ -1,0 +1,67 @@
+<!-- i-C-a -->
+<div id="theseus" data-role="page">
+  <div id="anisold">
+    <div data-role="content" class="kidzcontent">
+      <div id="node-content-theseus" style="margin-top:0px;">
+        <div id="psbutton-theseus" style="margin-top:400px;">
+          <div id="audiobuttonholder-theseus"><a href="#" id="start-theseus"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio-theseus" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-body-holder" style="margin-top:-20px;height:150px;color:#000000;">
+          <div id="node-body"></div>
+        </div>
+      </div>
+    </div> <!-- end content -->  
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:-71px;padding:0 10px;">
+      <!--<div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>-->
+      <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home.html" id="homelinkag-theseus"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div><!--/anisold-->
+  <script>
+    sound = new Audio(); // 'sound' is now an audio object
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=20";
+      $.getJSON( url, function( data ) {
+            $('#node-body').html(data[0].Body);
+            if(sound.canPlayType('audio/mpeg')) {
+              $('#psbutton-theseus').show();
+              $('#actualaudio-theseus').html('<audio controls preload  onpause="playthbg()" onplay="pausethbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton-theseus').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-theseus').show();
+            }
+      });
+    
+    $("#theseus").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    
+    })();
+    
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece-minoans.html");
+      theseusaudiobg.pause();
+      agsoundbg.play();
+    }
+    
+    $('#start-theseus').on('click', function() {
+    	$('#actualaudio-theseus').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio-theseus').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    
+    function pausethbg() {
+      theseusaudiobg.pause();
+    }
+    
+    function playthbg() {
+      //theseusaudiobg.play();
+    }
+    $('#homelinkag-theseus').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+  </script>
+</div>

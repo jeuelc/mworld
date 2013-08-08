@@ -1,0 +1,103 @@
+<!-- i-C-a -->
+<div id="legacyofgreece" data-role="page">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <div id="anisold"><div id="animatedsoldier"></div><div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>Legacy of Ancient Greece</h1></div>
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="theatrelink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Ancient_Civilizations/Greece/Legacy_Of_Ancient_Greece/theatre.jpg', 'The Ancient Greek theatre at Epidaurus... the theatre could seat thousands of people!');">click here</a>
+        <div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/5-8/Ancient_Civilizations/Greece/Legacy_Of_Ancient_Greece/theatrepol.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:100px;top:270px;">
+            <img src="css/images/5-8/Ancient_Civilizations/Greece/Legacy_Of_Ancient_Greece/archi4pol.jpg" alt="" />
+          </div>
+          <div id="pol3"class="pPiece" style="left:100px;top:270px;">
+              <img src="css/images/5-8/Ancient_Civilizations/Greece/Legacy_Of_Ancient_Greece/pythapol.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+	  
+      <div id="node-content-half">
+          <!--<div id="psbutton-legacy">
+            <div id="audiobuttonholder-legacy"><a href="#" id="start-legacy"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+            <div id="actualaudio-legacy" style="display: none;">
+            </div>
+          </div><!-- end of psbutton -->
+          <div id="node-body-holder" style="margin-top:-20px;height:308px;">
+            <div id="node-body-oag" style="margin-top:-20px;">
+      				<p>The civilisation created by the Ancient Greeks has had a profound influence on western culture, politics, art, theatre, sport, science, military technology and much more.</p>
+      				<p>Greek philosophers such as Plato and his pupil Aristotle have influenced European thinkers for more than 2,000 years, especially with their emphasis on the importance of reason and logic.</p>
+      				<p>Greek art hugely influenced western concepts of beauty.  The Ancient Greeks introduced realism to the portrayal of the human body.  They studied the anatomy of the human body and developed new ways of portraying muscles, bones, posture and movement in 2-D and 3-D.</p>
+      				<p>Ancient Greek temples and other buildings have inspired architects across the world.  There are buildings in many cities of the world today that draw their inspiration from Greek styles of architecture.</p>
+      				<p>Greek theatrical traditions still influence playwrights and styles of theatre today.   ‘Greek tragedy’ is a popular style of theatre today, more than 2,500 years after it was first developed!</p>
+            </div>
+          </div>   
+      </div>
+      <!-------------------->
+      
+    </div> <!--end of content-->
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:-134px;padding:0 10px;">
+      <!--div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div-->
+      <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home.html" id="homelinkag-legacy"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div></div><!--/anisold-->
+  <script>    
+    sound = new Audio();
+    (function() {
+	  $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-5deg)");
+	
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=63";
+     $.getJSON( url, function( data ) {
+            /*$('#titleb-holder').html("<h1>"+ data[0].node_title +"</h1>");*/
+           /* $('#node-body-oag').html(data[0].Body);
+            if(sound.canPlayType('audio/mpeg')) {
+              $('#psbutton-legacy').show();
+              $('#actualaudio-legacy').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton-legacy').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-legacy').show();
+            }*/
+         });
+    
+    $("#legacyofgreece").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    
+    })();
+    
+    $('#start-legacy').on('click', function() {
+      $('#actualaudio-legacy').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio-legacy').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece.html");
+    }
+    $('#homelinkag-legacy').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+    
+    $("#pol1").on('tap', function() {
+      $('#theatrelink')[0].click();
+    });
+    $("#pol2").on('tap', function() {
+      $.mobile.changePage("sub-ac-greece-legacy-architecture.html");
+    });
+    $("#pol3").on('tap', function() {
+      $.mobile.changePage("sub-ac-greece-math-science-more.html");
+    });
+    
+	</script>
+  <script src="js/threecardLogic.js"></script>
+</div>

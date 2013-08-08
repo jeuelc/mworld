@@ -1,0 +1,36 @@
+<!-- i-C-a -->
+<div id="kinghatpray2" data-role="page">
+  <div id="anisold"><div id="animatedsoldier"></div><div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div id="node-content-kinghatpray">
+        <div id="node-body-holder">
+          <div id="node-body"></div>
+        </div>
+      </div>
+      
+      <div class="v-spacer"></div>
+      <div id="foot-band" style="margin-top:0px;padding:0 10px;">
+        <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+        <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
+        <div style="width:253px;height:2px;color:#0071bc;margin:54px auto -15px;"><a href="home2.html" id="homelinkag-kinghatpray"><img src="css/images/5-8/bottomhome.png"></a></div>
+      </div>
+    </div> <!-- end content -->  
+  </div></div><!--/anisold-->
+  <script>
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=11";
+      $.getJSON( url, function( data ) {
+            /*$('#titleb-holder').html("<h1>"+ data[0].node_title +"</h1>");*/
+            $('#node-body').html(data[0].Body);
+      });
+      $("#kinghatpray2").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece-storytelling2.html");
+    }
+    $('#homelinkag-kinghatpray').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+  </script>
+</div>

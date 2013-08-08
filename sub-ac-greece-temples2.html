@@ -1,0 +1,88 @@
+<!-- i-C-a -->
+<div id="templesofgreece2" data-role="page">
+  <div id="anisold"><div id="animatedsoldier"></div><div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>Greek Temples</h1></div>
+      <div class="v-spacer"></div>
+      
+      <div class="sidebarleft-half">
+        <div id="eal1short-oag">
+          <p><a href='#' id="parthenon"><img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/parthenon2btn.png"></a></p>
+        </div>
+        <div id="eal2short-oag">
+          <p><a href='#' id="parthenonnight"><img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/parthenon-nightbtn.png"></a></p>
+        </div>
+      </div>
+      
+      <div id="node-content-half">
+        <div id="psbutton-temples">
+          <div id="audiobuttonholder-temples"><a href="#" id="start-temples"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio-temples" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-body-holder" style="height:262px;margin-top:-20px;">
+          <div id="node-body-oag"></div>
+        </div>
+      </div>
+      
+      
+    </div> <!--end of content-->
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:165px;padding:0 10px;">
+      <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
+      <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home2.html" id="homelinkag-temples"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div></div><!--/anisold-->
+  <script>
+    sound = new Audio(); // 'sound' is now an audio object
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=71";
+        $.getJSON( url, function( data ) {
+            $('#node-body-oag').html(data[0].Body);
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];
+            $('#parthenonnight').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Night time view of the Perthenon');")
+         
+            if(sound.canPlayType('audio/mpeg')) {
+              $('#psbutton-temples').show();
+              $('#actualaudio-temples').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton-temples').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-temples').show();
+            }
+         });
+    
+    $("#templesofgreece2").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=69";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];
+            $('#parthenon').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'The beautiful Parthenon and its Doric columns');")
+         });
+    })();
+    
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece-tribes2.html");
+    }
+    
+    $('#start-temples').on('click', function() {
+    	$('#actualaudio-temples').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio-temples').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    $('#homelinkag-temples').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+  </script>
+</div>

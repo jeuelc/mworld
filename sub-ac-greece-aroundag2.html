@@ -1,0 +1,50 @@
+<!-- i-C-a -->
+<div id="aroundag2" data-role="page">
+  <div id="anisold"><div id="animatedsoldier"></div><div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div id="titleb-holder"><h1 style="margin-top:0px;">The World Around Ancient Greece</h1></div>
+      <div class="v-spacer"></div>
+      
+      <div id="node-content-kinghatpray" style="margin-top:0px;">
+        <img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/agmap.jpg" usemap="#midsea">
+        <map name="midsea">
+          <area shape="rect" coords="260,220,342,280" href="sub-ac-greece-romans2.html" alt="The Romans" data-transition="slide" class="ui-link"></area>
+          <area shape="rect" coords="440,290,515,340" href="sub-ac-greece-lydians2.html" alt="The Lydians" data-transition="slide" class="ui-link"></area>
+          <area shape="rect" coords="560,300,630,360" href="sub-ac-greece-persians2.html" alt="The Persians" data-transition="slide"></area>
+          <area shape="rect" coords="500,365,575,400" href="sub-ac-greece-phoenicians2.html" alt="The Phoenicians" data-transition="slide"></area>
+          <area shape="rect" coords="570,390,640,440" href="sub-ac-greece-babylonians2.html" alt="The Babylonians" data-transition="slide"></area>
+          <area shape="rect" coords="440,410,520,450" href="sub-ac-greece-egyptians2.html" alt="The Egyptians" data-transition="slide"></area>
+        </map>
+      </div>
+      
+      <div class="v-spacer"></div>
+      <div id="foot-band" style="margin-top:-40px;padding:0 10px;">
+        <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+        <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
+        <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home2.html" id="homelinkag-aroundag"><img src="css/images/5-8/bottomhome.png"></a></div>
+      </div>
+    </div> <!--end of content-->
+  </div></div><!--/anisold-->
+  <script>
+    $(document).ready(function(e) {
+                $('area').on('tap', function(event) {
+                    event.preventDefault();/*if we remove this line then the popup will open/hide immediately*/
+                    var sel= $(this).attr('href');
+                    $.mobile.changePage(sel);
+                });
+                  
+    });
+    
+    $(function() {
+      $("#aroundag2").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+      $("node-content-kinghatpray").swipe("disabled");
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece2.html");
+    }
+    $('#homelinkag-aroundag').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+  </script>
+</div>

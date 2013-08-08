@@ -1,0 +1,81 @@
+﻿<!-- i-C-a -->
+<div id="agora" data-role="page">
+  <div id="anisold"><div id="animatedsoldier"></div>
+  <div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>The Agora</h1></div>
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+          <a href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Ancient_Civilizations/Greece/Life_in_Ancient_Greece/agora.jpg', 'Remains of the Agora in Athens today');">
+            <img src="css/images/5-8/Ancient_Civilizations/Greece/Life_in_Ancient_Greece/agorapol.jpg" alt="" style="border:solid 4px #FFFFFF;" />
+          </a>
+        </div>
+      </div>
+      <div id="node-content-half">
+        <!--<div id="psbutton-agora">
+          <div id="audiobuttonholder-agora"><a href="#" id="start-agora"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio-agora" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-body-holder" style="margin-top:-20px;height:265px;">
+          <div id="node-body-hittites">
+            <p>The Agora was the market place of the ancient Greek city Athens.  People would go there to buy fish, meat, fruit, cheese, pots and other goods.  Slaves, often accompanied by the children of the family, were responsible for the daily shopping.</p>
+            <p>The Agora was also the place where people met to discuss politics and to debate ways of thinking about the world.  Athenians were proud of their system of politics, which they called demoskratos (democracy).  Democracy in Athens meant people could vote about decisions in their society.  But democracy in Athens was quite limited. Only some men could vote, and women were not allowed to vote at all!</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- end of content -->
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:120px;padding:0 10px;">
+      <!--<div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>-->
+      <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home.html" id="homelinkag-agora"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div></div><!--/anisold-->
+  <script>
+    //sound = new Audio(); // 'sound' is now an audio object
+    sound = new Audio();
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=27";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];
+            $('#agoraremains').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Remains of the Agora in Athens today');")
+            if(sound.canPlayType('audio/mpeg')) {
+              $('#psbutton-agora').show();
+              $('#actualaudio-agora').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton-agora').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-agora').show();
+            }
+         });
+      $("#agora").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+     (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=78";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];
+            $('#pottery').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Greek Pottery used for voting');")
+         });
+    })();
+    $('#start-agora').on('click', function() {
+      $('#actualaudio-agora').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio-agora').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece-lifeinag.html");
+    }
+    $('#homelinkag-agora').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+  </script>
+</div>

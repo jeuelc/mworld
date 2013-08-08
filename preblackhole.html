@@ -1,0 +1,68 @@
+<div data-role="page" id="mov">
+  <div data-role="content" style="padding:0 !important;background:#000000;">
+      <div style="float:right;margin-top:5px;margin-right:10px;z-index:999;"><a href="#" id="proceedtobh"><img src="css/images/5-8/Space/Black_Holes/skipvidbtn.png"></a></div>
+      <!--<div id="vidoverlay">&nbsp;</div>-->
+      <div class="previdcontainer">
+        <video id="bhvideo" width="1024" height="722" controls preload>
+          <source src="http://back.uvmate.com/sites/default/files/videos/original/blackhole_3-SD_for_Apple_Devices.m4v" type="video/mp4">
+       </video>
+     </div>
+  </div>
+  <script>    
+    
+    var bhvid =document.getElementById("bhvideo"); 
+    /*$('#vidoverlay').on('tap', function() {
+        var curstate = $('#vidoverlay').css('background-image');
+        var patt=/\"|\'|\)/g;
+        var curbg = curstate.split('/').pop().replace(patt,'');
+        
+        if(curbg == "playvidbtn.png") {
+          bhvid.play();
+          $('#vidoverlay').css("background-image", "url(css/images/5-8/Space/Black_Holes/skipvidbtn.png)");
+          $('#vidoverlay').css("background-position", "top right");
+        } else {
+          $.mobile.changePage("sub-space-bh.html");
+        }
+      
+    });*/
+    
+    (function() {
+      var height = $(window).height();
+      $('#vidoverlay').height(height);
+      checkvid();
+      $("#mov").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+      $("#vidoverlay").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+      $(".previdcontainer").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    function checkvid() {
+          var done = false;
+          if(bhvid.paused == true && bhvid.currentTime < 45) {
+            //bhvid.play();
+            if(bhvid.paused == false) {
+              $('#vidoverlay').hide();
+            }
+          } 
+          
+          if(bhvid.currentTime >= 45 ) {
+            bhvid.currentTime = 0;
+            done = true;
+            $.mobile.changePage("sub-space-bh.html");
+          }
+          
+          if(done==false) {
+            ti = setTimeout(checkvid, 2000);
+          }
+      }
+    
+    $('#proceedtobh').on('tap', function() {
+        bgsoundbh.play();
+        $.mobile.changePage("sub-space-bh.html");
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-space-bh.html");
+      bgsoundbh.play();
+    }
+  </script>
+</div>

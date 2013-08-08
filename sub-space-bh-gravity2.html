@@ -1,0 +1,77 @@
+<!-- i-C-a -->
+<div id="gravity2" data-role="page">
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>Gravity</h1></div>
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <div id="eal1short-oag">
+          <p><a id="gravityimg" href='#' data-transition="slide"><img src="css/images/5-8/Space/Black_Holes/What_is_BH/eam.png"></a></p>
+        </div>
+      </div>
+      <div id="node-content-half">
+        <div id="psbutton-gravity">
+          <div id="audiobuttonholder-gravity"><a href="#" id="start-gravity"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio-gravity" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-body-holder" style="margin-top:-20px;">
+          <div id="node-body-minoans"></div>
+        </div>
+      </div>
+      
+      <div class="v-spacer"></div>
+      <div id="foot-band" style="margin-top:144px;padding:0 15px;">
+        <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+        <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
+        <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home2.html" id="homelinkbh-gravity"><img src="css/images/5-8/Space/bottomhome.png"></a></div>
+      </div>
+    </div><!--end of content-->
+  </div><!--/spacechar-->
+  <script>
+    sound = new Audio(); // 'sound' is now an audio object
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=34";
+     $.getJSON( url, function( data ) {
+            $('#node-body-minoans').html(data[0].Body);
+            if(sound.canPlayType('audio/mpeg')) {
+              /*sound.src = data[0].Audio;*/
+              $('#psbutton-gravity').show();
+              $('#actualaudio-gravity').html('<audio controls preload id="gravityaudio" onpause="pausedaudio()" onplay="pausebg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton-gravity').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-gravity').show();
+            }
+         
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];
+            $('#gravityimg').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Earth and Moon');")
+         });
+      
+      $("#gravity2").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    
+    })();
+    $('#homelinkbh-gravity').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause();bgsoundbh.currentTime = 0; });
+    $('#start-gravity').on('click', function() {
+    	$('#actualaudio-gravity').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio-gravity').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-space-bh-whatisbh2.html");
+    }
+    
+    function pausedaudio() {
+      bgsoundbh.play();
+    }
+    
+    function pausebg() {
+      bgsoundbh.pause();
+    }
+  </script>
+</div>

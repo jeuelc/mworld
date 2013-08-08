@@ -1,0 +1,122 @@
+﻿<!-- i-C-a -->
+<div id="minoansend" data-role="page">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <div id="anisold"><div id="animatedsoldier"></div><div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>The end of The Minoans</h1></div>
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="santorinilink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/santorini.jpg', 'The island of Santorini today');">click here</a>
+        <div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f1_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/quiztimepol.jpg" alt="" />
+            </div>
+            <div id="backofcard" class="back face center">
+              <p>Any content can go here.</p>
+            </div>
+          </div><!--/f1+card-->
+        </div>
+        <div id="zoomwrapper">
+          <div id="polb1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/santorinipol.jpg" alt="" />
+          </div>
+          <div id="polb2"class="pPiece" style="left:100px;top:270px;">
+            <img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/quiztimepol.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      <div id="node-content-half">
+        <!--<div id="psbutton-minoansend">
+          <div id="audiobuttonholder-minoansend"><a href="#" id="start-minoansend"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio-minoansend" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-body-holder" style="margin-top:-20px;height:400px;">
+          <div id="node-body-minoans">
+            <p>No one really knows for sure how the Minoan civilisation ended.  Most historians think it was linked to the huge explosion of a volcano on the island of Thera.</p>
+            <p>Today Thera is called Santorini. It's a beautiful island, not far from the mainland of Greece. But about 3,600 years ago this island was part of a large volcano that exploded and sent ash and a large tidal wave across nearby islands.</p>
+            <p>The damage from the explosion weakened the Minoan civilisation, allowing the Mycenaeans to become culturally dominant.</p>
+          </div>
+        </div>
+      </div>
+    </div><!--end of content-->
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:-145px;padding:0 10px;">
+      <!--<div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>-->
+      <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home.html" id="homelinkag-minoansend"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div></div><!--/anisold-->
+  <script>
+    sound = new Audio(); // 'sound' is now an audio object
+    (function() {
+      $('div#polb1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#polb1').css("z-index", 1);
+      $('div#polb2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('#f1_container').css({"visibility":"hidden", "z-index":0});
+    
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=65";
+     $.getJSON( url, function( data ) {
+            //$('#node-body-minoans').html(data[0].Body);
+            
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];
+            $('#santorini').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'The island of Santorini today');")
+         
+            if(sound.canPlayType('audio/mpeg')) {
+              $('#psbutton-minoansend').show();
+              $('#actualaudio-minoansend').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton-minoansend').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-minoansend').show();
+            }
+         });
+    
+    $("#minoansend").swipe( { swipeRight:goBack, allowPageScroll:"auto", excludedElements:$.fn.swipe.defaults.excludedElements+", #backofcard"} );
+    
+    })();
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece-minoans.html");
+    }
+    
+    $('#start-minoansend').on('click', function() {
+    	$('#actualaudio-minoansend').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio-minoansend').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    $('#homelinkag-minoansend').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+    $("#polb1").on('tap', function() {
+      $('#santorinilink')[0].click();
+    });
+    $("#f1_container").on('tap', function() {
+      $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"transform": "rotateY(0deg)"});
+      setTimeout(function() {
+        $("#polb2").css({"visibility":"visible", "z-index":2});
+        $('#f1_container').css({"visibility":"hidden", "z-index":0});
+      }, 1000);
+    });
+    
+    $("#polb2").on('tap', function() {
+      $('#f1_container').css({"visibility":"visible", "z-index":10});
+      $(this).css({"visibility":"hidden"});
+      $('#f1_card').css({"-webkit-transform": "rotateY(180deg)", "-webkit-box-shadow" : "-5px 5px 5px #aaa;"});
+      $('#f1_card').css({"-moz-transform": "rotateY(180deg)", "-moz-box-shadow" : "-5px 5px 5px #aaa;"});
+      $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"transform": "rotateY(180deg)", "box-shadow" : "-5px 5px 5px #aaa;"});
+      //$("#hittites").swipe("disable");
+      //$("#dopple").css({"visibility":"hidden"});
+    });
+  </script>
+  <script src="js/twocardLogicb.js"></script>
+</div>

@@ -1,0 +1,153 @@
+<!-- i-C-a -->
+<div id="mycenaeans" data-role="page">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <div id="anisold"><div id="animatedsoldier"></div><div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>The Mycenaenas</h1></div>
+      <div class="v-spacer"></div>
+      
+      <div class="sidebarleft-half">
+        <a id="goldmasklink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/goldmask.jpg', 'Mycenaen face mask, made out of gold!');">click here</a>
+        <a id="mycenaetodaylink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/mycenaetoday.jpg', 'Land inhabited by the Mycenaens, as it looks today');">click here</a>
+        <a id="liongatelink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/liongate.jpg', 'The famous lion gate, at the entrance to the citadel of Mycenae');">click here</a>
+        <div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/liongatepol.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:100px;top:270px;">
+            <img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/mycenaetodaypol.jpg" alt="" />
+          </div>
+          <div id="pol3"class="pPiece" style="left:100px;top:270px;">
+            <img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/goldmaskpol.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div id="node-content-half">
+        <!--<div id="psbutton-hittites">
+          <div id="audiobuttonholder-hittites"><a href="#" id="start-hittites"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio-hittites" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-body-holder-mycenaeans" style="height:305px;margin-top:0px;">
+          <div id="node-body-hittites" style="margin-top:-20px"><p>The Mycenaeans were the first Greek speaking population to live in Greece. The poetry of <a href="#imongnawong" data-rel="popup">Homer</a> suggests that the Mycenaens were a society organized around a king and his court.</p>
+            <p>The Mycenaens had extensive trade relationships with the Minoans. Archaeologists have found many Minoan records written in Linear B, the language of the Mycenaeans.  It took historians more than 50 years to decode the writing code of Linear B. Become an archaeologist one day, and maybe you too can solve 3000 year old codes!</p>
+            <p>Mycenaean artists were skilful in crafting jewellery and art from gold and other precious metals.  They also had amazing engineering ability. The entrance to the city at Mycenae was protected via the famous lion gate. The stone above the gate weighed more than a rhinoceros, or a large car!</p>
+            <p>We still don't know how the Mycenaens managed to lift the stone into place above the gate.  Can you think of a way of lifting such a large stone high up into the air?</p>
+          </div>
+        </div>
+      </div>
+      <div data-role="popup" id="imongnawong" data-position-to="window" data-overlay-theme="a" style="text-align:center;">
+        <div id="psbuttonpop">
+          <div id="audiobuttonholderpop"><a href="#" id="startpop"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudiopop" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-pop"></div>
+      </div>
+    </div><!-- end of content -->
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:-136px;padding:0 10px;">
+      <!--<div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>-->
+      <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home.html" id="homelinkag-mycenaeans"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div></div><!--/anisold-->
+  <script>
+    sound = new Audio(); // 'sound' is now an audio object
+    soundpop = new Audio(); // 'sound' is now an audio object
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=13";
+     $.getJSON( url, function( data ) {
+            /*$('#titleb-holder').html("<h1>"+ data[0].node_title +"</h1>");*/
+            //$('#node-body-hittites').html(data[0].Body);            
+            /*if(sound.canPlayType('audio/mpeg')) {
+              $('#psbutton-hittites').show();
+              $('#actualaudio-hittites').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton-hittites').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-hittites').show();
+            }*/
+         });
+    
+    $("#mycenaeans").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    
+    })();
+    
+    (function() {
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-5deg)");
+      
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=15";
+      $.getJSON( url, function( data ) {
+        var html = data[0].Images;
+        var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+        var results = re.exec(html);
+        var source = results[1];
+        $('#liongate').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Lion Gate');")
+      });
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=61";
+      $.getJSON( url, function( data ) {
+        var html = data[0].Images;
+        var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+        var results = re.exec(html);
+        var source = results[1];
+        $('#goldmask').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Mycenaean Artwork... a face mask made from solid gold!');")
+      });
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=62";
+     $.getJSON( url, function( data ) {
+            $('#node-pop').html(data[0].Body);
+            if(soundpop.canPlayType('audio/mpeg')) {
+              $('#psbuttonpop').show();
+              $('#actualaudiopop').html('<audio controls><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              soundpop.src = null;
+              $('#psbuttonpop').html('Your system does not support HTML5 Audio.');
+              $('#psbuttonpop').show();
+            }
+         });
+    })();
+    
+    $('#start-hittites').on('click', function() {
+    	$('#actualaudio-hittites').show();
+      var oldHeight = $('#node-body-holder-mycenaeans').height();
+      var newHeight = oldHeight - $('#actualaudio-hittites').height();
+      $('#node-body-holder-mycenaeans').height(newHeight);
+    });
+    
+    $('#startpop').on('click', function() {
+    	$('#actualaudiopop').show();
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece-origins.html");
+    }
+    $('#homelinkag-mycenaeans').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+    
+    $("#pol3").on('tap', function() {
+      $('#goldmasklink')[0].click();
+    });
+    
+    $("#pol2").on('tap', function() {
+      $('#mycenaetodaylink')[0].click();
+    });
+    
+    $("#pol1").on('tap', function() {
+      $('#liongatelink')[0].click();
+    });
+  </script>
+  <script src="js/threecardLogic.js"></script>
+</div>

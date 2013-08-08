@@ -1,0 +1,124 @@
+<!-- i-C-a -->
+<div id="legacyofgreece-2" data-role="page">
+  <div id="anisold"><div id="animatedsoldier"></div><div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="sidebarleft">
+        <div id="eal2" style="margin-top:100px;">
+          <p><a href="#" id="archi1"><img src="css/images/5-8/Ancient_Civilizations/Greece/Legacy_Of_Ancient_Greece/archibtn1.png"></a></p>
+        </div>
+        <div id="eal1">
+          <p><a href="#" id="archi2"><img src="css/images/5-8/Ancient_Civilizations/Greece/Legacy_Of_Ancient_Greece/archibtn2.png"></a></p>
+        </div>
+      </div>
+      <div class="sidebarright">
+        <div id="legacy" style="margin-top:100px;">
+          <p><a href="#" id="archi3"><img src="css/images/5-8/Ancient_Civilizations/Greece/Legacy_Of_Ancient_Greece/archibtn3.png"></a></p>
+        </div>
+        <div id="waag">
+          <p><a href="#" id="archi4"><img src="css/images/5-8/Ancient_Civilizations/Greece/Legacy_Of_Ancient_Greece/archibtn4.png"></a></p>
+        </div>
+      </div>
+      <div id="node-content" style="margin-top:0px;">
+          <div id="titleb-holder"><h1>Legacy of Ancient Greece</h1></div>
+          <div id="psbutton-legacy">
+            <div id="audiobuttonholder-legacy"><a href="#" id="start-legacy"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+            <div id="actualaudio-legacy" style="display: none;">
+            </div>
+          </div><!-- end of psbutton -->
+          <div id="node-body-holder" style="margin-top:-20px;height:308px;">
+            <div id="node-body-oag"></div>
+          </div>   
+            <p>
+              <a href="sub-ac-greece-legacy2-2.html" data-role="button" data-transition="slide">Read more about the legacy of<br>Ancient Greece in sport, medicine and science</a>
+            </p>          
+      </div>
+      <!-------------------->
+      
+    </div> <!--end of content-->
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:25px;padding:0 10px;">
+      <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
+      <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home2.html" id="homelinkag-legacy"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div></div><!--/anisold-->
+  <script>    
+    sound = new Audio();
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=63";
+     $.getJSON( url, function( data ) {
+            /*$('#titleb-holder').html("<h1>"+ data[0].node_title +"</h1>");*/
+            $('#node-body-oag').html(data[0].Body);
+            if(sound.canPlayType('audio/mpeg')) {
+              $('#psbutton-legacy').show();
+              $('#actualaudio-legacy').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton-legacy').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-legacy').show();
+            }
+         });
+    
+    $("#legacyofgreece-2").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    
+    })();
+
+   (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=102";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#archi1').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Modern buildings influenced by Ancient Greek architecture');")
+         });
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=103";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#archi2').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Modern buildings influenced by Ancient Greek architecture');")
+         });
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=104";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#archi3').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Modern buildings influenced by Ancient Greek architecture');")
+         });
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=105";
+     $.getJSON( url, function( data ) {
+            var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#archi4').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Modern buildings influenced by Ancient Greek architecture');")
+         });
+    })();
+    
+    $('#start-legacy').on('click', function() {
+      $('#actualaudio-legacy').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio-legacy').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece2.html");
+    }
+    $('#homelinkag-legacy').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+  </script>
+</div>

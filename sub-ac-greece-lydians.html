@@ -1,0 +1,167 @@
+<!-- i-C-a -->
+<div data-role="page" id="lydians">
+ <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <div id="anisold"><div id="animatedsoldier"></div><div id="acgreecechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+        <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>The Lydians</h1></div>
+        <div class="v-spacer"></div>
+       
+	  <div class="sidebarleft-half">
+    <a id="delphi" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/delphicity.jpg', 'The ancient city of Delphi, site of the legendary Oracle!');">click here</a>
+        <div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/lydianspol.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:100px;top:270px;">
+            <img src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/delphicitypol.jpg" alt="" />
+          </div>
+          
+        </div><!--/zoomwrapper-->
+      </div>
+	  
+      
+      <div id="node-content-half">
+        <!--div id="psbutton-lydians">
+          <div id="audiobuttonholder-lydians"><a href="#" id="start-lydians"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio-lydians" style="display: none;">
+          </div>
+        </div--><!-- end of psbutton -->
+        <div id="node-body-holder" style="height:345px;margin-top:-20px;">
+          <div id="node-body" style="margin-top:-20px;">
+		  <p>Lydia arose as a kingdom from the remains of the Hittite empire, which collapsed in the 12th century BCE.  The Lydians lived in the western part of what is now Turkey.  Ancient Greek historians such as <a href="#herod" data-rel="popup">Herodotus</a> tell us that the Lydians were the first Mediterranean people to develop coins as money.  They minted gold and silver coins that could be exchanged for goods.</p>
+			<p>The Lydians were also the first Mediterranean people to establish retail shops in permanent locations.  But surely their shops contained different goods than our shops of today… what do you think they contained?</p>
+			<p>The most famous Lydian king was called Croesus.  Croesus’s kingdom clashed with the Persians in the east.  Before the war with the Persians, Croesus asked for the advice of the oracle at Delphi.  The <a href="#delphic" data-rel="popup">Delphic oracle</a> was known for giving advice that could have many different meanings.  The oracle advised Croesus that if he attacked the Persians, he would destroy a great empire… but the oracle did not tell Croesus which empire he would destroy!  He went to war with the Persians, and it was his own empire that was destroyed!</p>
+		  
+		  </div>
+        </div>
+      </div>
+      <div data-role="popup" id="herod" data-position-to="window" data-overlay-theme="a" style="text-align:center;">
+        <div id="psbutton-herod">
+          <div id="audiobuttonholder-herod"><a href="#" id="start-herod"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio-herod" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-pop-herod"></div>
+      </div>
+      <div data-role="popup" id="delphic" data-position-to="window" data-overlay-theme="a" style="text-align:center;">
+        <div id="psbutton-delphic">
+          <div id="audiobuttonholder-delphic"><a href="#" id="start-delphic"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
+          <div id="actualaudio-delphic" style="display: none;">
+          </div>
+        </div><!-- end of psbutton -->
+        <div id="node-pop-delphic"></div>
+      </div>
+    </div> <!-- end content -->  
+    <div class="v-spacer"></div>
+    <div id="foot-band" style="margin-top:-170px;padding:0 10px;">
+      <!--div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div-->
+      <div style="width:253px;height:2px;color:#0071bc;margin:54px auto -15px;"><a href="home.html" id="homelinkag-lydians"><img src="css/images/5-8/bottomhome.png"></a></div>
+    </div>
+  </div></div><!--/anisold-->
+  <script>
+    sound = new Audio(); // 'sound' is now an audio object
+    sound2 = new Audio(); // 'sound' is now an audio object
+    sound3 = new Audio(); // 'sound' is now an audio object
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=28";
+     $.getJSON( url, function( data ) {
+            /*$('#node-body').html(data[0].Body);*/
+            
+          /*var html = data[0].Images;
+            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+            var results = re.exec(html);
+            var source = results[1];            
+            $('#delphi').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'default/delphicity.jpg', 'The ancient city of Delphi, site of the legendary Oracle!');")
+            */
+            if(sound.canPlayType('audio/mpeg')) {
+              $('#psbutton-lydians').show();
+              $('#actualaudio-lydians').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound.src = null;
+              $('#psbutton-lydians').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-lydians').show();
+            }
+         });
+    
+    $("#lydians").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    
+    })();
+    
+    (function() {
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=79";
+     $.getJSON( url, function( data ) {
+            $('#node-pop-herod').html(data[0].Body);
+            if(sound2.canPlayType('audio/mpeg')) {
+              $('#psbutton-herod').show();
+              $('#actualaudio-herod').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound2.src = null;
+              $('#psbutton-herod').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-herod').show();
+            }
+         });
+    })();
+    
+    (function() {
+	  $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol1').css("z-index", 1);
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");;
+      
+	
+      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=80";
+     $.getJSON( url, function( data ) {
+            $('#node-pop-delphic').html(data[0].Body);
+            if(sound2.canPlayType('audio/mpeg')) {
+              $('#psbutton-delphic').show();
+              $('#actualaudio-delphic').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+            } else {
+              sound2.src = null;
+              $('#psbutton-delphic').html('Your system does not support HTML5 Audio.');
+              $('#psbutton-delphic').show();
+            }
+         });
+    })();
+    function goBack() {
+      $.mobile.changePage("sub-ac-greece-aroundag.html");
+    }
+    
+    $('#start-lydians').on('click', function() {
+      $('#actualaudio-lydians').show();
+      var oldHeight = $('#node-body-holder').height();
+      var newHeight = oldHeight - $('#actualaudio-lydians').height();
+      $('#node-body-holder').height(newHeight);
+    });
+    
+    $('#start-herod').on('click', function() {
+      $('#actualaudio-herod').show();
+    });
+    
+    $('#start-delphic').on('click', function() {
+      $('#actualaudio-delphic').show();
+    });
+    $('#homelinkag-lydians').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+	
+	$('#homelinkag-lydians').on('tap', function() { 
+      mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+	
+	
+	
+	$("#pol1").on('tap', function() {
+      $.mobile.changePage("sub-ac-greece-lydiansmoney.html");
+    });
+    
+    $("#pol2").on('tap', function() {
+      $('#delphi')[0].click();
+    });
+	
+	
+	
+  </script>
+    <script src="js/twocardLogic.js"></script>
+</div> <!--//home-->
