@@ -109,26 +109,32 @@ $(function(){
         if(position.left < 50 || position.left > 150 || position.top < 220 || position.top > 320) { //balhin na
           if(jid == "pol1") {
             $('div#pol3 > img').css("-webkit-transform", "rotate(5deg)");
-            $('div#pol1 > img').css("-webkit-transform", "rotate(-5deg)");
+            $('div#pol3').css({'top':'290px', 'left':'73px'});
+            $('div#pol1 > img').css("-webkit-transform", "rotate(-3deg)");
             $('div#pol2 > img').css("-webkit-transform", "rotate(0deg)");
+            $('div#pol2').css({'top':'270px', 'left':'100px'});
             $('#pol2').css("z-index", 2);
             $('#pol3').css("z-index", 1);
             
           } else if(jid == "pol2") {
             $('div#pol1 > img').css("-webkit-transform", "rotate(5deg)");
-            $('div#pol2 > img').css("-webkit-transform", "rotate(-5deg)");
+            $('div#pol1').css({'top':'290px', 'left':'73px'});
+            $('div#pol2 > img').css("-webkit-transform", "rotate(-3deg)");
             $('div#pol3 > img').css("-webkit-transform", "rotate(0deg)");
+            $('div#pol3').css({'top':'270px', 'left':'100px'});
             $('#pol3').css("z-index", 2);
             $('#pol1').css("z-index", 1);
           } else if(jid == "pol3") {
             $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
-            $('div#pol3 > img').css("-webkit-transform", "rotate(-5deg)");
+            $('div#pol2').css({'top':'290px', 'left':'73px'});
+            $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
             $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+            $('div#pol1').css({'top':'270px', 'left':'100px'});
             $('#pol1').css("z-index", 2);
             $('#pol2').css("z-index", 1);
           } 
           $(target).css({'z-index':'0'});
-          $(target).animate({'top':'270px', 'left':'100px'}, 500);
+          $(target).animate({'top':'270px', 'left':'80px'}, 500);
         } else { //i-uli sa
           $(target).animate({'top':'270px', 'left':'100px'}, 500);
         }

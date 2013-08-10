@@ -1,4 +1,12 @@
 /* i-C-a */
+var mapmakerbg = new Audio();
+mapmakerbg.src = "audio/mapmaker.mp3";
+mapmakerbg.addEventListener('ended', function() { mapmakerbg.play(); });
+
+var civscrambg = new Audio();
+civscrambg.src = "audio/civilizationscramble.mp3";
+civscrambg.addEventListener('ended', function() { civscrambg.play(); });
+
 var animalsoundbg = new Audio();
 animalsoundbg.src = "audio/animals.mp3";
 animalsoundbg.addEventListener('ended', function() { animalsoundbg.play(); });
@@ -32,19 +40,19 @@ sciencesoundbg.src = "audio/science.mp3";
 sciencesoundbg.addEventListener('ended', function() { sciencesoundbg.play(); });
 
 var ancientsoundbg = new Audio();
-ancientsoundbg.src = "http://back.uvmate.com/sites/default/files/subjectsaudio/ancientcivbg.mp3";
+ancientsoundbg.src = "audio/ancientcivbg.mp3";
 ancientsoundbg.addEventListener('ended', function() { ancientsoundbg.play(); });
 
 var agsoundbg = new Audio();
-agsoundbg.src = "http://back.uvmate.com/sites/default/files/subjectsaudio/agsoundbg.mp3";
+agsoundbg.src = "audio/ancientgreece.mp3";
 agsoundbg.addEventListener('ended', function() { agsoundbg.play(); });
 
 var spacesoundbg = new Audio();
-spacesoundbg.src = "http://back.uvmate.com/sites/default/files/subjectsaudio/PurpleSunset.mp3";
+spacesoundbg.src = "audio/space.mp3";
 spacesoundbg.addEventListener('ended', function() { spacesoundbg.play(); });
 
 var bgsoundbh = new Audio();
-bgsoundbh.src = "http://back.uvmate.com/sites/default/files/subjectsaudio/Soundsnap-heavengate.mp3";
+bgsoundbh.src = "audio/blackhole.mp3";
 bgsoundbh.addEventListener('ended', function() { bgsoundbh.play(); });
 
 var mainaudiobg = new Audio();
@@ -892,4 +900,3 @@ $('#kid').live('pageshow',function(event, ui){
     this.currentTime = 0; // Reset time
   }); 
 });
-

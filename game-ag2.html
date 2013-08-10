@@ -50,6 +50,7 @@
     
     $('#backbtn').on('tap', function() {
       $.mobile.changePage("sub-ac-greece-aroundag.html", { transition: "flip"});
+      agsoundbg.play(); civscrambg.pause(); civscrambg.currentTime = 0; 
     });
     
     $('#resetbtn').on('tap', function() {

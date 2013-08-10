@@ -109,7 +109,9 @@
     });
     
     $('#backbtn').on('tap', function() {
-      $.mobile.changePage("home.html");
+      $.mobile.changePage("sub-ac-greece-agschool.html");
+      mapmakerbg.pause(); mapmakerbg.currentTime = 0;
+      agsoundbg.play();
     });
     
     $('#resetbtn').on('tap', function() {

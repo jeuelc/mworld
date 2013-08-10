@@ -109,26 +109,32 @@ $(function(){
         if(position.left < 50 || position.left > 150 || position.top < 220 || position.top > 320) { //balhin na
           if(jid == "polb1") {
             $('div#polb3 > img').css("-webkit-transform", "rotate(5deg)");
-            $('div#polb1 > img').css("-webkit-transform", "rotate(-5deg)");
+            $('div#polb3').css({'top':'290px', 'left':'73px'});
+            $('div#polb1 > img').css("-webkit-transform", "rotate(-3deg)");
             $('div#polb2 > img').css("-webkit-transform", "rotate(0deg)");
+            $('div#polb2').css({'top':'270px', 'left':'100px'});
             $('#polb2').css("z-index", 2);
             $('#polb3').css("z-index", 1);
             
           } else if(jid == "polb2") {
             $('div#polb1 > img').css("-webkit-transform", "rotate(5deg)");
-            $('div#polb2 > img').css("-webkit-transform", "rotate(-5deg)");
+            $('div#polb1').css({'top':'290px', 'left':'73px'});
+            $('div#polb2 > img').css("-webkit-transform", "rotate(-3deg)");
             $('div#polb3 > img').css("-webkit-transform", "rotate(0deg)");
+            $('div#polb3').css({'top':'270px', 'left':'100px'});
             $('#polb3').css("z-index", 2);
             $('#polb1').css("z-index", 1);
           } else if(jid == "polb3") {
             $('div#polb2 > img').css("-webkit-transform", "rotate(5deg)");
-            $('div#polb3 > img').css("-webkit-transform", "rotate(-5deg)");
+            $('div#polb2').css({'top':'290px', 'left':'73px'});
+            $('div#polb3 > img').css("-webkit-transform", "rotate(-3deg)");
             $('div#polb1 > img').css("-webkit-transform", "rotate(0deg)");
+            $('div#polb1').css({'top':'270px', 'left':'100px'});
             $('#polb1').css("z-index", 2);
             $('#polb2').css("z-index", 1);
           } 
           $(target).css({'z-index':'0'});
-          $(target).animate({'top':'270px', 'left':'100px'}, 500);
+          $(target).animate({'top':'270px', 'left':'80px'}, 500);
         } else { //i-uli sa
           $(target).animate({'top':'270px', 'left':'100px'}, 500);
         }

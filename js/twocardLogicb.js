@@ -109,15 +109,17 @@ $(function(){
           if(jid == "polb1") {
             $('div#polb1 > img').css("-webkit-transform", "rotate(-5deg)");
             $('div#polb2 > img').css("-webkit-transform", "rotate(0deg)");
+            $('div#polb2').css({'top':'270px', 'left':'100px'});
             $('#polb2').css("z-index", 1);
             
           } else if(jid == "polb2") {
-            $('div#polb2 > img').css("-webkit-transform", "rotate(5deg)");
+            $('div#polb2 > img').css("-webkit-transform", "rotate(-5deg)");
             $('div#polb1 > img').css("-webkit-transform", "rotate(0deg)");
+            $('div#polb1').css({'top':'270px', 'left':'100px'});
             $('#polb1').css("z-index", 1);
           } 
           $(target).css({'z-index':'0'});
-          $(target).animate({'top':'270px', 'left':'100px'}, 500);
+          $(target).animate({'top':'290px', 'left':'75px'}, 500);
         } else { //i-uli sa
           $(target).animate({'top':'270px', 'left':'100px'}, 500);
         }

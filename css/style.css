@@ -161,13 +161,13 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
 
 #theseus {
   background:url('images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/theseusbg.jpg') no-repeat;
-  height:768px;
+  height:748px;
   width:1024px !important;
 }
 
 #iliad {
   background:url('images/5-8/Ancient_Civilizations/Greece/Life_in_Ancient_Greece/iliadbg.jpg') no-repeat;
-  height:768px;
+  height:748px;
   width:1024px !important;
 }
 
@@ -261,13 +261,6 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
 }
 
 #titleb-holder, #title-holder { text-align:center; }
-
-#titleb-holder h1 {
-  text-transform:uppercase;
-  color: #000000;
-  font-family:"Chalkboard SE";
-  font-weight:normal;
-}
 
 #node-content-theseus {
   width:80%;
@@ -541,28 +534,6 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
 .upSky{ background: #FFFFFF; }
 
 /********* control panel **********/
-
-#hercules{
-background:url('images/hercules/forward/pb1.png') no-repeat 0 0; 
-float: left;
-
-position: absolute;
-
-width: 275px;
-
-height: 270px;
-
-overflow: hidden;
-
-top: 323px;
-
-left: 120px;
-	
-}
-
-
-
-
 #tbshiphead { 
 background:url('images/SpaceBottomleft/head.png') no-repeat 0 0; 
 float: left;
@@ -1022,3 +993,116 @@ margin-left: -345px;
   background-color: #aaa;
 }
 /********** /flipcard effect**************/
+
+/***********slider button************/
+.menubtnholder {
+  position:absolute;
+  top:660px;
+  left:42px;
+  z-index:21;
+}
+
+.homebtnholder, .cpbtnholder, .buildbtnholder, .mpbtnholder {
+  position:absolute;
+  top:748px;
+  left:42px;
+  z-index:20;
+}
+
+.menuhousing {
+  background:url('images/5-8/Ancient_Civilizations/Greece/menuhousing.png');
+  width:207px;
+  height:530px;
+  position:absolute;
+  /*top:267px;*/
+  top:748px;
+  left:5px;
+  z-index:19;
+}
+/*********** /slider button************/
+
+/************* new rules ***********/
+.bptitleholder {
+  width:627px;
+  height:68px;
+  text-align:center;
+  line-height:28px;
+  position:absolute;
+  top:169px;
+  left:194px;
+}
+
+.navtitleholder {
+  width:410px;
+  height:68px;
+  position:absolute;
+  top:169px;
+  left:305px;
+  text-align:center;
+  line-height:28px;
+}
+
+.navtitleholder h1, .bptitleholder h1 {
+  text-transform:uppercase;
+  color: #000000;
+  font-family:"Chalkboard SE";
+  font-weight:normal;
+  padding:0;
+  margin:0;
+}
+
+.nav-content {
+  position:absolute;
+  left:305px;
+  top:263px;
+  width:410px;
+  height:359px;
+  overflow-y:scroll;
+  text-align:left;
+  font-family:"Chalkboard SE";
+}
+
+.navbtn1 {
+  position:absolute;
+  left:60px;
+  top:221px;
+}
+
+.navbtn2 {
+  position:absolute;
+  left:60px;
+  top:449px;
+}
+
+.navbtn3 {
+  position:absolute;
+  left:760px;
+  top:221px;
+}
+
+.navbtn4 {
+  position:absolute;
+  left:760px;
+  top:449px;
+}
+
+.botlogoholder {
+  width:221px;
+  height:82px;
+  position:absolute;
+  left:398px;
+  top:671px;
+  text-align:center;
+}
+
+.bpcontent {
+  width:413px;
+  height:356px;
+  position:absolute;
+  left:550px;
+  top:266px;
+  overflow-y:scroll;
+  font-family:"Chalkboard SE";
+  text-align:left;
+}
+/************* /new rules ***********/

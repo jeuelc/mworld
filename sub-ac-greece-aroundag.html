@@ -1,5 +1,12 @@
 <!-- i-C-a -->
 <div id="aroundag" data-role="page">
+  <script src="js/slidebar.js"></script>
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><img class="homebtn" src="css/images/5-8/Ancient_Civilizations/Greece/homebtn.png"></div>
+  <div class="cpbtnholder"><img class="cpbtn" src="css/images/5-8/Ancient_Civilizations/Greece/cpbtn.png"></div>
+  <div class="buildbtnholder"><img class="buildbtn" src="css/images/5-8/Ancient_Civilizations/Greece/buildbtn.png"></div>
+  <div class="mpbtnholder"><img class="mpbtn" src="css/images/5-8/Ancient_Civilizations/Greece/mpbtn.png"></div>
+  <div class="menubtnholder"><img class="menubtn" src="css/images/5-8/Ancient_Civilizations/Greece/menubtn.png"></div>
   <div id="anisold"><div id="acgreecechar">
     <div data-role="content" class="kidzcontent" style="margin-top:0px;height:718px;">
       <div id="aggame1link" style="width:48px;height:100px;position:absolute;left:210px;top:554px;background:url(css/images/5-8/Ancient_Civilizations/Greece/game/civscramtrigger.png) center center no-repeat">
@@ -46,6 +53,8 @@
     
     $('#aggame1link').on('tap', function() {
       $.mobile.changePage("game-ag2.html", { transition: "flip" });
+      civscrambg.play();
+      agsoundbg.pause(); agsoundbg.currentTime = 0;
     });
     
     $('#romanslink').on('tap', function() {
