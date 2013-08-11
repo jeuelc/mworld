@@ -120,75 +120,75 @@ $(function(){
         var jid = $(target).attr("id");
         var position = $(target).position();
       
-        if(jid == "jpiece4" && position.left > 356 && position.left < 456 && position.top > 224 && position.top < 324) {
-          $(target).css({'left':406, 'top':274});
+        if(jid == "jpiece4" && position.left > 251 && position.left < 351 && position.top > 257 && position.top < 357) {
+          $(target).css({'left':301, 'top':307});
         }
-        if(jid == "jpiece5" && position.left > 410 && position.left < 510 && position.top > 225 && position.top < 325) {
-          $(target).css({'left':460, 'top':275});
+        if(jid == "jpiece5" && position.left > 300 && position.left < 400 && position.top > 252 && position.top < 352) {
+          $(target).css({'left':350, 'top':302});
         }
-        if(jid == "jpiece6" && position.left > 358 && position.left < 458 && position.top > 259 && position.top < 359) {
-          $(target).css({'left':408, 'top':309});
+        if(jid == "jpiece6" && position.left > 257 && position.left < 357 && position.top > 289 && position.top < 389) {
+          $(target).css({'left':307, 'top':339});
         }
-        if(jid == "jpiece7" && position.left > 423 && position.left < 523 && position.top > 260 && position.top < 360) {
-          $(target).css({'left':473, 'top':310});
+        if(jid == "jpiece7" && position.left > 312 && position.left < 412 && position.top > 283 && position.top < 383) {
+          $(target).css({'left':362, 'top':333});
         }
-        if(jid == "jpiece8" && position.left > 442 && position.left < 542 && position.top > 328 && position.top < 428) {
-          $(target).css({'left':492, 'top':378});
+        if(jid == "jpiece8" && position.left > 330 && position.left < 430 && position.top > 344 && position.top < 444) {
+          $(target).css({'left':380, 'top':394});
         }
-        if(jid == "jpiece9" && position.left > 515 && position.left < 615 && position.top > 344 && position.top < 444) {
-          $(target).css({'left':565, 'top':394});
+        if(jid == "jpiece9" && position.left > 396 && position.left < 496 && position.top > 349 && position.top < 449) {
+          $(target).css({'left':446, 'top':399});
         }
-        if(jid == "jpiece10" && position.left > 500 && position.left < 600 && position.top > 383 && position.top < 483) {
-          $(target).css({'left':550, 'top':433});
+        if(jid == "jpiece10" && position.left > 386 && position.left < 486 && position.top > 388 && position.top < 488) {
+          $(target).css({'left':436, 'top':438});
         }
-        if(jid == "jpiece11" && position.left > 514 && position.left < 614 && position.top > 383 && position.top < 483) {
-          $(target).css({'left':564, 'top':433});
+        if(jid == "jpiece11" && position.left > 399 && position.left < 499 && position.top > 386 && position.top < 486) {
+          $(target).css({'left':449, 'top':436});
         }
-        if(jid == "jpiece12" && position.left > 501 && position.left < 601 && position.top > 440 && position.top < 540) {
-          $(target).css({'left':551, 'top':490});
+        if(jid == "jpiece12" && position.left > 372 && position.left < 472 && position.top > 437 && position.top < 537) {
+          $(target).css({'left':442, 'top':487});
         }
-        if(jid == "jpiece13" && position.left > 536 && position.left < 636 && position.top > 422 && position.top < 522) {
-          $(target).css({'left':586, 'top':472});
+        if(jid == "jpiece13" && position.left > 419 && position.left < 519 && position.top > 419 && position.top < 519) {
+          $(target).css({'left':469, 'top':469});
         }
-        if(jid == "jpiece14" && position.left > 448 && position.left < 548 && position.top > 214 && position.top < 314) {
-          $(target).css({'left':498, 'top':264});
+        if(jid == "jpiece14" && position.left > 328 && position.left < 428 && position.top > 233 && position.top < 333) {
+          $(target).css({'left':378, 'top':283});
         }
-        if(jid == "jpiece15" && position.left > 554 && position.left < 654 && position.top > 214 && position.top < 314) {
-          $(target).css({'left':604, 'top':264});
+        if(jid == "jpiece15" && position.left > 415 && position.left < 515 && position.top > 231 && position.top < 331) {
+          $(target).css({'left':465, 'top':281});
         }
-        if(jid == "jpiece16" && position.left > 707 && position.left < 807 && position.top > 201 && position.top < 301) {
-          $(target).css({'left':757, 'top':251});
+        if(jid == "jpiece16" && position.left > 543 && position.left < 643 && position.top > 196 && position.top < 296) {
+          $(target).css({'left':593, 'top':246});
         }
-        if(jid == "jpiece17" && position.left > 832 && position.left < 932 && position.top > 199 && position.top < 299) {
-          $(target).css({'left':882, 'top':249});
+        if(jid == "jpiece17" && position.left > 647 && position.left < 747 && position.top > 192 && position.top < 292) {
+          $(target).css({'left':697, 'top':242});
         }
-        if(jid == "jpiece18" && position.left > 832 && position.left < 932 && position.top > 239 && position.top < 339) {
-          $(target).css({'left':882, 'top':289});
+        if(jid == "jpiece18" && position.left > 656 && position.left < 756 && position.top > 229 && position.top < 329) {
+          $(target).css({'left':706, 'top':279});
         }
-        if(jid == "jpiece19" && position.left > 677 && position.left < 777 && position.top > 265 && position.top < 365) {
-          $(target).css({'left':727, 'top':315});
+        if(jid == "jpiece19" && position.left > 528 && position.left < 628 && position.top > 253 && position.top < 353) {
+          $(target).css({'left':578, 'top':303});
         }
-        if(jid == "jpiece20" && position.left > 554 && position.left < 654 && position.top > 265 && position.top < 365) {
-          $(target).css({'left':604, 'top':315});
+        if(jid == "jpiece20" && position.left > 418 && position.left < 518 && position.top > 266 && position.top < 366) {
+          $(target).css({'left':468, 'top':316});
         }
-        if(jid == "jpiece21" && position.left > 492 && position.left < 592 && position.top > 239 && position.top < 339) {
-          $(target).css({'left':542, 'top':289});
+        if(jid == "jpiece21" && position.left > 364 && position.left < 464 && position.top > 258 && position.top < 358) {
+          $(target).css({'left':414, 'top':308});
         }
-        if(jid == "jpiece22" && position.left > 736 && position.left < 836 && position.top > 362 && position.top < 462) {
-          $(target).css({'left':786, 'top':412});
+        if(jid == "jpiece22" && position.left > 582 && position.left < 682 && position.top > 364 && position.top < 446) {
+          $(target).css({'left':632, 'top':396});
         }
-        if(jid == "jpiece23" && position.left > 860 && position.left < 960 && position.top > 361 && position.top < 461) {
-          $(target).css({'left':910, 'top':411});
+        if(jid == "jpiece23" && position.left > 686 && position.left < 786 && position.top > 337 && position.top < 447) {
+          $(target).css({'left':736, 'top':387});
         }
         
-        if(jid == "jpiece1" && position.left > 345 && position.left < 455 && position.top > 185 && position.top < 295) {
-          $(target).animate({'left':410, 'top':240}, 500);
+        if(jid == "jpiece1" && position.left > 190&& position.left < 290 && position.top > 200 && position.top < 295) {
+          $(target).animate({'left':250, 'top':240}, 500);
         }
-        if(jid == "jpiece2" && position.left > 409 && position.left < 930 && position.top > 240 && position.top < 360) {
-          $(target).animate({'left':840, 'top':305}, 500);
+        if(jid == "jpiece2" && position.left > 450 && position.left < 730 && position.top > 120 && position.top < 260) {
+          $(target).animate({'left':670, 'top':240}, 500);
         }
-        if(jid == "jpiece3" && position.left > 480 && position.left < 560 && position.top > 360 && position.top < 465) {
-          $(target).animate({'left':515, 'top':425}, 500);
+        if(jid == "jpiece3" && position.left > 370 && position.left < 460 && position.top > 320 && position.top < 400) {
+          $(target).animate({'left':420, 'top':380}, 500);
         }
       }
     }
