@@ -1,64 +1,73 @@
 <!-- i-C-a -->
-<div id="nscollide" data-role="page">
-  <div id="spacechar">&nbsp;
-    <div data-role="content" class="kidzcontent">
-      <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>Neutron Stars Collide</h1></div>
-      <div class="v-spacer"></div>
-      <div class="sidebarleft-half">
-        <div id="eal3short">
-          <div id="vidlinkholder"><a href="JavaScript:html5Lightbox.showLightbox(2, 'http://back.uvmate.com/sites/default/files/videos/original/nscollide.mp4', 'Two neutron stars collide and shoot bursts of energy out into space!', 800, 535);" id="vidbtn-nscollide"><img src="css/images/5-8/Space/Black_Holes/Where_BH_Come/vidicon3.png">
-            </a>Two neutron stars collide and shoot bursts of energy out into space!</div>
+<div id="blackhole" data-role="page">
+    <script src="js/hammer.js"></script>
+    <script src="js/jquery.hammer.js"></script>
+    <script src="js/slidebar.js"></script>
+    <div class="menuhousing"></div>
+    <div class="homebtnholder"><img class="homebtn" src="css/images/5-8/Space/Black_Holes/homebtn.png"></div>
+    <div class="cpbtnholder"><img class="cpbtn" src="css/images/5-8/Space/Black_Holes/cpbtn.png"></div>
+    <div class="buildbtnholder"><img class="buildbtn" src="css/images/5-8/Space/Black_Holes/buildbtn.png"></div>
+    <div class="mpbtnholder"><img class="mpbtn" src="css/images/5-8/Space/Black_Holes/mpbtn.png"></div>
+    <div class="menubtnholder"><img class="menubtn" src="css/images/5-8/Space/Black_Holes/menubtn.png"></div>
+    <div id="bonus-ags" class="talkbubble" style="background:url(css/images/5-8/Space/Black_Holes/game/bonustalk.png) no-repeat; width:473px;height:296px;position:absolute;left:500px;top:40px;visibility:hidden;"></div>
+    <div class="bptitleholder" style="padding-top:14px;"><h1>Neutron Stars Collide</h1></div>
+    <div id="anisold">
+        <div id="spacechar">&nbsp;
+            <div data-role="content" class="kidzcontent">
+                <div class="v-spacer"></div>
+                <div class="sidebarleft-half">
+                    <div id="eal3short" style="position:absolute;left:100px;top:270px;">
+                        <div id="vidlinkholder"><a href="JavaScript:html5Lightbox.showLightbox(2, 'http://back.uvmate.com/sites/default/files/videos/original/nscollide.mp4', 'Two neutron stars collide and shoot bursts of energy out into space!', 800, 535);" id="vidbtn-nscollide"><img src="css/images/5-8/Space/Black_Holes/Where_BH_Come/vidicon3.png">
+                            </a>Two neutron stars collide and shoot bursts of energy out into space!
+                        </div>
+                    </div>
+                </div>
+                <div class="bpcontent">
+                    <p>When two neutron stars collide, incredible things happen. </p>
+                    <p>The new object weighs much more than the Sun but cannot support its own weight. In a fraction of a second, it collapses to form a new black hole.</p>
+                    <p>This creation of a new black hole can be very violent, producing jets of particles and bursts of gamma rays. These gamma ray bursts can be seen by satellites orbiting the Earth.</p>
+                    <p>The creation of black holes in this way sends ripples throughout space.  These ripples pass by the Earth every day!</p>
+                </div>
+                <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
+
+            </div><!--end of content-->
         </div>
-      </div>
-      <div id="node-content-half">
-        <div id="psbutton-nscollide">
-          <div id="audiobuttonholder-nscollide"><a href="#" id="start-nscollide"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
-          <div id="actualaudio-nscollide" style="display: none;">
-          </div>
-        </div><!-- end of psbutton -->
-        <div id="node-body-holder" style="margin-top:-20px;">
-          <div id="node-body-minoans"></div>
-        </div>
-      </div>
-    </div><!--end of content-->
-    <div class="v-spacer"></div>
-    <div id="foot-band" style="margin-top:160px;padding:0 15px;">
-      <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
-      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
-      <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home.html" id="homelinkbh-nscollide"><img src="css/images/5-8/Space/bottomhome.png"></a></div>
-    </div>
-  </div><!--/spacechar-->
-  <script>
-    sound = new Audio();
-    (function() {
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=48";
-     $.getJSON( url, function( data ) {
-            $('#node-body-minoans').html(data[0].Body);
-            if(sound.canPlayType('audio/mpeg')) {
-              $('#psbutton-nscollide').show();
-              $('#actualaudio-nscollide').html('<audio controls preload id="nscollideaudio" onpause="pausedaudio()" onplay="pausebg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            } else {
-              sound.src = null;
-              $('#psbutton-nscollide').html('Your system does not support HTML5 Audio.');
-              $('#psbutton-nscollide').show();
-            }
-         });
+    </div><!--/anisold-->
+    <section class="container" style="height:670px;margin-top:0px;">
+        <div class="spriteComing"></div>
+    </section>
+    <script src="js/spritespin.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript" src="js/script.js"></script>    
+    <script>
+        sound = new Audio();
+        (function() {
+            var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=48";
+            $.getJSON( url, function( data ) {
+                if(sound.canPlayType('audio/mpeg')) {
+                    $('#psbutton-nscollide').show();
+                    $('#actualaudio-nscollide').html('<audio controls preload id="nscollideaudio" onpause="pausedaudio()" onplay="pausebg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+                } else {
+                    sound.src = null;
+                    $('#psbutton-nscollide').html('Your system does not support HTML5 Audio.');
+                    $('#psbutton-nscollide').show();
+                }
+            });
     
-    $("#nscollide").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+            $("#nscollide").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     
-    })();
-    $('#homelinkbh-nscollide').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause();bgsoundbh.currentTime = 0; });
-    function goBack() {
-      $.mobile.changePage("sub-space-bh-blackhole.html");
-    }
-    $('#start-nscollide').on('click', function() {
-    	$('#actualaudio-nscollide').show();
-      var oldHeight = $('#node-body-holder').height();
-      var newHeight = oldHeight - $('#actualaudio-nscollide').height();
-      $('#node-body-holder').height(newHeight);
-    });
-    $('#vidbtn-nscollide').on('tap', function() { bgsoundbh.pause(); });
-    $('#html5-lightbox-overlay').on('tap', function() { bgsoundbh.play(); });
-    $('#html5-close').on('tap', function() { bgsoundbh.play(); });
-  </script>
+        })();
+        $('#homelinkbh-nscollide').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause();bgsoundbh.currentTime = 0; });
+        function goBack() {
+            $.mobile.changePage("sub-space-bh-blackhole.html");
+        }
+        $('#start-nscollide').on('click', function() {
+            $('#actualaudio-nscollide').show();
+            var oldHeight = $('#node-body-holder').height();
+            var newHeight = oldHeight - $('#actualaudio-nscollide').height();
+            $('#node-body-holder').height(newHeight);
+        });
+        $('#vidbtn-nscollide').on('tap', function() { bgsoundbh.pause(); });
+        $('#html5-lightbox-overlay').on('tap', function() { bgsoundbh.play(); });
+        $('#html5-close').on('tap', function() { bgsoundbh.play(); });
+    </script>
 </div>

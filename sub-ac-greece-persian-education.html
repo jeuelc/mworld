@@ -37,30 +37,24 @@
       
     </div> <!--end of content-->
   </div></div><!--/anisold-->
+  <div class="audiopanel">
+    <div class="bbh"><img id="persianeducaudiobbtn" src="css/images/audio/audio-back.png"></div>
+    <div class="plbh"><img id="persianeducaudioplbtn" src="css/images/audio/audio-play.png"></div>
+    <div class="psbh"><img id="persianeducaudiopsbtn" src="css/images/audio/audio-pause.png"></div>
+    <div class="fbh"><img id="persianeducaudiofbtn" src="css/images/audio/audio-forw.png"></div>
+    <div id="actualaudio-persianseduc" style="visibility:hidden;"></div>
+  </div>
   <script>
     sound = new Audio(); // 'sound' is now an audio object
     (function() {
       $('div#polb1 > img').css("-webkit-transform", "rotate(0deg)");
       $('div#polb1').css("z-index", 1);
       $('div#polb2 > img').css("-webkit-transform", "rotate(5deg)");;
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=71";
-        $.getJSON( url, function( data ) {
-            //$('#node-body-oag').html(data[0].Body);
-      /*      var html = data[0].Images;
-            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-            var results = re.exec(html);
-            var source = results[1];
-            $('#parthenonnight').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Night time view of the Perthenon');")
-         */
+      
             if(sound.canPlayType('audio/mpeg')) {
-              $('#psbutton-temples').show();
-              $('#actualaudio-temples').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            } else {
-              sound.src = null;
-              $('#psbutton-temples').html('Your system does not support HTML5 Audio.');
-              $('#psbutton-temples').show();
-            }
-         });
+              
+              $('#actualaudio-persianseduc').html('<audio id="perseducaudio" controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page25.mp3" type="audio/mpeg"></audio>');
+            } 
     
     $("#persianeducation").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     
@@ -95,6 +89,28 @@
     });
     $("#polb2").on('tap', function() {
       $('#cyrus')[0].click();
+    });
+    
+    /* ******************** */
+    $("#persianeducaudioplbtn").on('tap', function() {
+      perseducaudio.play();
+      agsoundbg.pause(); agsoundbg.currentTime = 0; 
+      $(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#persianeducaudiofbtn").on('tap', function() {
+      var ctime = perseducaudio.currentTime;
+      perseducaudio.currentTime = ctime + 10;
+    });
+    
+    $("#persianeducaudiobbtn").on('tap', function() {
+      var ctime = perseducaudio.currentTime;
+      perseducaudio.currentTime = ctime - 10;
+    });
+    
+    $("#persianeducaudiopsbtn").on('tap', function() {
+      perseducaudio.pause();
+      $(".audiopanel").css({"backgroundPosition":"0px 0px"});
     });
   </script>
   <script src="js/twocardLogicb.js"></script>

@@ -48,31 +48,23 @@
       
     </div> <!-- end content -->  
   </div></div><!--/anisold-->
+  <div class="audiopanel">
+    <div class="bbh"><img id="lydiansaudiobbtn" src="css/images/audio/audio-back.png"></div>
+    <div class="plbh"><img id="lydiansaudioplbtn" src="css/images/audio/audio-play.png"></div>
+    <div class="psbh"><img id="lydiansaudiopsbtn" src="css/images/audio/audio-pause.png"></div>
+    <div class="fbh"><img id="lydiansaudiofbtn" src="css/images/audio/audio-forw.png"></div>
+    <div id="actualaudio-lydians" style="visibility:hidden;"></div>
+  </div>
   <script>
     sound = new Audio(); // 'sound' is now an audio object
     sound2 = new Audio(); // 'sound' is now an audio object
     sound3 = new Audio(); // 'sound' is now an audio object
     
     (function() {
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=28";
-     $.getJSON( url, function( data ) {
-            /*$('#node-body').html(data[0].Body);*/
-            
-          /*var html = data[0].Images;
-            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-            var results = re.exec(html);
-            var source = results[1];            
-            $('#delphi').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'default/delphicity.jpg', 'The ancient city of Delphi, site of the legendary Oracle!');")
-            */
-            if(sound.canPlayType('audio/mpeg')) {
-              $('#psbutton-lydians').show();
-              $('#actualaudio-lydians').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            } else {
-              sound.src = null;
-              $('#psbutton-lydians').html('Your system does not support HTML5 Audio.');
-              $('#psbutton-lydians').show();
-            }
-         });
+      
+        if(sound.canPlayType('audio/mpeg')) {
+          $('#actualaudio-lydians').html('<audio id="lydiansaudio" controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page20.mp3" type="audio/mpeg"></audio>');
+        } 
     
     $("#lydians").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     
@@ -116,12 +108,6 @@
       $.mobile.changePage("sub-ac-greece-aroundag.html");
     }
     
-    $('#start-lydians').on('click', function() {
-      $('#actualaudio-lydians').show();
-      var oldHeight = $('#node-body-holder').height();
-      var newHeight = oldHeight - $('#actualaudio-lydians').height();
-      $('#node-body-holder').height(newHeight);
-    });
     
     $('#start-herod').on('click', function() {
       $('#actualaudio-herod').show();
@@ -147,7 +133,27 @@
     $("#pol2").on('tap', function() {
       $('#delphi')[0].click();
     });
-	
+  	/* ******************** */
+    $("#lydiansaudioplbtn").on('tap', function() {
+      lydiansaudio.play();
+      agsoundbg.pause(); agsoundbg.currentTime = 0; 
+      $(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#lydiansaudiofbtn").on('tap', function() {
+      var ctime = lydiansaudio.currentTime;
+      lydiansaudio.currentTime = ctime + 10;
+    });
+    
+    $("#lydiansaudiobbtn").on('tap', function() {
+      var ctime = lydiansaudio.currentTime;
+      lydiansaudio.currentTime = ctime - 10;
+    });
+    
+    $("#lydiansaudiopsbtn").on('tap', function() {
+      lydiansaudio.pause();
+      $(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
 	
 	
   </script>

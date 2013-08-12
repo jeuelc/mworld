@@ -40,6 +40,13 @@
       
     </div> <!--end of content-->
   </div></div><!--/anisold-->
+  <div class="audiopanel">
+    <div class="bbh"><img id="spartansaudiobbtn" src="css/images/audio/audio-back.png"></div>
+    <div class="plbh"><img id="spartansaudioplbtn" src="css/images/audio/audio-play.png"></div>
+    <div class="psbh"><img id="spartansaudiopsbtn" src="css/images/audio/audio-pause.png"></div>
+    <div class="fbh"><img id="spartansaudiofbtn" src="css/images/audio/audio-forw.png"></div>
+    <div id="actualaudio-spartans" style="visibility:hidden;"></div>
+  </div>
   <script>
     sound = new Audio(); // 'sound' is now an audio object
     sound2 = new Audio(); // 'sound' is now an audio object
@@ -49,25 +56,13 @@
       $('div#polb2').css("z-index", 1);
       $('div#polb2 > img').css("-webkit-transform", "rotate(5deg)");
       $('div#polb3 > img').css("-webkit-transform", "rotate(-3deg)");
-      
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=72";
-        $.getJSON( url, function( data ) {
-            //$('#node-body-oag').html(data[0].Body);
-            var html = data[0].Images;
-            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-            var results = re.exec(html);
-            var source = results[1];
-            $('#peloponnese').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'The Peloponnese, homeland of the Spartans, as it is today');")
+            
             
             if(sound.canPlayType('audio/mpeg')) {
-              $('#psbutton-spartans').show();
-              $('#actualaudio-spartans').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            } else {
-              sound.src = null;
-              $('#psbutton-spartans').html('Your system does not support HTML5 Audio.');
-              $('#psbutton-spartans').show();
-            }
-         });
+              
+              $('#actualaudio-spartans').html('<audio id="spartansaudio" controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page12.mp3" type="audio/mpeg"></audio>');
+            } 
+         
     
     $("#spartans").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     
@@ -129,6 +124,26 @@
     
     $("#polb1").on('tap', function() {
       $('#leonidaslink')[0].click();
+    });
+    /* ******************** */
+    $("#spartansaudioplbtn").on('tap', function() {
+      spartansaudio.play();
+      agsoundbg.pause(); agsoundbg.currentTime = 0; 
+      $(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#spartansaudiofbtn").on('tap', function() {
+      var ctime = spartansaudio.currentTime;
+      spartansaudio.currentTime = ctime + 10;
+    });
+    
+    $("#spartansaudiobbtn").on('tap', function() {
+      var ctime = spartansaudio.currentTime;
+      spartansaudio.currentTime = ctime - 10;
+    });
+    
+    $("#spartansaudiopsbtn").on('tap', function() {
+      spartansaudio.pause();
     });
   </script>
   <script src="js/threecardLogicb.js"></script>

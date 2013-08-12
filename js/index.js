@@ -72,7 +72,7 @@ var olympicsaudiobg = new Audio();
 olympicsaudiobg.src = "http://back.uvmate.com/sites/default/files/subjectsaudio/Olympics.mp3";
 
 function pauseagbg() { agsoundbg.pause() }
-function playagbg() { agsoundbg.play() }
+function playagbg() { agsoundbg.play(); $(".audiopanel").css({"backgroundPosition":"0px 0px"}); }
 
 function startolympicsaudiobg() {
   olympicsaudiobg.play();
@@ -659,10 +659,6 @@ $('#originsofgreece2').live( 'pagehide',function(event, ui){
 
 $('#ancientgreece').live( 'pagehide',function(event, ui){
   animateAGS =  false;
-  $('audio').each(function(){
-    this.pause(); // Stop playing
-    this.currentTime = 0; // Reset time
-  }); 
 });
 
 

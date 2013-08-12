@@ -40,6 +40,13 @@
       
     </div> <!--end of content-->
   </div></div><!--/anisold-->
+  <div class="audiopanel">
+    <div class="bbh"><img id="legacyaudiobbtn" src="css/images/audio/audio-back.png"></div>
+    <div class="plbh"><img id="legacyaudioplbtn" src="css/images/audio/audio-play.png"></div>
+    <div class="psbh"><img id="legacyaudiopsbtn" src="css/images/audio/audio-pause.png"></div>
+    <div class="fbh"><img id="legacyaudiofbtn" src="css/images/audio/audio-forw.png"></div>
+    <div id="actualaudio-legacy" style="visibility:hidden;"></div>
+  </div>
   <script>    
     sound = new Audio();
     (function() {
@@ -49,19 +56,10 @@
       $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
       $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
 	
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=63";
-     $.getJSON( url, function( data ) {
-            /*$('#titleb-holder').html("<h1>"+ data[0].node_title +"</h1>");*/
-           /* $('#node-body-oag').html(data[0].Body);
+      
             if(sound.canPlayType('audio/mpeg')) {
-              $('#psbutton-legacy').show();
-              $('#actualaudio-legacy').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            } else {
-              sound.src = null;
-              $('#psbutton-legacy').html('Your system does not support HTML5 Audio.');
-              $('#psbutton-legacy').show();
-            }*/
-         });
+              $('#actualaudio-legacy').html('<audio id="legacyaudio" controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page29.mp3" type="audio/mpeg"></audio>');
+            } 
     
     $("#legacyofgreece").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     
@@ -91,6 +89,27 @@
       $.mobile.changePage("sub-ac-greece-math-science-more.html");
     });
     
+    /* ******************** */
+    $("#legacyaudioplbtn").on('tap', function() {
+      legacyaudio.play();
+      agsoundbg.pause(); agsoundbg.currentTime = 0; 
+      $(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#legacyaudiofbtn").on('tap', function() {
+      var ctime = legacyaudio.currentTime;
+      legacyaudio.currentTime = ctime + 10;
+    });
+    
+    $("#legacyaudiobbtn").on('tap', function() {
+      var ctime = legacyaudio.currentTime;
+      legacyaudio.currentTime = ctime - 10;
+    });
+    
+    $("#legacyaudiopsbtn").on('tap', function() {
+      legacyaudio.pause();
+      $(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
 	</script>
   <script src="js/threecardLogic.js"></script>
 </div>

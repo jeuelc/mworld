@@ -36,24 +36,26 @@
       
     </div> <!--end of content-->
   </div></div><!--/anisold-->
+  <div class="audiopanel">
+    <div class="bbh"><img id="oagaudiobbtn" src="css/images/audio/audio-back.png"></div>
+    <div class="plbh"><img id="oagaudioplbtn" src="css/images/audio/audio-play.png"></div>
+    <div class="psbh"><img id="oagaudiopsbtn" src="css/images/audio/audio-pause.png"></div>
+    <div class="fbh"><img id="oagaudiofbtn" src="css/images/audio/audio-forw.png"></div>
+    <div id="actualaudio-oag" style="visibility:hidden;"></div>
+  </div>
   <script>
     sound = new Audio(); // 'sound' is now an audio object
     
     (function() {
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=7";
-     $.getJSON( url, function( data ) {
+      //var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=7";
+     //$.getJSON( url, function( data ) {
             /*$('#titleb-holder').html("<h1>"+ data[0].node_title +"</h1>");*/
             //$('#node-body-oag').html(data[0].Body);
             
-            /*if(sound.canPlayType('audio/mpeg')) {
-              $('#psbutton-oag').show();
-              $('#actualaudio-oag').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            } else {
-              sound.src = null;
-              $('#psbutton-oag').html('Your system does not support HTML5 Audio.');
-              $('#psbutton-oag').show();
-            }*/
-         });
+            if(sound.canPlayType('audio/mpeg')) {
+              $('#actualaudio-oag').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()" id="oagnar"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page2.mp3" type="audio/mpeg"></audio>');
+            } 
+         //});
     
           
           $("#originsofgreece").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
@@ -72,6 +74,26 @@
     }
     $('#homelinkag-origins').on('tap', function() { 
       mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+    /* ******************** */
+    $("#oagaudioplbtn").on('tap', function() {
+      oagnar.play();
+      agsoundbg.pause(); agsoundbg.currentTime = 0; 
+      $(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#oagaudiofbtn").on('tap', function() {
+      var ctime = oagnar.currentTime;
+      oagnar.currentTime = ctime + 10;
+    });
+    
+    $("#oagaudiobbtn").on('tap', function() {
+      var ctime = oagnar.currentTime;
+      oagnar.currentTime = ctime - 10;
+    });
+    
+    $("#oagaudiopsbtn").on('tap', function() {
+      oagnar.pause();
     });
   </script>
 </div>

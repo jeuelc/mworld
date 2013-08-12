@@ -1,10 +1,10 @@
 <!-- i-C-a -->
-<div id="whatisbh" data-role="page">
+<div id="whatisbh" data-role="page">	<script src="js/hammer.js"></script>	<script src="js/jquery.hammer.js"></script>
   <div id="spacechar">&nbsp;
     <div data-role="content" class="kidzcontent">
       <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>What is a black hole?</h1></div>
       <div class="v-spacer"></div>
-      <div class="sidebarleft-half">
+      <!--div class="sidebarleft-half">
         <div id="eal3short">
           <div id="vidlinkholder"><a href="JavaScript:html5Lightbox.showLightbox(2, 'http://back.uvmate.com/sites/default/files/videos/original/bheatinggas.mp4', 'See a blackhole sucking in a gas cloud', 480, 270);" id="vidbtn"><img src="css/images/5-8/Space/Black_Holes/What_is_BH/vidicon.png">
             </a>See a blackhole sucking in a gas cloud</div>
@@ -12,32 +12,32 @@
         <div id="eal1short-oag">
           <p><a href='sub-space-bh-gravity.html' data-transition="slide" id="gravitylnk"><img src="css/images/5-8/Space/Black_Holes/What_is_BH/gravitybtn.png"></a></p>
         </div>
-      </div>
+      </div-->	  	  <div class="sidebarleft-half">        <div id="zoomwrapper">          <div id="pol1" class="pPiece" style="left:100px;top:270px;">            <img src="css/images/5-8/Space/Black_Holes/What_is_BH/vidicon.png" alt="" />          </div>          <div id="pol2"class="pPiece" style="left:75px;top:290px;">            <img src="css/images/5-8/Space/Black_Holes/What_is_BH/whatisgravity.png" alt="" />          </div>        </div><!--/zoomwrapper-->      </div>	  	  	  	  <div id="volcvidholder" style="width:1024px;height:748px;position:absolute;left:0px;top:0px;visibility:hidden;background:#000000;">      <div class="previdcontainer">        <video id="minoanvolcano" width="1024" height="748" controls preload>          <source src="sites/default/files/videos/original/bheatinggas.mp4" type="video/mp4">        </video>      </div>  		</div> 	  	  	  
       <div id="node-content-half">
-        <div id="psbutton2">
+        <!--div id="psbutton2">
           <div id="audiobuttonholder2"><a href="#" id="start2"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
           <div id="actualaudio2" style="display: none;">
           </div>
-        </div><!-- end of psbutton -->
-        <div id="node-body-holder" style="margin-top:-20px;height:400px;">
-          <div id="node-body-minoans"></div>
+        </div--><!-- end of psbutton -->
+        <div id="node-body-holder" style="margin-top:40px;height:400px;">
+          <div id="node-body-minoans" style="text-align:left;margin-top:-20px;">			<p>A black hole is the collapsed core of a very large star that has exploded.  Black holes are small but very, very heavy... A black hole that weighs as much as the Sun is just 6 km across!</p>			<p>A black hole is so incredibly dense that its gravity doesn’t even let light escape.  Near a black hole, the path of light is bent by the force of the black hole, so you get a warped view of what is around you. </p>			<p>A black hole warps not just space but even time!  If you fell into a black hole, time would slow down and eventually grind to a halt!!  You would age slowly, but could never escape to tell anyone about your adventure.  Nothing, not even light, escapes a black hole.</p>		  </div>
         </div>
       </div>
       
       <div class="v-spacer"></div>
       <div id="foot-band" style="margin-top:-4px;padding:0 15px;">
-        <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
-        <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
-        <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home.html" id="homelinkbh-whatisbh"><img src="css/images/5-8/Space/bottomhome.png"></a></div>
+        <!--div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+        <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div-->
+        <div style="width:253px;color:#0071bc;margin:22px auto -15px;"><a href="home.html" id="homelinkbh-whatisbh"><img src="css/images/5-8/Space/bottomhome.png"></a></div>
       </div>
     </div><!--end of content-->
   </div><!--/spacechar-->
   <script>
     sound = new Audio(); // 'sound' is now an audio object
-    (function() {
+    (function() {			$('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");      $('div#pol1').css("z-index", 1);      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");      $('#volcvidholder').css({"visibility":"hidden", "z-index":-10});		
       var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=33";
      $.getJSON( url, function( data ) {
-            $('#node-body-minoans').html(data[0].Body);
+          /*  $('#node-body-minoans').html(data[0].Body);*/
             if(sound.canPlayType('audio/mpeg')) {
               /*sound.src = data[0].Audio;*/
               $('#psbutton2').show();
@@ -74,6 +74,6 @@
     
     function pausebg() {
       bgsoundbh.pause();
-    }
-  </script>
+    }			$("#pol2").on('tap', function() {      starttheseusaudiobg();      pauseagbg();      $.mobile.changePage("sub-space-bh-gravity.html");    });        $("#pol1").on('tap', function() {      $("#volcvidholder").css({"visibility":"visible", "z-index":10});      $("#minoanvolcano").css({"z-index":9});      pauseagbg();      minoanvolcano.play();      //minoanvolcano.webkitExitFullscreen();    });
+  </script><script src="js/twocardLogic.js"></script>
 </div>

@@ -28,26 +28,20 @@
       
     </div><!-- end of content -->
   </div></div><!--/anisold-->
+  <div class="audiopanel">
+    <div class="bbh"><img id="agoraaudiobbtn" src="css/images/audio/audio-back.png"></div>
+    <div class="plbh"><img id="agoraaudioplbtn" src="css/images/audio/audio-play.png"></div>
+    <div class="psbh"><img id="agoraaudiopsbtn" src="css/images/audio/audio-pause.png"></div>
+    <div class="fbh"><img id="agoraaudiofbtn" src="css/images/audio/audio-forw.png"></div>
+    <div id="actualaudio-agora" style="visibility:hidden;"></div>
+  </div>
   <script>
     //sound = new Audio(); // 'sound' is now an audio object
     sound = new Audio();
     (function() {
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=27";
-     $.getJSON( url, function( data ) {
-            var html = data[0].Images;
-            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-            var results = re.exec(html);
-            var source = results[1];
-            $('#agoraremains').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Remains of the Agora in Athens today');")
             if(sound.canPlayType('audio/mpeg')) {
-              $('#psbutton-agora').show();
-              $('#actualaudio-agora').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            } else {
-              sound.src = null;
-              $('#psbutton-agora').html('Your system does not support HTML5 Audio.');
-              $('#psbutton-agora').show();
-            }
-         });
+              $('#actualaudio-agora').html('<audio id="agoraaudio" controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page19.mp3" type="audio/mpeg"></audio>');
+            } 
       $("#agora").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     })();
      (function() {
@@ -71,6 +65,28 @@
     }
     $('#homelinkag-agora').on('tap', function() { 
       mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+    
+    /* ******************** */
+    $("#agoraaudioplbtn").on('tap', function() {
+      agoraaudio.play();
+      agsoundbg.pause(); agsoundbg.currentTime = 0; 
+      $(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#agoraaudiofbtn").on('tap', function() {
+      var ctime = agoraaudio.currentTime;
+      agoraaudio.currentTime = ctime + 10;
+    });
+    
+    $("#agoraaudiobbtn").on('tap', function() {
+      var ctime = agoraaudio.currentTime;
+      agoraaudio.currentTime = ctime - 10;
+    });
+    
+    $("#agoraaudiopsbtn").on('tap', function() {
+      agoraaudio.pause();
+      $(".audiopanel").css({"backgroundPosition":"0px 0px"});
     });
   </script>
 </div>

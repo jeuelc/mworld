@@ -1,6 +1,6 @@
 <!-- i-C-a -->
 <div data-role="page" id="space2">
-  <div id="spacechar">
+  <div id="spacechar" style="overflow:hidden !important;">
     <div data-role="content">
       <div id="titleb-holder"><h1 style="margin-top:184px;">Space</h1></div>
       
@@ -20,7 +20,7 @@
     <div id="foot-band" style="margin-top:-7px;padding:0 15px;">
       <div style="float:left;width:150px;color:#0071bc;margin:-8px 0 0 0px;">Brought to you by<br>Monash University</div>
       <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
-      <div style="width:253px;height:2px;color:#0071bc;margin:34px auto -15px;"><a href="home2.html" id="homelinkspace"><img src="css/images/9-12/Space/bottomhome.png"></a></div>
+      <div style="width:253px;height:2px;color:#0071bc;margin:34px auto -15px;"><a href="home.html" id="homelinkspace"><img src="css/images/9-12/Space/bottomhome.png"></a></div>
     </div>
   </div><!--end of spacechar-->
   <script>
@@ -29,7 +29,7 @@
     });
         
     function goBack() {
-      $.mobile.changePage("home2.html");
+      $.mobile.changePage("home.html");
       mainaudiobg.play();
       spacesoundbg.pause(); spacesoundbg.currentTime = 0;
     }

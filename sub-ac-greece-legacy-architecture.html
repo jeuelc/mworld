@@ -45,6 +45,13 @@
       
     </div> <!--end of content-->
   </div></div><!--/anisold-->
+  <div class="audiopanel">
+    <div class="bbh"><img id="archiaudiobbtn" src="css/images/audio/audio-back.png"></div>
+    <div class="plbh"><img id="archiaudioplbtn" src="css/images/audio/audio-play.png"></div>
+    <div class="psbh"><img id="archiaudiopsbtn" src="css/images/audio/audio-pause.png"></div>
+    <div class="fbh"><img id="archiaudiofbtn" src="css/images/audio/audio-forw.png"></div>
+    <div id="actualaudio-archi" style="visibility:hidden;"></div>
+  </div>
   <script>    
     sound = new Audio();
     (function() {
@@ -56,19 +63,11 @@
       $('div#polb3 > img').css("-webkit-transform", "rotate(-3deg)");
       $('div#polb4 > img').css("-webkit-transform", "rotate(-3deg)");
     
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=63";
-     $.getJSON( url, function( data ) {
-            /*$('#titleb-holder').html("<h1>"+ data[0].node_title +"</h1>");*/
-            //$('#node-body-oag').html(data[0].Body);
+      
             if(sound.canPlayType('audio/mpeg')) {
-              $('#psbutton-legacy').show();
-              $('#actualaudio-legacy').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            } else {
-              sound.src = null;
-              $('#psbutton-legacy').html('Your system does not support HTML5 Audio.');
-              $('#psbutton-legacy').show();
-            }
-         });
+              
+              $('#actualaudio-archi').html('<audio id="archiaudio" controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page30.mp3" type="audio/mpeg"></audio>');
+            } 
     
     $("#architecture").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     
@@ -142,6 +141,28 @@
     });
     $("#polb4").on('tap', function() {
       $('#archi4link')[0].click();
+    });
+  
+   /* ******************** */
+    $("#archiaudioplbtn").on('tap', function() {
+      archiaudio.play();
+      agsoundbg.pause(); agsoundbg.currentTime = 0; 
+      $(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#archiaudiofbtn").on('tap', function() {
+      var ctime = archiaudio.currentTime;
+      archiaudio.currentTime = ctime + 10;
+    });
+    
+    $("#archiaudiobbtn").on('tap', function() {
+      var ctime = archiaudio.currentTime;
+      archiaudio.currentTime = ctime - 10;
+    });
+    
+    $("#archiaudiopsbtn").on('tap', function() {
+      archiaudio.pause();
+      $(".audiopanel").css({"backgroundPosition":"0px 0px"});
     });
   </script>
   <script src="js/fourcardLogicb.js"></script>

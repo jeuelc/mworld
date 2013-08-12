@@ -1,12 +1,12 @@
 /* i-C-a */
 $('.menubtn').on('tap', function() {
   var housingpos = $('.menuhousing').position();
-  if(housingpos.top == 267) {
-    $('.menuhousing').animate({'top':'367px','opacity':0}, 500, "easeInBack", function() { $('.menuhousing').css({'top':'748px'}); });
-    $('.homebtnholder').animate({'top':'465px','opacity':0}, 500, "easeInBack", function() { $('.homebtnholder').css({'top':'748px'}); });
-    $('.cpbtnholder').animate({'top':'538px','opacity':0}, 500, "easeInBack", function() { $('.cpbtnholder').css({'top':'748px'}); });
-    $('.buildbtnholder').animate({'top':'611px','opacity':0}, 500, "easeInBack", function() { $('.buildbtnholder').css({'top':'748px'}); });
-    $('.mpbtnholder').animate({'top':'685px','opacity':0}, 500, "easeInBack", function() { $('.mpbtnholder').css({'top':'748px'}); });
+  if(housingpos.left == -234) {
+    $('.menuhousing').animate({'left':'-334px','opacity':0}, 500, "easeInBack", function() { $('.menuhousing').css({'left':'-660px'}); });
+    $('.homebtnholder').animate({'left':'268px','opacity':0}, 500, "easeInBack", function() { $('.homebtnholder').css({'left':'-93px'}); });
+    $('.cpbtnholder').animate({'left':'184px','opacity':0}, 500, "easeInBack", function() { $('.cpbtnholder').css({'left':'-93px'}); });
+    $('.buildbtnholder').animate({'left':'88px','opacity':0}, 500, "easeInBack", function() { $('.buildbtnholder').css({'left':'-93px'}); });
+    $('.mpbtnholder').animate({'left':'4px','opacity':0}, 500, "easeInBack", function() { $('.mpbtnholder').css({'left':'-93px'}); });
     
   } else {
     $('.menuhousing').css({'opacity':1});
@@ -14,11 +14,11 @@ $('.menubtn').on('tap', function() {
     $('.cpbtnholder').css({'opacity':1});
     $('.buildbtnholder').css({'opacity':1});
     $('.mpbtnholder').css({'opacity':1});
-    $('.menuhousing').animate({'top':'267px'}, 1000, "easeInOutBack");
-    $('.homebtnholder').animate({'top':'365px'}, 1500, "easeInOutBack");
-    $('.cpbtnholder').animate({'top':'438px'}, 1600, "easeInOutBack");
-    $('.buildbtnholder').animate({'top':'511px'}, 1700, "easeInOutBack");
-    $('.mpbtnholder').animate({'top':'585px'}, 1800, "easeInOutBack");
+    $('.menuhousing').animate({'left':'-234px'}, 1000, "easeInOutBack");
+    $('.homebtnholder').animate({'left':'328px'}, 1500, "easeInOutBack");
+    $('.cpbtnholder').animate({'left':'244px'}, 1600, "easeInOutBack");
+    $('.buildbtnholder').animate({'left':'148px'}, 1700, "easeInOutBack");
+    $('.mpbtnholder').animate({'left':'64px'}, 1800, "easeInOutBack");
   }
 });
 

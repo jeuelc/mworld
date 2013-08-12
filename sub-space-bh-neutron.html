@@ -1,25 +1,18 @@
 <!-- i-C-a -->
-<div id="neutron" data-role="page">
+<div id="neutron" data-role="page"><script src="js/hammer.js"></script>	<script src="js/jquery.hammer.js"></script>
   <div id="spacechar">&nbsp;
     <div data-role="content" class="kidzcontent">
       <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>Neutron Star</h1></div>
-      <div class="v-spacer"></div>
-      <div class="sidebarleft-half">
-        <div id="eal3short">
-          <p><a id="crabn" href='#' data-transition="slide"><img src="css/images/5-8/Space/Black_Holes/Where_BH_Come/crabnebulabtn.png"></a></p>
-        </div>
-        <div id="eal1short-oag">
-          <p><a id="nstar" href='#' data-transition="slide"><img src="css/images/5-8/Space/Black_Holes/Where_BH_Come/neutronstarbtn.png"></a></p>
-        </div>
-      </div>
+      <div class="v-spacer"></div>	  	  	  <div class="sidebarleft-half">		 <a id="chandra" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Space/Black_Holes/Where_BH_Come/chandra.png', 'The spectacular Crab Nebula was created by a supernova that was recorded by astronomers in China nearly 1,000 years ago!');">click here</a>        <a id="crab" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Space/Black_Holes/Where_BH_Come/crabnebula.png', 'See the very bright dot in the middle of this picture – that’s the neutron star at the heart of Crab Nebula!');">click here</a>	          <div id="zoomwrapper">          <div id="pol1" class="pPiece" style="left:100px;top:270px;">            <img src="css/images/5-8/Space/Black_Holes/Where_BH_Come/chandra.png" alt="" />          </div>          <div id="pol2"class="pPiece" style="left:75px;top:290px;">            <img src="css/images/5-8/Space/Black_Holes/Where_BH_Come/crabnebula.png" alt="" />          </div>        </div><!--/zoomwrapper-->      </div>	  
+      
       <div id="node-content-half">
-        <div id="psbutton2">
+        <!--div id="psbutton2">
           <div id="audiobuttonholder2"><a href="#" id="start2"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
           <div id="actualaudio2" style="display: none;">
           </div>
-        </div><!-- end of psbutton -->
-        <div id="node-body-holder" style="margin-top:-20px;height:268px;">
-          <div id="node-body-minoans"></div>
+        </div--><!-- end of psbutton -->
+        <div id="node-body-holder" style="margin-top:40px;">
+          <div id="node-body-minoans" style="margin-top:-20px;">			<p>When a supernova has exploded, the star’s core collapses.  This forms a neutron star, or if the core keeps collapsing, it forms a black hole. </p>			<p>A neutron star is a small but very dense star, made up of very small particles called neutrons.</p>			<p>Being dense means that a little bit of neutron star weighs an awful lot.  A piece of neutron star the size of a grain of sand would weigh as much as a large airplane!</p>			<p>Despite being very heavy, neutron stars can spin around very fast. Some neutron stars can spin around hundreds of times each second!</p>			<p>A thousand years ago there was a large supernova explosion that was so bright it could be seen on earth without any telescopes!  The remains of this supernova are called Crab Nebula and they contain a small, very dense neutron star.</p>					  </div>
         </div>
       </div>
     </div><!--end of content-->
@@ -36,7 +29,7 @@
     (function() {
       var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=43";
      $.getJSON( url, function( data ) {
-            $('#node-body-minoans').html(data[0].Body);
+            //$('#node-body-minoans').html(data[0].Body);
             if(sound.canPlayType('audio/mpeg')) {
               /*sound.src = data[0].Audio;*/
               $('#psbutton2').show();
@@ -88,5 +81,5 @@
     function pausebg() {
       bgsoundbh.pause();
     }
-  </script>
+	$("#pol2").on('tap', function() {       $('#crab')[0].click();    });        $("#pol1").on('tap', function() {      $('#chandra')[0].click();    });  </script><script src="js/twocardLogic.js"></script>
 </div>

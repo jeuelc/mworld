@@ -1,10 +1,10 @@
 <!-- i-C-a -->
-<div id="supernova" data-role="page">
+<div id="supernova" data-role="page"><script src="js/hammer.js"></script>  <script src="js/jquery.hammer.js"></script>
   <div id="spacechar">&nbsp;
     <div data-role="content" class="kidzcontent">
       <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>Supernova</h1></div>
       <div class="v-spacer"></div>
-      <div class="sidebarleft-half">
+      <!--div class="sidebarleft-half">
         <div id="eal3short">
           <div id="vidlinkholder"><a href="JavaScript:html5Lightbox.showLightbox(2, 'http://back.uvmate.com/sites/default/files/videos/original/supernovawithsfx.mp4', 'See a supernova explode', 640, 480);" id="vidbtn-supernova"><img src="css/images/5-8/Space/Black_Holes/Where_BH_Come/vidicon.png">
             </a>See a supernova explode</div>
@@ -12,34 +12,34 @@
         <div id="eal1short-oag">
           <p><a id="sgiant" href='sub-space-bh-formgold.html' data-transition="slide"><img src="css/images/5-8/Space/Black_Holes/Where_BH_Come/stardustbtn.png"></a></p>
         </div>
-      </div>
+      </div-->	  	   <div class="sidebarleft-half">        <div id="zoomwrapper">          <div id="pol1" class="pPiece" style="left:100px;top:270px;">            <img src="css/images/5-8/Space/Black_Holes/Where_BH_Come/vidicon.png" alt="" />          </div>          <div id="pol2"class="pPiece" style="left:75px;top:290px;">            <img src="css/images/5-8/Space/Black_Holes/Where_BH_Come/supergold.png" alt="" />          </div>		  <div id="pol3"class="pPiece" style="left:80px;top:270px;">              <img src="css/images/5-8/Space/Black_Holes/Where_BH_Come/superhowbig.png" alt="" />          </div>        </div><!--/zoomwrapper-->      </div>	  	  	  	  <div id="volcvidholder" style="width:1024px;height:748px;position:absolute;left:0px;top:0px;visibility:hidden;background:#000000;">      <div class="previdcontainer">        <video id="minoanvolcano" width="1024" height="748" controls preload>          <source src="video/Supernova_ESO.mov" type="video/mp4">        </video>      </div>  		</div> 	  	  	  
       <div id="node-content-half">
-        <div id="psbutton2">
+        <!--div id="psbutton2">
           <div id="audiobuttonholder2"><a href="#" id="start2"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
           <div id="actualaudio2" style="display: none;">
           </div>
-        </div><!-- end of psbutton -->
-        <div id="node-body-holder" style="margin-top:-20px;">
-          <div id="node-body-minoans"></div>
+        </div--><!-- end of psbutton -->
+        <div id="node-body-holder" style="margin-top:40px;">
+          <div id="node-body-minoans" style="margin-top:-20px;">			<p>When a supergiant star runs out of fuel, it starts to collapse.  The collapse squeezes and heats the remains of the star, causing a series of massive explosions, called a supernova!</p>			<p>A supernova explosion is so violent that the star is torn apart, blowing hydrogen, helium and other elements out into space.  These elements forms the materials that make up the rest of the Universe, including the Earth and our very own bodies!</p>			<p>In this sense, we are all made from star dust.  Did you know that gold also comes from the dust of a supernova?!</p>			<p>The core of the star collapses during the supernova, leaving behind either a dense neutron star or a black hole…</p>		  </div>
         </div>
-        <div><a href="sub-space-bh-snexplosion.html" data-role="button" data-transition="slide">Want to find out how big a supernova explosion can be?</a>
-        </div>
+        <!--div><a href="sub-space-bh-snexplosion.html" data-role="button" data-transition="slide">Want to find out how big a supernova explosion can be?</a>
+        </div-->
       </div>
     </div><!--end of content-->
     <div class="v-spacer"></div>
     <div id="foot-band" style="margin-top:-18px;padding:0 15px;">
-      <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
-      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
-      <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home.html" id="homelinkbh-supernova"><img src="css/images/5-8/Space/bottomhome.png"></a></div>
+      <!--div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div-->
+      <div style="width:253px;color:#0071bc;margin:22px auto -15px;"><a href="home.html" id="homelinkbh-supernova"><img src="css/images/5-8/Space/bottomhome.png"></a></div>
     </div>
   </div><!--/spacechar-->
   <script>
     sound = new Audio(); // 'sound' is now an audio object
     soundpop = new Audio(); // 'sound' is now an audio object
-    (function() {
+    (function() {		  $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");      $('div#pol1').css("z-index", 2);      $('div#pol2').css("z-index", 1);      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");      $('div#pol3 > img').css("-webkit-transform", "rotate(-5deg)");      $('#f1_container').css({"visibility":"hidden", "z-index":0});	
       var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=38";
      $.getJSON( url, function( data ) {
-            $('#node-body-minoans').html(data[0].Body);
+            /*$('#node-body-minoans').html(data[0].Body);*/
             if(sound.canPlayType('audio/mpeg')) {
               /*sound.src = data[0].Audio;*/
               $('#psbutton2').show();
@@ -77,6 +77,6 @@
     
     function pausebg() {
       bgsoundbh.pause();
-    }
-  </script>
+    }			$("#pol3").on('tap', function() {       $.mobile.changePage("sub-space-bh-snexplosion.html");    });        $("#pol2").on('tap', function() {       $.mobile.changePage("sub-space-bh-formgold.html");    });        $("#pol1").on('tap', function() {      $("#volcvidholder").css({"visibility":"visible", "z-index":10});      $("#minoanvolcano").css({"z-index":9});      pauseagbg();      minoanvolcano.play();      //minoanvolcano.webkitExitFullscreen();    });
+  </script><script src="js/threecardLogic.js"></script>
 </div>

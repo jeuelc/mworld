@@ -45,6 +45,13 @@
       
     </div><!--end of content-->
   </div></div><!--/anisold-->
+  <div class="audiopanel">
+    <div class="bbh"><img id="minoansendaudiobbtn" src="css/images/audio/audio-back.png"></div>
+    <div class="plbh"><img id="minoansendaudioplbtn" src="css/images/audio/audio-play.png"></div>
+    <div class="psbh"><img id="minoansendaudiopsbtn" src="css/images/audio/audio-pause.png"></div>
+    <div class="fbh"><img id="minoansendaudiofbtn" src="css/images/audio/audio-forw.png"></div>
+    <div id="actualaudio-minoansend" style="visibility:hidden;"></div>
+  </div>
   <script>
     sound = new Audio(); // 'sound' is now an audio object
     (function() {
@@ -53,25 +60,13 @@
       $('div#polb2 > img').css("-webkit-transform", "rotate(5deg)");
       $('#f1_container').css({"visibility":"hidden", "z-index":0});
     
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=65";
-     $.getJSON( url, function( data ) {
+     
             //$('#node-body-minoans').html(data[0].Body);
             
-            var html = data[0].Images;
-            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-            var results = re.exec(html);
-            var source = results[1];
-            $('#santorini').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'The island of Santorini today');")
-         
             if(sound.canPlayType('audio/mpeg')) {
-              $('#psbutton-minoansend').show();
-              $('#actualaudio-minoansend').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            } else {
-              sound.src = null;
-              $('#psbutton-minoansend').html('Your system does not support HTML5 Audio.');
-              $('#psbutton-minoansend').show();
-            }
-         });
+              $('#actualaudio-minoansend').html('<audio id="minoansendaudio" controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page8b.mp3" type="audio/mpeg"></audio>');
+            } 
+         
     
     $("#minoansend").swipe( { swipeRight:goBack, allowPageScroll:"auto", excludedElements:$.fn.swipe.defaults.excludedElements+", #backofcard"} );
     
@@ -112,6 +107,26 @@
       $('#f1_card').css({"transform": "rotateY(180deg)", "box-shadow" : "-5px 5px 5px #aaa;"});
       //$("#hittites").swipe("disable");
       //$("#dopple").css({"visibility":"hidden"});
+    });
+    /* ******************** */
+    $("#minoansendaudioplbtn").on('tap', function() {
+      minoansendaudio.play();
+      agsoundbg.pause(); agsoundbg.currentTime = 0; 
+      $(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#minoansendaudiofbtn").on('tap', function() {
+      var ctime = minoansendaudio.currentTime;
+      minoansendaudio.currentTime = ctime + 10;
+    });
+    
+    $("#minoansendaudiobbtn").on('tap', function() {
+      var ctime = minoansendaudio.currentTime;
+      minoansendaudio.currentTime = ctime - 10;
+    });
+    
+    $("#minoansendaudiopsbtn").on('tap', function() {
+      minoansendaudio.pause();
     });
   </script>
   <script src="js/twocardLogicb.js"></script>

@@ -20,22 +20,22 @@
           </div>
         </div>
         <div id="node-content" style="margin-top:0px;">
-          <div id="titleb-holder"><h1>Black Holes</h1></div>
+          <div id="titleb-holder" style="margin-top: 40px;"><h1>Black Holes</h1></div>
           
-          <div id="psbutton">
+          <!--div id="psbutton">
             <div id="audiobuttonholder"><a href="#" id="start"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
             <div id="actualaudio" style="display: none;">
             </div>
-          </div><!-- end of psbutton -->
-          <div id="node-body-holder" style="margin-top:-20px;">
-            <div id="node-body"></div>
+          </div--><!-- end of psbutton -->
+          <div id="node-body-holder" style="text-align: left; margin-top: 40px;">
+            <div id="node-body">				<p>Welcome to Black Holes!<br><br>					Find out about these strange and very powerful objects...<br><br>					What is a black hole?<br><br>					How is a black hole formed?<br><br>					What is the Universe like around a black hole?<br><br>					...and where do black holes go?<br><br>					Check out the story and the images, and there’s some pretty cool videos too!				</p>							</div>
           </div>
         </div>
     </div> <!-- end content -->  
     <div class="v-spacer"></div>
     <div id="foot-band" style="margin-top:86px;padding:0 15px;">
-      <div style="float:left;width:150px;color:#0071bc;margin:-8px 0 0 0px;">Brought to you by<br>Monash University</div>
-      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
+      <!--div style="float:left;width:150px;color:#0071bc;margin:-8px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div-->
       <div style="width:253px;height:2px;color:#0071bc;margin:34px auto -15px;"><a href="home.html" id="homelinkbh-blackholes"><img src="css/images/5-8/Space/bottomhome.png"></a></div>
     </div>
   </div><!--/spacechar-->
@@ -44,7 +44,7 @@
     (function() {
       var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=115";
      $.getJSON( url, function( data ) {
-            $('#node-body').html(data[0].Body);
+          /*  $('#node-body').html(data[0].Body);*/
             if(sound.canPlayType('audio/mpeg')) {
               /*sound.src = data[0].Audio;*/
               $('#psbutton').show();

@@ -1,23 +1,18 @@
 <!-- i-C-a -->
-<div id="snexplosion" data-role="page">
+<div id="snexplosion" data-role="page"><script src="js/hammer.js"></script>	<script src="js/jquery.hammer.js"></script>
   <div id="spacechar">&nbsp;
     <div data-role="content" class="kidzcontent">
-      <div id="titleb-holder"><h1 style="margin-top:0px;">Supernova...<br>How big are they?</h1></div>
+      <div id="titleb-holder"><h1 style="margin-top:40px;">Supernova...<br>How big are they?</h1></div>
       <div class="v-spacer"></div>
-      <div class="sidebarleft-half">
-        <div id="eal3short">
-          <div id="vidlinkholder"><a href="JavaScript:html5Lightbox.showLightbox(2, 'http://back.uvmate.com/sites/default/files/videos/original/snexplosionwithsfx.mp4', 'Supernova Hubble', 640, 360);" id="vidbtn-snexplosion"><img src="css/images/5-8/Space/Black_Holes/Where_BH_Come/vidicon2.png">
-            </a></div>
-        </div>
-      </div>
+      	  	  <div class="sidebarleft-half">		         <div id="zoomwrapper">          <div id="pol1" class="pPiece" style="left:100px;top:270px;">            <img src="css/images/5-8/Space/Black_Holes/Where_BH_Come/vidicon2.png" alt="" />          </div>         <div id="pol2"class="pPiece" style="left:75px;top:290px;">            <img src="css/images/5-8/Space/Black_Holes/What_is_BH/whatisgravity.png" alt="" />          </div>        </div><!--/zoomwrapper-->      </div>	  	  	  <div id="volcvidholder" style="width:1024px;height:748px;position:absolute;left:0px;top:0px;visibility:hidden;background:#000000;">      <div class="previdcontainer">        <video id="minoanvolcano" width="1024" height="748" controls preload>          <source src="video/Supernova.mov" type="video/mp4">        </video>      </div>  		</div> 
       <div id="node-content-half">
-        <div id="psbutton3">
+        <!--div id="psbutton3">
           <div id="audiobuttonholder3"><a href="#" id="start3"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
           <div id="actualaudio3" style="display: none;">
           </div>
-        </div><!-- end of psbutton -->
-        <div id="node-body-holder" style="margin-top:-20px;">
-          <div id="node-body-minoans"></div>
+        </div--><!-- end of psbutton -->
+        <div id="node-body-holder">
+          <div id="node-body-minoans">			<p>The explosion of a supernova can be a really, really big explosion.  In fact, a really bright supernova emits bursts of  <a href="#imongnawong" data-rel="popup">gamma rays</a> that can outshine everything else in the Universe for a few seconds!</p>			<p>This means they can be seen from very, very far away.  We can see these explosions in our telescopes even when they occurred billions of years ago on the other side of the Universe!<br>			Imagine if you had a torch that could shine a light all the way across the Universe – wow, that would be a bright torch!</p>		  </div>
         </div>
       </div>
       
@@ -27,23 +22,23 @@
           <div id="actualaudiopop" style="display: none;">
           </div>
         </div><!-- end of psbutton -->
-        <div id="node-pop"></div>
+        <div id="node-pop">			<p>There are many types of light. There is light that we can see, but there are also types of light that we cannot see.</p>			<p>The colours blue and red are types of light that we can see.</p>						<p>X-rays and gamma rays are high energy forms of light that we cannot see with our eyes.  These high energy forms of light come from the most violent places in the Universe, including black holes.</p>			<p>These types of light can be very useful here on Earth.  For example, if you have fallen over, a doctor can use x-rays to see inside your body and check if you have broken any bones!</p>		</div>
       </div>
     </div><!--end of content-->
     <div class="v-spacer"></div>
     <div id="foot-band" style="margin-top:189px;padding:0 15px;">
-      <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
-      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
-      <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home.html" id="homelinkbh-snexplosion"><img src="css/images/5-8/Space/bottomhome.png"></a></div>
+      <!--div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div-->
+      <div style="width:253px;color:#0071bc;margin:22px auto -15px;"><a href="home.html" id="homelinkbh-snexplosion"><img src="css/images/5-8/Space/bottomhome.png"></a></div>
     </div>
   </div><!--/spacechar-->
   <script>
     sound3 = new Audio(); // 'sound' is now an audio object
     soundpop1 = new Audio(); // 'sound' is now an audio object
-    (function() {
+    (function() {				
       var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=39";
      $.getJSON( url, function( data ) {
-            $('#node-body-minoans').html(data[0].Body);
+         /*   $('#node-body-minoans').html(data[0].Body);*/
             if(sound.canPlayType('audio/mpeg')) {
               /*sound.src = data[0].Audio;*/
               $('#psbutton3').show();
@@ -60,10 +55,10 @@
     
     })();
     $('#homelinkbh-sbexplosion').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause(); bgsoundbh.currentTime = 0;});
-    (function() {
+    (function() {			$('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");      $('div#pol1').css("z-index", 1);      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");      $('#volcvidholder').css({"visibility":"hidden", "z-index":-10});	
       var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=40";
      $.getJSON( url, function( data ) {
-            $('#node-pop').html(data[0].Body);
+           /* $('#node-pop').html(data[0].Body);*/
             if(sound.canPlayType('audio/mpeg')) {
               /*sound.src = data[0].Audio;*/
               $('#psbuttonpop').show();
@@ -100,6 +95,6 @@
     }
     $('#vidbtn-snexplosion').on('tap', function() { bgsoundbh.pause(); });
     $('#html5-lightbox-overlay').on('tap', function() { bgsoundbh.play(); });
-    $('#html5-close').on('tap', function() { bgsoundbh.play(); });
-  </script>
+    $('#html5-close').on('tap', function() { bgsoundbh.play(); });			$("#pol2").on('tap', function() {		  		});		    $("#pol1").on('tap', function() {         });
+	  </script><script src="js/twocardLogic.js"></script>
 </div>

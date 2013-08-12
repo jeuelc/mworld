@@ -45,6 +45,13 @@
       
     </div> <!-- end content -->  
   </div></div><!--/anisold-->
+  <div class="audiopanel">
+    <div class="bbh"><img id="persianaudiobbtn" src="css/images/audio/audio-back.png"></div>
+    <div class="plbh"><img id="persianaudioplbtn" src="css/images/audio/audio-play.png"></div>
+    <div class="psbh"><img id="persianaudiopsbtn" src="css/images/audio/audio-pause.png"></div>
+    <div class="fbh"><img id="persianaudiofbtn" src="css/images/audio/audio-forw.png"></div>
+    <div id="actualaudio-persians" style="visibility:hidden;"></div>
+  </div>
   <script>
     sound = new Audio(); // 'sound' is now an audio object
     
@@ -56,58 +63,14 @@
       $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
       $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
 	
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=84";
-     $.getJSON( url, function( data ) {
-            /*$('#node-body').html(data[0].Body);
-            
-            var html = data[0].Images;
-            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-            var results = re.exec(html);
-            var source = results[1];            
-            $('#persianwar').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Persian soldier from the Achaemenid Empire');")
-            */
+      
             if(sound.canPlayType('audio/mpeg')) {
-              $('#psbutton-persians').show();
-              $('#actualaudio-persians').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            } else {
-              sound.src = null;
-              $('#psbutton-persians').html('Your system does not support HTML5 Audio.');
-              $('#psbutton-persians').show();
-            }
-         });
+              $('#actualaudio-persians').html('<audio id="persianaudio" controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page24.mp3" type="audio/mpeg"></audio>');
+            } 
     
     $("#persians").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     
     })();
-    
-     /*  (function() {
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=85";
-     $.getJSON( url, function( data ) {
-         var html = data[0].Images;
-            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-            var results = re.exec(html);
-            var source = results[1];            
-            $('#persopolis').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'The famous Persian City of Persopolis as it looks today... not much remains after 2,500 years!');")
-         });
-    })();*/
-    
-   /* (function() {
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=86";
-     $.getJSON( url, function( data ) {
-            var html = data[0].Images;
-            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-            var results = re.exec(html);
-            var source = results[1];            
-            $('#humabird').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'A statue at Persopolis of the Huma Birds, a legendary bird from Persian mythology');")
-        });
-    })(); */
-    
-    $('#start-persians').on('click', function() {
-      $('#actualaudio-persians').show();
-      var oldHeight = $('#node-body-holder').height();
-      var newHeight = oldHeight - $('#actualaudio-persians').height();
-      $('#node-body-holder').height(newHeight);
-    });
     
     function goBack() {
       $.mobile.changePage("sub-ac-greece-aroundag.html");
@@ -128,6 +91,27 @@
     $.mobile.changePage("sub-ac-greece-persian-education.html");
   });
 	
+  /* ******************** */
+    $("#persianaudioplbtn").on('tap', function() {
+      persianaudio.play();
+      agsoundbg.pause(); agsoundbg.currentTime = 0; 
+      $(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#persianaudiofbtn").on('tap', function() {
+      var ctime = persianaudio.currentTime;
+      persianaudio.currentTime = ctime + 10;
+    });
+    
+    $("#persianaudiobbtn").on('tap', function() {
+      var ctime = persianaudio.currentTime;
+      persianaudio.currentTime = ctime - 10;
+    });
+    
+    $("#persianaudiopsbtn").on('tap', function() {
+      persianaudio.pause();
+      $(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
   </script>
    <script src="js/threecardLogic.js"></script>
 </div> <!--//home-->

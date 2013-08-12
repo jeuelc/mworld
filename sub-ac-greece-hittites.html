@@ -58,6 +58,13 @@
       
     </div><!-- end of content -->
   </div></div><!--/anisold-->
+  <div class="audiopanel">
+    <div class="bbh"><img id="hittitesaudiobbtn" src="css/images/audio/audio-back.png"></div>
+    <div class="plbh"><img id="hittitesaudioplbtn" src="css/images/audio/audio-play.png"></div>
+    <div class="psbh"><img id="hittitesaudiopsbtn" src="css/images/audio/audio-pause.png"></div>
+    <div class="fbh"><img id="hittitesaudiofbtn" src="css/images/audio/audio-forw.png"></div>
+    <div id="actualaudio-hittites" style="visibility:hidden;"></div>
+  </div>
   <script>
     sound = new Audio(); // 'sound' is now an audio object
     soundpop = new Audio(); // 'sound' is now an audio object
@@ -69,20 +76,15 @@
       $('div#pol3 > img').css("-webkit-transform", "rotate(-5deg)");
       $('#f1_container').css({"visibility":"hidden", "z-index":0});
       
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=10";
-     $.getJSON( url, function( data ) {
+      
+     
             /*$('#titleb-holder').html("<h1>"+ data[0].node_title +"</h1>");*/
             //$('#node-body-hittites').html(data[0].Body);
             
             if(sound.canPlayType('audio/mpeg')) {
-              $('#psbutton-hittites').show();
-              $('#actualaudio-hittites').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            } else {
-              sound.src = null;
-              $('#psbutton-hittites').html('Your system does not support HTML5 Audio.');
-              $('#psbutton-hittites').show();
-            }
-         });
+              $('#actualaudio-hittites').html('<audio id="hittitesaudio" controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page3.mp3" type="audio/mpeg"></audio>');
+            } 
+         
     
     $("#hittites").swipe( { swipeRight:goBack, allowPageScroll:"auto", excludedElements:$.fn.swipe.defaults.excludedElements+", #backofcard" } );
     
@@ -112,13 +114,8 @@
             //$('#node-pop').html(data[0].Body);
             
             if(soundpop.canPlayType('audio/mpeg')) {
-              $('#psbuttonpop').show();
               $('#actualaudiopop').html('<audio controls><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            } else {
-              soundpop.src = null;
-              $('#psbuttonpop').html('Your system does not support HTML5 Audio.');
-              $('#psbuttonpop').show();
-            }
+            } 
          });
     })();
     
@@ -170,6 +167,26 @@
     
     $("#pol1").on('tap', function() {
       $('#hittiteslink')[0].click();
+    });
+    /* ******************** */
+    $("#hittitesaudioplbtn").on('tap', function() {
+      hittitesaudio.play();
+      agsoundbg.pause(); agsoundbg.currentTime = 0; 
+      $(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#hittitesaudiofbtn").on('tap', function() {
+      var ctime = hittitesaudio.currentTime;
+      hittitesaudio.currentTime = ctime + 10;
+    });
+    
+    $("#hittitesaudiobbtn").on('tap', function() {
+      var ctime = hittitesaudio.currentTime;
+      hittitesaudio.currentTime = ctime - 10;
+    });
+    
+    $("#hittitesaudiopsbtn").on('tap', function() {
+      hittitesaudio.pause();
     });
   </script>
   <script src="js/threecardLogic.js"></script>

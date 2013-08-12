@@ -1,91 +1,94 @@
 <!-- i-C-a -->
-<div id="galaxies" data-role="page">
-  <div id="spacechar">&nbsp;
-    <div data-role="content" class="kidzcontent">
-      <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>Galaxies and black holes</h1></div>
-      <div class="v-spacer"></div>
-      <div class="sidebarleft-half">
-        <div id="eal3short">
-          <p><a id="andromeda" href='#' data-transition="slide"><img src="css/images/5-8/Space/Black_Holes/Life_Around_BH/andromedabtn.png"></a></p>
+<div id="blackhole" data-role="page">
+    <script src="js/hammer.js"></script>
+    <script src="js/jquery.hammer.js"></script>
+    <script src="js/slidebar.js"></script>
+    <div class="menuhousing"></div>
+    <div class="homebtnholder"><img class="homebtn" src="css/images/5-8/Space/Black_Holes/homebtn.png"></div>
+    <div class="cpbtnholder"><img class="cpbtn" src="css/images/5-8/Space/Black_Holes/cpbtn.png"></div>
+    <div class="buildbtnholder"><img class="buildbtn" src="css/images/5-8/Space/Black_Holes/buildbtn.png"></div>
+    <div class="mpbtnholder"><img class="mpbtn" src="css/images/5-8/Space/Black_Holes/mpbtn.png"></div>
+    <div class="menubtnholder"><img class="menubtn" src="css/images/5-8/Space/Black_Holes/menubtn.png"></div>
+    <div id="bonus-ags" class="talkbubble" style="background:url(css/images/5-8/Space/Black_Holes/game/bonustalk.png) no-repeat; width:473px;height:296px;position:absolute;left:500px;top:40px;visibility:hidden;"></div><!--/bonus-ags-->
+    <div class="bptitleholder" style="padding-top:14px;"><h1>Galaxies and black holes</h1></div>
+    <div id="anisold">
+        <div id="spacechar">&nbsp;
+            <div data-role="content" class="kidzcontent">
+                <div class="v-spacer"></div>
+                <div class="sidebarleft-half">
+                    <div id="eal3short" style="position:absolute;left:100px;top:250px;">
+                        <p><a id="andromeda" href='#' data-transition="slide"><img src="css/images/5-8/Space/Black_Holes/Life_Around_BH/andromedabtn.png"></a></p>
+                    </div>
+                    <div id="eal1short-oag"style="position:absolute;left:100px;top:380px;">
+                        <p><a id="ngc3079" href='#' data-transition="slide"><img src="css/images/5-8/Space/Black_Holes/Life_Around_BH/ngc3079btn.png"></a></p>
+                    </div>
+                    <div style="padding:0 50px; position:absolute; left:100px;top:560px;">
+                        <a href="sub-space-bh-bhingalaxy.html" data-role="button" data-transition="slide">Fine out more about the black hole<br>at the center of our galaxy.</a>
+                    </div>
+                </div>
+                <div class="bpcontent">
+                    <p>A galaxy is made of stars, gas and mysterious dark matter, all held together by gravity. There can be billions of stars in a single galaxy. And there are many billions of galaxies across the Universe.</p>
+                    <p>Our Earth, Sun and Solar System are all part of a galaxy called the Milky Way.</p>
+                    <p>Galaxies are enormous. To travel from Earth to the centre of our galaxy would take 26,000 years even if we travelled at the speed of light. That is 300,000 kilometres every second!</p>
+                    <p>There is a very large black hole in the centre of our galaxy, and in the centre of all large galaxies. But dont fear luckily the black hole at the centre of our galaxy is not a threat to the Earth!</p>
+                </div>
+                <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
+
+            </div><!--end of content-->
         </div>
-        <div id="eal1short-oag">
-          <p><a id="ngc3079" href='#' data-transition="slide"><img src="css/images/5-8/Space/Black_Holes/Life_Around_BH/ngc3079btn.png"></a></p>
-        </div>
-        <div style="padding:0 50px;">
-          <a href="sub-space-bh-bhingalaxy.html" data-role="button" data-transition="slide">Fine out more about the black hole<br>at the center of our galaxy.</a>
-        </div>
-      </div>
-      <div id="node-content-half">
-        <div id="psbutton-galaxies">
-          <div id="audiobuttonholder-galaxies"><a href="#" id="start-galaxies"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
-          <div id="actualaudio-galaxies" style="display: none;">
-          </div>
-        </div><!-- end of psbutton -->
-        <div id="node-body-holder" style="margin-top:-20px;height:356px;">
-          <div id="node-body-minoans"></div>
-        </div>
-      </div>
-      
-      <div data-role="popup" id="imongnawong" data-position-to="window" data-overlay-theme="a" style="text-align:center;">
-        <div id="node-pop"></div>
-      </div>
-    </div><!--end of content-->
-    <div class="v-spacer"></div>
-      <div id="foot-band" style="margin-top:95px;padding:0 15px;">
-        <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
-        <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
-        <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home.html" id="homelinkbh-galaxies"><img src="css/images/5-8/Space/bottomhome.png"></a></div>
-      </div>
-  </div><!--/spacechar-->
-  <script>
-    sound = new Audio();
-    (function() {
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=53";
-     $.getJSON( url, function( data ) {
-            $('#node-body-minoans').html(data[0].Body);
+    </div><!--/anisold-->
+    <section class="container" style="height:670px;margin-top:0px;">
+        <div class="spriteComing"></div>
+    </section>
+    <script src="js/spritespin.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript" src="js/script.js"></script>    
+    <script>
+        sound = new Audio();
+        (function() {
+            var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=53";
+            $.getJSON( url, function( data ) {
+                var html = data[0].Images;
+                var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+                var results = re.exec(html);
+                var source = results[1];
+                $('#andromeda').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Andromeda, the largest nearby galaxy to our galaxy');")
             
-            var html = data[0].Images;
-            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-            var results = re.exec(html);
-            var source = results[1];
-            $('#andromeda').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Andromeda, the largest nearby galaxy to our galaxy');")
+                if(sound.canPlayType('audio/mpeg')) {
+                    $('#psbutton-galaxies').show();
+                    $('#actualaudio-galaxies').html('<audio controls preload id="galaxiesaudio" onpause="pausedaudio()" onplay="pausebg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+                } else {
+                    sound.src = null;
+                    $('#psbutton-galaxies').html('Your system does not support HTML5 Audio.');
+                    $('#psbutton-galaxies').show();
+                }
+            });
+    
+            $("#galaxies").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+        })();
+    
+        $('#homelinkbh-galaxies').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause(); bgsoundbh.currentTime = 0;});
+    
+        (function() {
+            var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=54";
+            $.getJSON( url, function( data ) {
             
-            if(sound.canPlayType('audio/mpeg')) {
-              $('#psbutton-galaxies').show();
-              $('#actualaudio-galaxies').html('<audio controls preload id="galaxiesaudio" onpause="pausedaudio()" onplay="pausebg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            } else {
-              sound.src = null;
-              $('#psbutton-galaxies').html('Your system does not support HTML5 Audio.');
-              $('#psbutton-galaxies').show();
-            }
-         });
+                var html = data[0].Images;
+                var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+                var results = re.exec(html);
+                var source = results[1];
+                $('#ngc3079').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'A galaxy called NGC 3079, whic his very, very far from our own galaxy');")
+            });
+        })();
     
-    $("#galaxies").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
-    })();
+        function goBack() {
+            $.mobile.changePage("sub-space-bh-lifeabh.html");
+        }
     
-    $('#homelinkbh-galaxies').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause(); bgsoundbh.currentTime = 0;});
-    
-    (function() {
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=54";
-     $.getJSON( url, function( data ) {
-            
-            var html = data[0].Images;
-            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-            var results = re.exec(html);
-            var source = results[1];
-            $('#ngc3079').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'A galaxy called NGC 3079, whic his very, very far from our own galaxy');")
-         });
-    })();
-    
-    function goBack() {
-      $.mobile.changePage("sub-space-bh-lifeabh.html");
-    }
-    
-    $('#start-galaxies').on('click', function() {
-    	$('#actualaudio-galaxies').show();
-      var oldHeight = $('#node-body-holder').height();
-      var newHeight = oldHeight - $('#actualaudio-galaxies').height();
-      $('#node-body-holder').height(newHeight);
-    });
-  </script>
+        $('#start-galaxies').on('click', function() {
+            $('#actualaudio-galaxies').show();
+            var oldHeight = $('#node-body-holder').height();
+            var newHeight = oldHeight - $('#actualaudio-galaxies').height();
+            $('#node-body-holder').height(newHeight);
+        });
+    </script>
 </div>

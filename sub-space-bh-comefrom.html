@@ -2,7 +2,7 @@
 <div id="bhcomefrom" data-role="page">
   <div id="spacechar">&nbsp;
     <div data-role="content" class="kidzcontent">
-      <div id="titleb-holder"><h1 style="margin-top:0px;">Where does a black<br>hole come from?</h1></div>
+      <div id="titleb-holder" style="margin-top: 40px;"><h1 style="margin-top:0px;">Where does a black<br>hole come from?</h1></div>
       <div class="v-spacer"></div>
       <div class="sidebarleft-half">
         <div id="eal3short">
@@ -18,20 +18,20 @@
         </div>
       </div>
       <div id="node-content-half">
-        <div id="psbutton-bhcf">
+        <!--div id="psbutton-bhcf">
           <div id="audiobuttonholder-bhcf"><a href="#" id="start-bhcf"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
           <div id="actualaudio-bhcf" style="display: none;">
           </div>
-        </div><!-- end of psbutton -->
-        <div id="node-body-holder" style="margin-top:-20px;">
-          <div id="node-body-minoans"></div>
+        </div--><!-- end of psbutton -->
+        <div id="node-body-holder" style="margin-top:40px;text-align:left;">
+          <div id="node-body-minoans" style="margin-top:-20px;">			<p>Black holes are formed when very, very large stars called supergiants explode.  The explosion of a supergiant star is called a supernova.  Sometimes all that remains of a supernova explosion is a small, very dense core called a neutron star. </p>			<p>When the exploding star is really massive, the core of the star collapses completely and leaves behind a black hole.  Click on each image to find out more… including some cool stories about where gold comes from, and the link between our own bodies and a supernova…!</p>		  </div>
         </div>
       </div>
     </div><!--end of content-->
     <div class="v-spacer"></div>
     <div id="foot-band" style="margin-top:74px;padding:0 15px;">
-      <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
-      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
+      <!--div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div-->
       <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home.html" id="homelinkbh-comefrom"><img src="css/images/5-8/Space/bottomhome.png"></a></div>
     </div>
   </div><!--/spacechar-->
@@ -40,7 +40,7 @@
     (function() {
       var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=35";
      $.getJSON( url, function( data ) {
-            $('#node-body-minoans').html(data[0].Body);
+           /* $('#node-body-minoans').html(data[0].Body);*/
             if(sound.canPlayType('audio/mpeg')) {
               /*sound.src = data[0].Audio;*/
               $('#psbutton-bhcf').show();

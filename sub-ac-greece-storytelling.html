@@ -59,6 +59,13 @@
       
     </div><!--end of content-->
   </div></div><!--/anisold-->
+  <div class="audiopanel">
+    <div class="bbh"><img id="storytellingaudiobbtn" src="css/images/audio/audio-back.png"></div>
+    <div class="plbh"><img id="storytellingaudioplbtn" src="css/images/audio/audio-play.png"></div>
+    <div class="psbh"><img id="storytellingaudiopsbtn" src="css/images/audio/audio-pause.png"></div>
+    <div class="fbh"><img id="storytellingaudiofbtn" src="css/images/audio/audio-forw.png"></div>
+    <div id="actualaudio-storytelling" style="visibility:hidden;"></div>
+  </div>
   <script>
     sound = new Audio();
     soundpop = new Audio(); // 'sound' is now an audio object
@@ -70,18 +77,10 @@
       $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
       $('#f1_container').css({"visibility":"hidden", "z-index":0});
       
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=75";
-     $.getJSON( url, function( data ) {
-            //$('#node-body-minoans').html(data[0].Body);
+      
             if(sound.canPlayType('audio/mpeg')) {
-              $('#psbutton-storytelling').show();
-              $('#actualaudio-storytelling').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            } else {
-              sound.src = null;
-              $('#psbutton-storytelling').html('Your system does not support HTML5 Audio.');
-              $('#psbutton-storytelling').show();
-            }
-         });
+              $('#actualaudio-storytelling').html('<audio id="storytellingaudio" controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page15.mp3" type="audio/mpeg"></audio>');
+            } 
     
     $("#storytelling").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     
@@ -160,6 +159,27 @@
       startiliadaudiobg();
       pauseagbg();
       $.mobile.changePage("sub-ac-greece-iliad.html");
+    });
+    /* ******************** */
+    $("#storytellingaudioplbtn").on('tap', function() {
+      storytellingaudio.play();
+      agsoundbg.pause(); agsoundbg.currentTime = 0; 
+      $(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#storytellingaudiofbtn").on('tap', function() {
+      var ctime = storytellingaudio.currentTime;
+      storytellingaudio.currentTime = ctime + 10;
+    });
+    
+    $("#storytellingaudiobbtn").on('tap', function() {
+      var ctime = storytellingaudio.currentTime;
+      storytellingaudio.currentTime = ctime - 10;
+    });
+    
+    $("#storytellingaudiopsbtn").on('tap', function() {
+      storytellingaudio.pause();
+      $(".audiopanel").css({"backgroundPosition":"0px 0px"});
     });
   </script>
   <script src="js/threecardLogic.js"></script>

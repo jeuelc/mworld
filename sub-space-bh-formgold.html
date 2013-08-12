@@ -1,42 +1,42 @@
 <!-- i-C-a -->
-<div id="formgold" data-role="page">
+<div id="formgold" data-role="page"><script src="js/hammer.js"></script>	<script src="js/jquery.hammer.js"></script>
   <div id="spacechar">&nbsp;
     <div data-role="content" class="kidzcontent">
-      <div id="titleb-holder"><h1 style="margin-top:0px;">Supernova...<br>and the formation of gold</h1></div>
+      <div id="titleb-holder"><h1 style="margin-top:20px;">Supernova...<br>and the formation of gold</h1></div>
       <div class="v-spacer"></div>
-      <div class="sidebarleft-half">
+      <!--div class="sidebarleft-half">
         <div id="eal3short">
           <p><a id="remainsofsn" href='#' data-transition="slide"><img src="css/images/5-8/Space/Black_Holes/Where_BH_Come/remainsofsnbtn.png"></a></p>
         </div>
         <div id="eal1short-oag">
           <p><a id="goldtoday" href='#' data-transition="slide"><img src="css/images/5-8/Space/Black_Holes/Where_BH_Come/goldbtn.png"></a></p>
         </div>
-      </div>
+      </div-->	  	  	  	  <div class="sidebarleft-half">		 <a id="chandra" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Space/Black_Holes/Where_BH_Come/chandra.jpg', 'The remains of a supernova explosion');">click here</a>        <a id="gold" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Space/Black_Holes/Where_BH_Come/Gold_bars.jpg', 'Gold… it looks great and costs a lot, but did you know it comes from the inside of a supernova?');">click here</a>	          <div id="zoomwrapper">          <div id="pol1" class="pPiece" style="left:100px;top:270px;">            <img src="css/images/5-8/Space/Black_Holes/Where_BH_Come/chandra.png" alt="" />          </div>          <div id="pol2" class="pPiece" style="left:75px;top:290px;">            <img src="css/images/5-8/Space/Black_Holes/Where_BH_Come/gold.png" alt="" />          </div>		  <div id="pol3" class="pPiece" style="left:80px;top:270px;">              <img src="css/images/5-8/Space/Black_Holes/Where_BH_Come/quiz.png" alt="" />          </div>        </div><!--/zoomwrapper-->      </div>	  	  	  
       <div id="node-content-half">
-        <div id="psbutton-formgold">
+        <!--div id="psbutton-formgold">
           <div id="audiobuttonholder-formgold"><a href="#" id="start-formgold"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
           <div id="actualaudio-formgold" style="display: none;">
           </div>
-        </div><!-- end of psbutton -->
-        <div id="node-body-holder" style="margin-top:-20px;height:268px;">
-          <div id="node-body-minoans"></div>
+        </div--><!-- end of psbutton -->
+        <div id="node-body-holder" style="margin-top:40px;">
+          <div id="node-body-minoans" style="margin-top:-20px;">			<p>When the Universe was formed, it was mostly made up of hydrogen and helium.</p>			<p>All the other elements, including the oxygen we breathe and the gold we wear, were made via nuclear reactions. Where did these nuclear reactions take place?  In stars.</p>			<p>When a big star dies in a supernova, it has a series of large explosions that spread all these elements into space.  These elements sometimes come together and form planets, like our very own Earth!</p>			<p>Do you know someone wearing a gold ring, or a gold necklace? That gold was created during a supernova explosion over four and half billion years ago!</p>			<p>Why don’t you ask your mum or dad if they know where gold comes from?  You can tell them the story of how a supernova makes gold!</p>		  </div>
         </div>
       </div>
     </div><!--end of content-->
     <div class="v-spacer"></div>
     <div id="foot-band" style="margin-top:165px;padding:0 15px;">
-      <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
-      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
-      <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home.html" id="homelinkbh-formgold"><img src="css/images/5-8/Space/bottomhome.png"></a></div>
+      <!--div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
+      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div-->
+      <div style="width:253px;color:#0071bc;margin:22px auto -15px;"><a href="home.html" id="homelinkbh-formgold"><img src="css/images/5-8/Space/bottomhome.png"></a></div>
     </div>
   </div><!--/spacechar-->
   <script>
     sound = new Audio(); // 'sound' is now an audio object
     soundpop = new Audio(); // 'sound' is now an audio object
-    (function() {
+    (function() {			$('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");      $('div#pol1').css("z-index", 2);      $('div#pol2').css("z-index", 1);      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");      $('div#pol3 > img').css("-webkit-transform", "rotate(-5deg)");      $('#f1_container').css({"visibility":"hidden", "z-index":0});		
       var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=41";
      $.getJSON( url, function( data ) {
-            $('#node-body-minoans').html(data[0].Body);
+           // $('#node-body-minoans').html(data[0].Body);
             if(sound.canPlayType('audio/mpeg')) {
               /*sound.src = data[0].Audio;*/
               $('#psbutton-formgold').show();
@@ -88,6 +88,6 @@
     
     function pausebg() {
       bgsoundbh.pause();
-    }
-  </script>
+    }		$("#pol3").on('tap', function() {           });
+	$("#pol2").on('tap', function() {      $('#gold')[0].click();    });        $("#pol1").on('tap', function() {      $('#chandra')[0].click();    });  </script><script src="js/threecardLogic.js"></script>
 </div>

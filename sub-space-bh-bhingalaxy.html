@@ -1,84 +1,86 @@
 <!-- i-C-a -->
-<div id="bhingalaxy" data-role="page">
-  <div id="spacechar">&nbsp;
-    <div data-role="content" class="kidzcontent">
-      <div id="titleb-holder"><h1 style="margin-top:0px;">&nbsp;<br>The Black Hole in Our Galaxy</h1></div>
-      <div class="v-spacer"></div>
-      <div class="sidebarleft-half">
-        <div id="eal3short">
-          <p><a id="milkyway" href='#' data-transition="slide"><img src="css/images/5-8/Space/Black_Holes/Life_Around_BH/milkywaybtn.png"></a></p>
+<div id="blackhole" data-role="page">
+    <script src="js/hammer.js"></script>
+    <script src="js/jquery.hammer.js"></script>
+    <script src="js/slidebar.js"></script>
+    <div class="menuhousing"></div>
+    <div class="homebtnholder"><img class="homebtn" src="css/images/5-8/Space/Black_Holes/homebtn.png"></div>
+    <div class="cpbtnholder"><img class="cpbtn" src="css/images/5-8/Space/Black_Holes/cpbtn.png"></div>
+    <div class="buildbtnholder"><img class="buildbtn" src="css/images/5-8/Space/Black_Holes/buildbtn.png"></div>
+    <div class="mpbtnholder"><img class="mpbtn" src="css/images/5-8/Space/Black_Holes/mpbtn.png"></div>
+    <div class="menubtnholder"><img class="menubtn" src="css/images/5-8/Space/Black_Holes/menubtn.png"></div>
+    <div id="bonus-ags" class="talkbubble" style="background:url(css/images/5-8/Space/Black_Holes/game/bonustalk.png) no-repeat; width:473px;height:296px;position:absolute;left:500px;top:40px;visibility:hidden;"></div><!--/bonus-ags-->
+    <div class="bptitleholder" style="padding-top:14px;"><h1>The Black Hole in Our Galaxy</h1></div>
+    <div id="anisold">
+        <div id="spacechar">&nbsp;
+            <div data-role="content" class="kidzcontent">
+                <div class="v-spacer"></div>
+                <div class="sidebarleft-half">
+                    <div id="eal3short" style="position:absolute;left:100px;top:250px;">
+                        <p><a id="milkyway" href='#' data-transition="slide"><img src="css/images/5-8/Space/Black_Holes/Life_Around_BH/milkywaybtn.png"></a></p>
+                    </div>
+                    <div id="eal1short-oag" style="position:absolute;left:100px;top:390px;">
+                        <p><a id="sagittarius" href='#' data-transition="slide"><img src="css/images/5-8/Space/Black_Holes/Life_Around_BH/sagittariusbtn.png"></a></p>
+                    </div>
+                </div>
+                <div class="bpcontent">
+                    <p>Yes, there is a black hole at the centre of our galaxy a very, very large black hole! But dont worry, its very very far away. In fact its so far away it will never come close enough to be a threat to the Earth.</p>
+                    <p>There are also other black holes in our galaxy, but these are much smaller than the black hole at the centre of our galaxy. These black holes are also very far away. You see, the Universe really is a very large place.</p>
+                    <p>What would happen if a black hole hit the Earth? If it was a big black hole, it would swallow the Earth. Luckily, this is very unlikely to ever happen.</p>
+                    <p>If a small black hole hit the Earth it would pass straight through the Earth, and keep on going.  The Universe really is a strange place too!</p>
+                </div>
+                <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
+            </div><!--end of content-->
         </div>
-        <div id="eal1short-oag">
-          <p><a id="sagittarius" href='#' data-transition="slide"><img src="css/images/5-8/Space/Black_Holes/Life_Around_BH/sagittariusbtn.png"></a></p>
-        </div>
-        
-      </div>
-      <div id="node-content-half">
-        <div id="psbutton-bhingalaxy">
-          <div id="audiobuttonholder-bhingalaxy"><a href="#" id="start-bhingalaxy"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
-          <div id="actualaudio-bhingalaxy" style="display: none;">
-          </div>
-        </div><!-- end of psbutton -->
-        <div id="node-body-holder" style="margin-top:-20px;height:268px;">
-          <div id="node-body-minoans"></div>
-        </div>
-      </div>
-    </div><!--end of content-->
-    <div class="v-spacer"></div>
-    <div id="foot-band" style="margin-top:165px;padding:0 15px;">
-      <div style="float:left;width:150px;color:#0071bc;margin:-15px 0 0 0px;">Brought to you by<br>Monash University</div>
-      <div style="float:right;width:260px;color:#0071bc;margin:0px 0 0 52px;text-align:right;">Proudly supported by [Partner XYZ]</div>
-      <div style="width:253px;height:2px;color:#0071bc;margin:22px auto -15px;"><a href="home.html" id="homelinkbh-bhingalaxy"><img src="css/images/5-8/Space/bottomhome.png"></a></div>
-    </div>
-  </div><!--/spacechar-->
-  <script>
+    </div><!--/anisold-->
+    <section class="container" style="height:670px;margin-top:0px;">
+        <div class="spriteComing"></div>
+    </section>
+    <script src="js/spritespin.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript" src="js/script.js"></script>    
+    <script>
    
-    (function() {
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=55";
-     $.getJSON( url, function( data ) {
-            $('#node-body-minoans').html(data[0].Body);
-            
-            var html = data[0].Images;
-            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-            var results = re.exec(html);
-            var source = results[1];
-            $('#milkyway').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'The center of our galaxy, the Milky Way');")
-            if(sound.canPlayType('audio/mpeg')) {
-              $('#psbutton-bhingalaxy').show();
-              $('#actualaudio-bhingalaxy').html('<audio controls preload id="bhingalaxyaudio" onpause="pausedaudio()" onplay="pausebg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            } else {
-              sound.src = null;
-              $('#psbutton-bhingalaxy').html('Your system does not support HTML5 Audio.');
-              $('#psbutton-bhingalaxy').show();
-            }
+        (function() {
+            var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=55";
+            $.getJSON( url, function( data ) {
+                var html = data[0].Images;
+                var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+                var results = re.exec(html);
+                var source = results[1];
+                $('#milkyway').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'The center of our galaxy, the Milky Way');")
+                if(sound.canPlayType('audio/mpeg')) {
+                    $('#psbutton-bhingalaxy').show();
+                    $('#actualaudio-bhingalaxy').html('<audio controls preload id="bhingalaxyaudio" onpause="pausedaudio()" onplay="pausebg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
+                } else {
+                    sound.src = null;
+                    $('#psbutton-bhingalaxy').html('Your system does not support HTML5 Audio.');
+                    $('#psbutton-bhingalaxy').show();
+                }
          
-         });
+            });    
+            $("#bhingalaxy").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );    
+        })();
     
-      $("#bhingalaxy").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+        (function() {
+            var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=56";
+            $.getJSON( url, function( data ) {            
+                var html = data[0].Images;
+                var re = /<img[^>]+src="http:\/\/([^">]+)/g;
+                var results = re.exec(html);
+                var source = results[1];
+                $('#sagittarius').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Sagittarius A*, the site of the supermassive black hole ath the center of our galaxy... Can you see the black hole?');")
+            });
+        })();
+        $('#homelinkbh-bhingalaxy').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause(); bgsoundbh.currentTime = 0;});
+        function goBack() {
+            $.mobile.changePage("sub-space-bh-galaxies.html");
+        }
     
-    })();
-    
-    (function() {
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=56";
-     $.getJSON( url, function( data ) {
-            
-            var html = data[0].Images;
-            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-            var results = re.exec(html);
-            var source = results[1];
-            $('#sagittarius').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Sagittarius A*, the site of the supermassive black hole ath the center of our galaxy... Can you see the black hole?');")
-         });
-    })();
-    $('#homelinkbh-bhingalaxy').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause(); bgsoundbh.currentTime = 0;});
-    function goBack() {
-      $.mobile.changePage("sub-space-bh-galaxies.html");
-    }
-    
-    $('#start-bhingalaxy').on('click', function() {
-    	$('#actualaudio-bhingalaxy').show();
-      var oldHeight = $('#node-body-holder').height();
-      var newHeight = oldHeight - $('#actualaudio-bhingalaxy').height();
-      $('#node-body-holder').height(newHeight);
-    });
-  </script>
+        $('#start-bhingalaxy').on('click', function() {
+            $('#actualaudio-bhingalaxy').show();
+            var oldHeight = $('#node-body-holder').height();
+            var newHeight = oldHeight - $('#actualaudio-bhingalaxy').height();
+            $('#node-body-holder').height(newHeight);
+        });
+    </script>
 </div>

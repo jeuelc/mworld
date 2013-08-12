@@ -40,6 +40,13 @@
       
     </div> <!-- end content -->  
   </div></div><!--/anisold-->
+  <div class="audiopanel">
+    <div class="bbh"><img id="phoeaudiobbtn" src="css/images/audio/audio-back.png"></div>
+    <div class="plbh"><img id="phoeaudioplbtn" src="css/images/audio/audio-play.png"></div>
+    <div class="psbh"><img id="phoeaudiopsbtn" src="css/images/audio/audio-pause.png"></div>
+    <div class="fbh"><img id="phoeaudiofbtn" src="css/images/audio/audio-forw.png"></div>
+    <div id="actualaudio-phoenicians" style="visibility:hidden;"></div>
+  </div>
   <script>
     sound = new Audio(); // 'sound' is now an audio object
     
@@ -53,62 +60,16 @@
 	
 	
 	
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=93";
-     $.getJSON( url, function( data ) {
-            /*$('#node-body').html(data[0].Body);
-            
-            var html = data[0].Images;
-            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-            var results = re.exec(html);
-            var source = results[1];            
-            $('#sidon1').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'The Phoenician City of Sidon');")
-         */
+      
             if(sound.canPlayType('audio/mpeg')) {
-              $('#psbutton-phoenicians').show();
-              $('#actualaudio-phoenicians').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            } else {
-              sound.src = null;
-              $('#psbutton-phoenicians').html('Your system does not support HTML5 Audio.');
-              $('#psbutton-phoenicians').show();
-            }
-         });
+              
+              $('#actualaudio-phoenicians').html('<audio id="phoeaudio" controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page27.mp3" type="audio/mpeg"></audio>');
+            } 
     
     $("#phoenicians").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     
     })();
     
-   /* (function() {
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=94";
-     $.getJSON( url, function( data ) {
-            var html = data[0].Images;
-            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-            var results = re.exec(html);
-            var source = results[1];            
-            $('#sidon2').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'The Phoenician City of Sidon');")
-         });
-    })();
-    
-    (function() {
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=95";
-     $.getJSON( url, function( data ) {
-            var html = data[0].Images;
-            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-            var results = re.exec(html);
-            var source = results[1];            
-            $('#carthage1').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'The city of Carthage as it is today');")
-         });
-    })();
-    
-    (function() {
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=96";
-     $.getJSON( url, function( data ) {
-            var html = data[0].Images;
-            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-            var results = re.exec(html);
-            var source = results[1];            
-            $('#carthage2').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'The city of Carthage as it is today');")
-         });
-    })();*/
     
     $('#start-phoenicians').on('click', function() {
       $('#actualaudio-phoenicians').show();
@@ -136,6 +97,27 @@
       $('#sidon1')[0].click();
     });
 	
+  /* ******************** */
+    $("#phoeaudioplbtn").on('tap', function() {
+      phoeaudio.play();
+      agsoundbg.pause(); agsoundbg.currentTime = 0; 
+      $(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#phoeaudiofbtn").on('tap', function() {
+      var ctime = phoeaudio.currentTime;
+      phoeaudio.currentTime = ctime + 10;
+    });
+    
+    $("#phoeaudiobbtn").on('tap', function() {
+      var ctime = phoeaudio.currentTime;
+      phoeaudio.currentTime = ctime - 10;
+    });
+    
+    $("#phoeaudiopsbtn").on('tap', function() {
+      phoeaudio.pause();
+      $(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
 	
   </script>
     <script src="js/threecardLogic.js"></script>

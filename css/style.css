@@ -62,71 +62,57 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
 }
 
 #ancient {
-  background:url('images/5-8/Ancient_Civilizations/ancientbg.png') no-repeat;
-  height:768px !important;
+  background:url('images/5-8/Ancient_Civilizations/ancientbg.jpg') no-repeat;
+  height:748px !important;
   width:1024px !important;
   overflow:hidden;
 }
 
-#ancient2 {
-  background:url('images/9-12/Ancient_Civilizations/ancientbg.jpg') no-repeat;
-  min-height:768px !important;
-  width:1024px !important;
-  overflow:hidden !important;
-}
-
-#animals2 {
-  background:url('images/9-12/Animals/animalsbg.jpg') no-repeat;
-  min-height:768px !important;
-  width:1024px !important;
-  overflow:hidden !important;
-}
-
 #artandmusic2 {
   background:url('images/9-12/Art_and_Music/artandmusicbg.jpg') no-repeat;
-  min-height:768px !important;
+  height: 748px !important;
   width:1024px !important;
   overflow:hidden !important;
 }
 
 #humanbody2 {
   background:url('images/9-12/Human_Body/humanbodybg.jpg') no-repeat;
-  min-height:768px !important;
+  height: 748px !important;
   width:1024px !important;
   overflow:hidden !important;
 }
 
 #languageculture2 {
   background:url('images/9-12/Language_and_Culture/langcultbg.jpg') no-repeat;
-  min-height:768px !important;
+  height: 748px !important;
   width:1024px !important;
   overflow:hidden !important;
 }
 
 #peopleplaces2 {
   background:url('images/9-12/People_and_Places/peopleplacesbg.jpg') no-repeat;
-  min-height:768px !important;
+  height: 748px !important;
   width:1024px !important;
   overflow:hidden !important;
 }
 
 #modernworld2 {
   background:url('images/9-12/The_Modern_World/modernworldbg.jpg') no-repeat;
-  min-height:768px !important;
+  height: 748px !important;
   width:1024px !important;
   overflow:hidden !important;
 }
 
 #naturalworld2 {
   background:url('images/9-12/The_Natural_World/naturalworldbg.jpg') no-repeat;
-  min-height:768px !important;
+  height: 748px !important;
   width:1024px !important;
   overflow:hidden !important;
 }
 
 #wonderscience2 {
   background:url('images/9-12/The_Wonders_of_Science/wondersciencebg.jpg') no-repeat;
-  min-height:768px !important;
+  height: 748px !important;
   width:1024px !important;
   overflow:hidden !important;
 }
@@ -138,9 +124,9 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
   overflow:hidden !important;
 }
 
-#ancientgreece, #originsofgreece, #hittites, #kinghatpray, #mycenaeans, #minoans, #lifeinag, #olympics, 
+#ancientgreece, #originsofgreece, #hittites, #kinghatpray, #mycenaeans, #minoans, #lifeinag,  
 #panathenai, #agschool, #agora, #lydians, #lydiansmoney, #agintro, #legacyofgreece, #legacyofgreece2, #minoansend,
-#tribesofgreece, #templesofgreece, #spartans, #storytelling, #odyssey, #romans, #persians, #xenophon, #egyptians,
+#tribesofgreece, #templesofgreece, #spartans, #storytelling, #romans, #persians, #xenophon, #egyptians,
 #phoenicians, #babylonians, #gilgamesh, #persianeducation, #mathsciencemore, #architecture {
   /*background:url('images/5-8/Ancient_Civilizations/Greece/agbg.png') no-repeat;*/
   background:url('images/9-12/Ancient_Civilizations/Greece/agbgn.jpg') no-repeat;
@@ -149,26 +135,32 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
   overflow:hidden !important;
 }
 
-#ancientgreece2, #originsofgreece2, #hittites2, #kinghatpray2, #mycenaeans2, #minoans2, #lifeinag2, #olympics2, 
-#panathenai2, #agschool2, #agora2, #aroundag2, #lydians2, #lydiansmoney2, #agintro2, #legacyofgreece-2, #legacyofgreece2-2, 
-#minoansend2, #tribesofgreece2, #templesofgreece2, #spartans2, #storytelling2, #odyssey2, #romans2, #persians2, #xenophon2, 
-#egyptians2, #phoenicians2, #babylonians2, #gilgamesh2 {
-  background:url('images/9-12/Ancient_Civilizations/Greece/agbg.png') no-repeat;
-  height:768px !important;
-  width:1024px !important;
-  overflow:hidden !important;
-}
-
 #theseus {
   background:url('images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/theseusbg.jpg') no-repeat;
   height:748px;
   width:1024px !important;
+  overflow:hidden !important;
+}
+
+#olympics{
+  background:url('images/5-8/Ancient_Civilizations/Greece/Life_in_Ancient_Greece/olympicbg.jpg') no-repeat;
+  height:748px;
+  width:1024px !important;
+  overflow:hidden !important;
 }
 
 #iliad {
   background:url('images/5-8/Ancient_Civilizations/Greece/Life_in_Ancient_Greece/iliadbg.jpg') no-repeat;
   height:748px;
   width:1024px !important;
+  overflow:hidden !important;
+}
+
+#odyssey {
+  background:url('images/5-8/Ancient_Civilizations/Greece/Life_in_Ancient_Greece/odysseybg.jpg') no-repeat;
+  height:748px;
+  width:1024px !important;
+  overflow:hidden !important;
 }
 
 #animatedsoldier {
@@ -883,11 +875,6 @@ margin-left: -345px;
 
 
 /******* polaroidtest**********/
-#polaroidtest {
-  background:url('images/9-12/Ancient_Civilizations/ancientbg.jpg') no-repeat;
-  min-height:748px !important;
-  width:1024px !important;
-}
 
 .pPiece img {
   /*border-radius: 20px;*/
@@ -997,26 +984,26 @@ margin-left: -345px;
 /***********slider button************/
 .menubtnholder {
   position:absolute;
-  top:660px;
-  left:42px;
+  top:630px;
+  left:-10px;
   z-index:21;
 }
 
 .homebtnholder, .cpbtnholder, .buildbtnholder, .mpbtnholder {
   position:absolute;
-  top:748px;
-  left:42px;
+  top:630px;
+  left:-93px;
   z-index:20;
 }
 
 .menuhousing {
   background:url('images/5-8/Ancient_Civilizations/Greece/menuhousing.png');
-  width:207px;
-  height:530px;
+  width:660px;
+  height:145px;
   position:absolute;
   /*top:267px;*/
-  top:748px;
-  left:5px;
+  top:603px;
+  left:-660px;
   z-index:19;
 }
 /*********** /slider button************/
@@ -1042,7 +1029,7 @@ margin-left: -345px;
   line-height:28px;
 }
 
-.navtitleholder h1, .bptitleholder h1 {
+.navtitleholder h1, .bptitleholder h1, h1 {
   text-transform:uppercase;
   color: #000000;
   font-family:"Chalkboard SE";
@@ -1060,6 +1047,8 @@ margin-left: -345px;
   overflow-y:scroll;
   text-align:left;
   font-family:"Chalkboard SE";
+  font-size:18px;
+  font-weight:bold;
 }
 
 .navbtn1 {
@@ -1103,6 +1092,52 @@ margin-left: -345px;
   top:266px;
   overflow-y:scroll;
   font-family:"Chalkboard SE";
+  font-size:18px;
+  font-weight:bold;
   text-align:left;
+}
+
+.bpcontent p, .nav-content p {
+  margin-top:0 !important;
+}
+
+.storypagetitle {
+  width:390px;
+  font-family:"Chalkboard SE";
+  position:absolute;
+  left:550px;
+  top:200px;
+  text-align:center;
+}
+
+.storypage{
+  width:390px;
+  height:356px;
+  position:absolute;
+  left:550px;
+  top:266px;
+  overflow-y:scroll;
+  font-family:"Chalkboard SE";
+  font-size:18px;
+  font-weight:bold;
+  text-align:left;
+}
+
+.audiopanel {
+  position:absolute;
+  top:611px;
+  left:827px;
+  width:169px;
+  height:137px;
+  background:url("images/audio/micpanel.png") no-repeat 0 0;
+  padding-left:28px;
+}
+
+.plbh, .psbh, .bbh, .fbh {
+  width:29px;
+  height:29px;
+  float:left;
+  margin-top:93px;
+  margin-left:3px;
 }
 /************* /new rules ***********/

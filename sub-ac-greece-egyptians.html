@@ -46,6 +46,13 @@
     
     </div> <!-- end content -->  
   </div></div><!--/anisold-->
+  <div class="audiopanel">
+    <div class="bbh"><img id="egyptaudiobbtn" src="css/images/audio/audio-back.png"></div>
+    <div class="plbh"><img id="egyptaudioplbtn" src="css/images/audio/audio-play.png"></div>
+    <div class="psbh"><img id="egyptaudiopsbtn" src="css/images/audio/audio-pause.png"></div>
+    <div class="fbh"><img id="egyptaudiofbtn" src="css/images/audio/audio-forw.png"></div>
+    <div id="actualaudio-egyptians" style="visibility:hidden;"></div>
+  </div>
   <script>
     sound = new Audio(); // 'sound' is now an audio object
     
@@ -57,26 +64,11 @@
       $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
       $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
       $('div#pol4 > img').css("-webkit-transform", "rotate(-3deg)");
-      
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=89";
-     $.getJSON( url, function( data ) {
-            //$('#node-body').html(data[0].Body);
             
-            var html = data[0].Images;
-            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-            var results = re.exec(html);
-            var source = results[1];            
-            $('#egyptart1').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Egyptian Art');")
-            
-            if(sound.canPlayType('audio/mpeg')) {
-              $('#psbutton-egyptians').show();
-              $('#actualaudio-egyptians').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            } else {
-              sound.src = null;
-              $('#psbutton-egyptians').html('Your system does not support HTML5 Audio.');
-              $('#psbutton-egyptians').show();
-            }
-         });
+        if(sound.canPlayType('audio/mpeg')) {
+          
+          $('#actualaudio-egyptians').html('<audio id="egyptaudio" controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page26.mp3" type="audio/mpeg"></audio>');
+        } 
     
     $("#egyptians").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     
@@ -143,6 +135,28 @@
     
     $("#pol1").on('tap', function() {
       $('#sphinxlink')[0].click();
+    });
+    
+    /* ******************** */
+    $("#egyptaudioplbtn").on('tap', function() {
+      egyptaudio.play();
+      agsoundbg.pause(); agsoundbg.currentTime = 0; 
+      $(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#egyptaudiofbtn").on('tap', function() {
+      var ctime = egyptaudio.currentTime;
+      egyptaudio.currentTime = ctime + 10;
+    });
+    
+    $("#egyptaudiobbtn").on('tap', function() {
+      var ctime = egyptaudio.currentTime;
+      egyptaudio.currentTime = ctime - 10;
+    });
+    
+    $("#egyptaudiopsbtn").on('tap', function() {
+      egyptaudio.pause();
+      $(".audiopanel").css({"backgroundPosition":"0px 0px"});
     });
   </script>
   <script src="js/fourcardLogic.js"></script>

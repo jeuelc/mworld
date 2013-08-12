@@ -39,30 +39,27 @@
       
     </div> <!--end of content-->
   </div></div><!--/anisold-->
+  <div class="audiopanel">
+    <div class="bbh"><img id="templesaudiobbtn" src="css/images/audio/audio-back.png"></div>
+    <div class="plbh"><img id="templesaudioplbtn" src="css/images/audio/audio-play.png"></div>
+    <div class="psbh"><img id="templesaudiopsbtn" src="css/images/audio/audio-pause.png"></div>
+    <div class="fbh"><img id="templesaudiofbtn" src="css/images/audio/audio-forw.png"></div>
+    <div id="actualaudio-temples" style="visibility:hidden;"></div>
+  </div>
   <script>
     sound = new Audio(); // 'sound' is now an audio object
     (function() {
       $('div#polb1 > img').css("-webkit-transform", "rotate(0deg)");
       $('div#polb1').css("z-index", 1);
       $('div#polb2 > img').css("-webkit-transform", "rotate(5deg)");;
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=71";
-        $.getJSON( url, function( data ) {
+      
+        
             //$('#node-body-oag').html(data[0].Body);
-            var html = data[0].Images;
-            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-            var results = re.exec(html);
-            var source = results[1];
-            $('#parthenonnight').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Night time view of the Perthenon');")
          
-            if(sound.canPlayType('audio/mpeg')) {
-              $('#psbutton-temples').show();
-              $('#actualaudio-temples').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            } else {
-              sound.src = null;
-              $('#psbutton-temples').html('Your system does not support HTML5 Audio.');
-              $('#psbutton-temples').show();
-            }
-         });
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-temples').html('<audio id="templesaudio" controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page%2011.mp3" type="audio/mpeg"></audio>');
+      } 
+         
     
     $("#templesofgreece").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     
@@ -83,12 +80,6 @@
       $.mobile.changePage("sub-ac-greece-tribes.html");
     }
     
-    $('#start-temples').on('click', function() {
-    	$('#actualaudio-temples').show();
-      var oldHeight = $('#node-body-holder').height();
-      var newHeight = oldHeight - $('#actualaudio-temples').height();
-      $('#node-body-holder').height(newHeight);
-    });
     $('#homelinkag-temples').on('tap', function() { 
       mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
     });
@@ -97,6 +88,26 @@
     });
     $("#polb2").on('tap', function() {
       $('#acropolislink')[0].click();
+    });
+    /* ******************** */
+    $("#templesaudioplbtn").on('tap', function() {
+      templesaudio.play();
+      agsoundbg.pause(); agsoundbg.currentTime = 0; 
+      $(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#templesaudiofbtn").on('tap', function() {
+      var ctime = templesaudio.currentTime;
+      templesaudio.currentTime = ctime + 10;
+    });
+    
+    $("#templesaudiobbtn").on('tap', function() {
+      var ctime = templesaudio.currentTime;
+      templesaudio.currentTime = ctime - 10;
+    });
+    
+    $("#templesaudiopsbtn").on('tap', function() {
+      templesaudio.pause();
     });
   </script>
   <script src="js/twocardLogicb.js"></script>

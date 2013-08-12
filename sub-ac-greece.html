@@ -8,7 +8,6 @@
   <div class="mpbtnholder"><img class="mpbtn" src="css/images/5-8/Ancient_Civilizations/Greece/mpbtn.png"></div>
   <div class="menubtnholder"><img class="menubtn" src="css/images/5-8/Ancient_Civilizations/Greece/menubtn.png"></div>
   <div class="navtitleholder" style="padding-top:14px;"><h1>Ancient Greece</h1></div>
-  
   <!---------******************--------->
   <div id="anisold"><div id="animatedsoldier"></div>
     <div id="acgreecechar">&nbsp;	
@@ -37,29 +36,24 @@
       <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
     </div> <!-- end content -->  
   </div></div><!--/anisold-->
+  <div class="audiopanel">
+    <div class="bbh"><img id="audiobbtn" src="css/images/audio/audio-back.png"></div>
+    <div class="plbh"><img id="audioplbtn" src="css/images/audio/audio-play.png"></div>
+    <div class="psbh"><img id="audiopsbtn" src="css/images/audio/audio-pause.png"></div>
+    <div class="fbh"><img id="audiofbtn" src="css/images/audio/audio-forw.png"></div>
+    <div id="actualaudio" style="visibility:hidden;"></div>
+  </div>
   <script>
     sound = new Audio(); // 'sound' is now an audio object
     
     (function() {
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=2";
-     $.getJSON( url, function( data ) {
-            if(sound.canPlayType('audio/mpeg')) {
-              /*sound.src = data[0].Audio;*/
-              $('#psbutton').show();
-              //$('#actualaudio').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            } else {
-              sound.src = null;
-              $('#psbutton').html('Your system does not support HTML5 Audio.');
-              $('#psbutton').show();
-            }
-         });
+     
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()" id="agnar"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Intro.mp3" type="audio/mpeg"></audio>');
+      } 
     
       $("#ancientgreece").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     })();
-
-    $('#start').on('click', function() {
-    	$('#actualaudio').show();
-    });
     
     function goBack() {/*
       $.mobile.changePage("sub-ancient.html");
@@ -67,6 +61,26 @@
     }
     $('#homelinkag').on('tap', function() { 
       mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+    
+    $("#audioplbtn").on('tap', function() {
+      agnar.play();
+      agsoundbg.pause(); agsoundbg.currentTime = 0; 
+      $(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#audiofbtn").on('tap', function() {
+      var ctime = agnar.currentTime;
+      agnar.currentTime = ctime + 10;
+    });
+    
+    $("#audiobbtn").on('tap', function() {
+      var ctime = agnar.currentTime;
+      agnar.currentTime = ctime - 10;
+    });
+    
+    $("#audiopsbtn").on('tap', function() {
+      agnar.pause();
     });
   </script>
 </div> <!--//home-->

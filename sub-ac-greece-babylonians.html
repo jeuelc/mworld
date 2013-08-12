@@ -51,6 +51,13 @@
         
     </div> <!-- end content -->  
   </div></div><!--/anisold-->
+  <div class="audiopanel">
+    <div class="bbh"><img id="babyaudiobbtn" src="css/images/audio/audio-back.png"></div>
+    <div class="plbh"><img id="babyaudioplbtn" src="css/images/audio/audio-play.png"></div>
+    <div class="psbh"><img id="babyaudiopsbtn" src="css/images/audio/audio-pause.png"></div>
+    <div class="fbh"><img id="babyaudiofbtn" src="css/images/audio/audio-forw.png"></div>
+    <div id="actualaudio-babylonians" style="visibility:hidden;"></div>
+  </div>
   <script>
     sound = new Audio(); // 'sound' is now an audio object
     
@@ -63,25 +70,11 @@
       $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
       $('div#pol4 > img').css("-webkit-transform", "rotate(-3deg)");
     
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=97";
-     $.getJSON( url, function( data ) {
-            //$('#node-body').html(data[0].Body);
-            
-            var html = data[0].Images;
-            var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-            var results = re.exec(html);
-            var source = results[1];            
-            $('#babylonianart1').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Babylonian art');")
             
             if(sound.canPlayType('audio/mpeg')) {
-              $('#psbutton-babylonians').show();
-              $('#actualaudio-babylonians').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            } else {
-              sound.src = null;
-              $('#psbutton-babylonians').html('Your system does not support HTML5 Audio.');
-              $('#psbutton-babylonians').show();
-            }
-         });
+              
+              $('#actualaudio-babylonians').html('<audio id="babynar" controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page28.mp3" type="audio/mpeg"></audio>');
+            } 
     
       $("#babylonians").swipe( { swipeRight:goBack, allowPageScroll:"auto" } );
     
@@ -148,6 +141,28 @@
     
     $("#pol1").on('tap', function() {
       $('#babart1link')[0].click();
+    });
+    
+    /* ******************** */
+    $("#babyaudioplbtn").on('tap', function() {
+      babynar.play();
+      agsoundbg.pause(); agsoundbg.currentTime = 0; 
+      $(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#babyaudiofbtn").on('tap', function() {
+      var ctime = babynar.currentTime;
+      babynar.currentTime = ctime + 10;
+    });
+    
+    $("#babyaudiobbtn").on('tap', function() {
+      var ctime = babynar.currentTime;
+      babynar.currentTime = ctime - 10;
+    });
+    
+    $("#babyaudiopsbtn").on('tap', function() {
+      babynar.pause();
+      $(".audiopanel").css({"backgroundPosition":"0px 0px"});
     });
   </script>
   <script src="js/fourcardLogic.js"></script>

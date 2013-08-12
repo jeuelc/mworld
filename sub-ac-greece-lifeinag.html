@@ -37,6 +37,13 @@
       
     </div> <!--end of content-->
   </div></div><!--/anisold-->
+  <div class="audiopanel">
+    <div class="bbh"><img id="lifeinagaudiobbtn" src="css/images/audio/audio-back.png"></div>
+    <div class="plbh"><img id="lifeinagaudioplbtn" src="css/images/audio/audio-play.png"></div>
+    <div class="psbh"><img id="lifeinagaudiopsbtn" src="css/images/audio/audio-pause.png"></div>
+    <div class="fbh"><img id="lifeinagaudiofbtn" src="css/images/audio/audio-forw.png"></div>
+    <div id="actualaudio-lifeinag" style="visibility:hidden;"></div>
+  </div>
   <script>
     sound = new Audio(); // 'sound' is now an audio object
     
@@ -47,25 +54,14 @@
             //$('#node-body-oag').html(data[0].Body);
             
             if(sound.canPlayType('audio/mpeg')) {
-              $('#psbutton-lifeinag').show();
-              $('#actualaudio-lifeinag').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()""><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            } else {
-              sound.src = null;
-              $('#psbutton-lifeinag').html('Your system does not support HTML5 Audio.');
-              $('#psbutton-lifeinag').show();
-            }
+              
+              $('#actualaudio-lifeinag').html('<audio id="lifeinagaudio" controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page13.mp3" type="audio/mpeg"></audio>');
+            } 
          });
     
     $("#lifeinag").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     
     })();
-
-    $('#start-lifeinag').on('click', function() {
-      $('#actualaudio-lifeinag').show();
-      var oldHeight = $('#node-body-holder').height();
-      var newHeight = oldHeight - $('#actualaudio-lifeinag').height();
-      $('#node-body-holder').height(newHeight);
-    });
     
     $('#olympicslink').on('click', function() {
       startolympicsaudiobg();
@@ -77,6 +73,27 @@
     }
     $('#homelinkag-lifeinag').on('tap', function() { 
       mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
+    });
+    /* ******************** */
+    $("#lifeinagaudioplbtn").on('tap', function() {
+      lifeinagaudio.play();
+      agsoundbg.pause(); agsoundbg.currentTime = 0; 
+      $(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#lifeinagaudiofbtn").on('tap', function() {
+      var ctime = lifeinagaudio.currentTime;
+      lifeinagaudio.currentTime = ctime + 10;
+    });
+    
+    $("#lifeinagaudiobbtn").on('tap', function() {
+      var ctime = lifeinagaudio.currentTime;
+      lifeinagaudio.currentTime = ctime - 10;
+    });
+    
+    $("#lifeinagaudiopsbtn").on('tap', function() {
+      lifeinagaudio.pause();
+      $(".audiopanel").css({"backgroundPosition":"0px 0px"});
     });
   </script>
 </div>
