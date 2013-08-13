@@ -68,6 +68,13 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
   overflow:hidden;
 }
 
+#animals2 {
+  background:url('images/9-12/Animals/animalsbg.jpg') no-repeat;
+  height:748px !important;
+  width:1024px !important;
+  overflow:hidden;
+}
+
 #artandmusic2 {
   background:url('images/9-12/Art_and_Music/artandmusicbg.jpg') no-repeat;
   height: 748px !important;
@@ -335,27 +342,27 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
 
 #space {
   background:url('images/5-8/Space/spacebg.png') no-repeat;
-  height:768px;
+  height:748px;
   width:1024px !important;
 }
 
 #space2 {
   background:url('images/9-12/Space/spacebg.png') no-repeat;
-  height:768px;
+  height:748px;
   width:1024px !important;
 }
 
 #blackholes, #whatisbh, #gravity, #bhcomefrom, #supergiant, #supernova, #snexplosion, #formgold, #neutron, #blackhole,
 #nscollide, #lifeabh, #galaxies, #bhingalaxy, #quasars, #binaries, #bhgo {
   background:url('images/5-8/Space/Black_Holes/bhbg.png') no-repeat;
-  height:768px;
+  height:748px;
   width:1024px !important;
 }
 
 #blackholes2, #whatisbh2, #gravity2, #bhcomefrom2, #supergiant2, #supernova2, #snexplosion2, #formgold2, #neutron2, 
 #blackhole2, #nscollide2, #lifeabh2, #galaxies2, #bhingalaxy2, #quasars2, #binaries2, #bhgo2 {
   background:url('images/9-12/Space/Black_Holes/bhbg.png') no-repeat;
-  height:768px;
+  height:748px;
   width:1024px !important;
 }
 
@@ -370,14 +377,14 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
 /*end for animated gif test*/
 
 #spacechar {
-  background:url('images/5-8/Space/minister.png') no-repeat scroll 761px 30px transparent;
-  height:768px;
+  /*background:url('images/5-8/Space/minister.png') no-repeat scroll 761px 30px transparent;*/
+  height:748px;
   width:1024px !important;
 }
 
 #coach {
   /*background:url('images/5-8/Space/coachrico.png') no-repeat scroll 761px 30px transparent;*/
-  height:768px;
+  height:748px;
   width:1024px;
 }
 
@@ -466,19 +473,11 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
 	bottom: 53px;
 }
 
-/************************************/
-/************************************/
 #spacegallery {
   background:url('images/spacegallery/spacegallerybg.jpg') no-repeat;
   height:748px  !important;
   width:1024px;
   overflow: hidden;
-}
-
-#test {
-  background:url('images/5-8/Ancient_Civilizations/gallerybg.jpg') no-repeat;
-  height:768px;
-  width:1024px !important;
 }
 
 #museum {
@@ -526,68 +525,6 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
 .upSky{ background: #FFFFFF; }
 
 /********* control panel **********/
-#tbshiphead { 
-background:url('images/SpaceBottomleft/head.png') no-repeat 0 0; 
-float: left;
-position: absolute;
-width: 75px;
-height: 70px;
-overflow: hidden;
-top: 323px;
-left: 127px;
-
-}
-#tbshiptail { 
-background:url('images/SpaceBottomleft/tail4.png') no-repeat 0 0; 
-float: left;
-position: absolute;
-width: 75px;
-height: 70px;
-overflow: hidden;
-top: 320px;
-left: 73px;
-
-}
-
-.taskbarcontainer {
-  height:372px;
-  position:absolute;
-  left:-101px;
-  top:347px;
-}
-
-.taskbarwick {
- background: url('images/SpaceBottomleft/airUpdated.png');
-width: 500px;
-height: 260px;
-position: absolute;
-left: 70px;
-top: 193px;
-margin-top: -20px;
-margin-left: -345px;
-}
-
-
-.greecetaskbarwick {
-
- background: url('images/hercules/platform.png');
-
-width: 500px;
-
-height: 260px;
-
-position: absolute;
-
-left: 70px;
-
-top: 193px;
-
-margin-top: -20px;
-
-margin-left: -345px;
-
-}
-
 
 
 .taskbarpanel a img {
@@ -616,16 +553,6 @@ margin-left: -345px;
 
 .tbicon {
   background:url('images/taskbarbg.png');
-  width:100px;
-  float:left;
-  height:80px;
-  margin:10px 0px 10px 20px;
-  color:#FFFFFF;
-  text-align:center;
-}
-
-#cpbtn {
-  background:url('images/cpbtn.png');
   width:100px;
   float:left;
   height:80px;
@@ -732,34 +659,7 @@ margin-left: -345px;
   float:left;
 }
 
-.tblink {
-  width:173px;
-  height:37px;
-  position:relative;
-  top:0px;
-  left:10px;
-  background:url('images/cplink.png') no-repeat;
-}
-
-#cpclose {
-  width:173px;
-  height:37px;
-  position:relative;
-  top:711px;
-  left:800px;
-  background:url('images/cpclose.png') no-repeat;
-}
 /********* /control panel **********/
-
-/********* jigsaw puzzle *********/
-
-#jigsawpage {
-  
-  background:url('images/jigsaw/whole.png') no-repeat scroll 400px 20px #e6e6e6;
-  height:768px;
-  width:1024px !important;
-}
-/********* /jigsaw puzzle *********/
 
 /******* homescreen sprites**********/
 #schead { background:url('images/9-12/Home_Screen/sch.png') no-repeat 0 0; }

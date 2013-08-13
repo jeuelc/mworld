@@ -60,6 +60,12 @@
         $.mobile.changePage("sub-space-bh.html");
     });
     
+    $("#bhvideo").on('tap', function() {
+      //agvideo.webkitExitFullscreen();
+      bhsoundbg.play();
+      $.mobile.changePage("sub-space-bh.html");
+    });
+    
     function goBack() {
       $.mobile.changePage("sub-space-bh.html");
       bgsoundbh.play();

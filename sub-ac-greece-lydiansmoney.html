@@ -43,7 +43,7 @@
       <div class="spriteComing"></div>
     </section>
   <script src="js/spritespin.js" type="text/javascript"></script>
-  <script language="javascript" type="text/javascript" src="js/script.js"></script>
+  <script language="javascript" type="text/javascript" src="js/scriptpop.js"></script>
   <script>
     sound = new Audio(); // 'sound' is now an audio object
     
@@ -57,25 +57,6 @@
     })();
     
     $("#lydiansmoney").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
-	
-	
-    /*(function() {
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=81";
-      $.getJSON( url, function( data ) {
-        var html = data[0].Images;
-        var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-        var results = re.exec(html);
-        var source = results[1];
-        $('#money2').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'European Coins today... What are the main differences to Lydian coins?');")
-      });
-    })();*/
-    
-    /*$('#start-lydiansmoney').on('click', function() {
-      $('#actualaudio-lydiansmoney').show();
-      var oldHeight = $('#node-body-holder').height();
-      var newHeight = oldHeight - $('#actualaudio-lydiansmoney').height();
-      $('#node-body-holder').height(newHeight);
-    });*/
     
     function goBack() {
       $.mobile.changePage("sub-ac-greece-lydians.html");
