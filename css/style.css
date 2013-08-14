@@ -355,7 +355,8 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
 #blackholes, #whatisbh, #gravity, #bhcomefrom, #supergiant, #supernova, #snexplosion, #formgold, #neutron, #blackhole,
 #nscollide, #lifeabh, #galaxies, #bhingalaxy, #quasars, #binaries, #bhgo {
   background:url('images/5-8/Space/Black_Holes/bhbg.png') no-repeat;
-  height:748px;
+  height:748px !important;
+  overflow:hidden !important;
   width:1024px !important;
 }
 
@@ -926,7 +927,7 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
   top:169px;
   left:305px;
   text-align:center;
-  line-height:28px;
+  line-height:32px;
 }
 
 .navtitleholder h1, .bptitleholder h1, h1 {
@@ -936,6 +937,28 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
   font-weight:normal;
   padding:0;
   margin:0;
+}
+
+.navtitleholderbh h1, .bptitleholderbh h1 {
+  text-transform:uppercase;
+  color: #FFFFFF;
+  font-family:"Chalkboard SE";
+  font-weight:normal;
+  padding:0;
+  margin:0;
+}
+
+.navbh-content {
+  position:absolute;
+  left:305px;
+  top:263px;
+  width:410px;
+  height:359px;
+  overflow-y:scroll;
+  text-align:left;
+  font-family:"Chalkboard SE";
+  font-size:18px;
+  font-weight:bold;
 }
 
 .nav-content {
@@ -997,7 +1020,20 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
   text-align:left;
 }
 
-.bpcontent p, .nav-content p {
+.bpcontentbh {
+  width:413px;
+  height:356px;
+  position:absolute;
+  left:550px;
+  top:266px;
+  overflow-y:scroll;
+  font-family:"Chalkboard SE";
+  font-size:18px;
+  font-weight:bold;
+  text-align:left;
+}
+
+.bpcontent p, .nav-content p, .bpcontentbh p, .navbh-content p {
   margin-top:0 !important;
 }
 
