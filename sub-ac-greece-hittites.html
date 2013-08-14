@@ -54,7 +54,7 @@
         </div>
       </div>
       
-      <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
+      <div class="botlogoholder"><a href="home.html" class="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
       
     </div><!-- end of content -->
   </div></div><!--/anisold-->
@@ -133,7 +133,7 @@
     $('#startpop').on('click', function() {
     	$('#actualaudiopop').show();
     });
-    $('#homelinkag-hittites').on('tap', function() { 
+    $('.homelinkag').on('tap', function() { 
       mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
     });
     

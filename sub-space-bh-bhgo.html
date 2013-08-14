@@ -26,7 +26,7 @@
                     <p>The smallest black holes would disappear almost instantly, while black holes the mass of the Sun would survive for a very long time. Not a billion years, not a trillion years, but far far longer!</p>
                     <p>Maybe you can become an astrophysicist one day and learn more about the mysteries of black holes!</p>
                 </div>
-                <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
+                <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/5-8/bottomhome.png"></a></div>
 
             </div><!--end of content-->
         </div>
@@ -61,7 +61,7 @@
             $("#bhgo").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     
         })();
-        $('#homelinkbh-bhgo').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause();bgsoundbh.currentTime = 0; });
+        $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause();bgsoundbh.currentTime = 0; });
         function goBack() {
             $.mobile.changePage("sub-space-bh.html");
         }

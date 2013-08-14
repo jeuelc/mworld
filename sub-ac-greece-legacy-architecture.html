@@ -41,7 +41,7 @@
         <p>Greek theatrical traditions still influence playwrights and styles of theatre today.   'Greek tragedy' is a popular style of theatre today, more than 2,500 years after it was first developed!</p>         
       </div>
       
-      <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div> 
+      <div class="botlogoholder"><a href="home.html" class="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div> 
       
     </div> <!--end of content-->
   </div></div><!--/anisold-->
@@ -127,7 +127,7 @@
     function goBack() {
       $.mobile.changePage("sub-ac-greece-legacy.html");
     }
-    $('#homelinkag-legacy').on('tap', function() { 
+    $('.homelinkag').on('tap', function() { 
       mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
     });
     $("#polb1").on('tap', function() {

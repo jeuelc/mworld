@@ -9,13 +9,12 @@
   <div class="buildbtnholder"><img class="buildbtn" src="css/images/5-8/Ancient_Civilizations/Greece/buildbtn.png"></div>
   <div class="mpbtnholder"><img class="mpbtn" src="css/images/5-8/Ancient_Civilizations/Greece/mpbtn.png"></div>
   <div class="menubtnholder"><img class="menubtn" src="css/images/5-8/Ancient_Civilizations/Greece/menubtn.png"></div>
-  <div class="navtitleholder" style="padding-top:14px;"><h1>What is a Black Hole?</h1></div>
+  <div class="bptitleholderbh" style="padding-top:14px;"><h1>What is a Black Hole?</h1></div>
   <div id="spacechar">&nbsp;
     <div data-role="content" class="kidzcontent">
       <div class="v-spacer"></div>
       <div class="sidebarleft-half">
         <div id="zoomwrapper">
-          
           <div id="pol1" class="pPiece" style="left:100px;top:270px;">
              <img src="css/images/5-8/Space/Black_Holes/What_is_BH/gravitypol.jpg" alt="" />
           </div>
@@ -31,7 +30,7 @@
         <p>A black hole warps not just space but even time!  If you fell into a black hole, time would slow down and eventually grind to a halt!!  You would age slowly, but could never escape to tell anyone about your adventure.  Nothing, not even light, escapes a black hole.</p>
       </div>
       
-      <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/5-8/bottomhome.png"></a></div>
     </div><!--end of content-->
   </div><!--/spacechar-->
   <div class="audiopanel">
@@ -55,7 +54,7 @@
       $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");      
       $('div#pol1').css("z-index", 1);      
       $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");      
-      $('#volcvidholder').css({"visibility":"hidden", "z-index":-10});		
+      $('#eatinggasholder').css({"visibility":"hidden", "z-index":-10});		
       
       if(sound.canPlayType('audio/mpeg')) {
         $('#actualaudio-wibh').html('<audio id="wibhaudio" controls preload onpause="playbh()" onplay="pausebh()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/WhatIsBlackHole.mp3" type="audio/mpeg"></audio>');
@@ -72,7 +71,7 @@
     
     })();
     
-    $('#homelinkbh-whatisbh').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause(); bgsoundbh.currentTime = 0;});
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause(); bgsoundbh.currentTime = 0;});
     
     
     $('#vidbtn').on('tap', function() { bgsoundbh.pause(); });
@@ -93,7 +92,6 @@
     
     $("#pol1").on('tap', function() {
       $.mobile.changePage("sub-space-bh-gravity.html", { transition: "slide" });
-      $('#theatrelink')[0].click();
     });
     $("#pol2").on('tap', function() {
       $("#eatinggasholder").css({"visibility":"visible", "z-index":10});

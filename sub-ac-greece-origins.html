@@ -19,20 +19,19 @@
       </div>
       
       <div class="navbtn1">
-        <p><a href='sub-ac-greece-hittites.html' data-transition="slide"><img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/hittitesbtn.png"></a></p>
-      </div>
-      <div class="navbtn2">
         <p><a href='sub-ac-greece-mycenaeans.html' data-transition="slide"><img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/mycenaeansbtn.png"></a></p>
       </div>
-    
-      <div class="navbtn3">
-        <p><a href='sub-ac-greece-minoans.html' data-transition="slide" ><img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/minoansbtn.png"></a></p>
+      <div class="navbtn2">
+        <p><a href='sub-ac-greece-hittites.html' data-transition="slide"><img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/hittitesbtn.png"></a></p>
       </div>
-      <div class="navbtn4">
+      <div class="navbtn3">
         <p><a href='sub-ac-greece-tribes.html' data-transition="slide"><img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/greektribesbtn.png"></a></p>
       </div>
+      <div class="navbtn4">
+        <p><a href='sub-ac-greece-minoans.html' data-transition="slide" ><img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/minoansbtn.png"></a></p>
+      </div>
       
-      <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
+      <div class="botlogoholder"><a href="home.html" class="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
       
     </div> <!--end of content-->
   </div></div><!--/anisold-->
@@ -72,7 +71,7 @@
     function goBack() {
       $.mobile.changePage("sub-ac-greece.html");
     }
-    $('#homelinkag-origins').on('tap', function() { 
+    $('.homelinkag').on('tap', function() { 
       mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
     });
     /* ******************** */

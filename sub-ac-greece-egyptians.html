@@ -42,7 +42,7 @@
         <p>The Ancient Greeks had trade and cultural links with the Egyptians over many hundreds of years.  Eventually, Alexander the Great conquered Egypt and founded a new city there called Alexandria!  Alexandria is today the second largest city in Egypt.</p>
       </div>
         
-    <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div> 
+    <div class="botlogoholder"><a href="home.html" class="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div> 
     
     </div> <!-- end content -->  
   </div></div><!--/anisold-->
@@ -117,7 +117,7 @@
     function goBack() {
       $.mobile.changePage("sub-ac-greece-aroundag.html");
     }
-    $('#homelinkag-egyptians').on('tap', function() { 
+    $('.homelinkag').on('tap', function() { 
       mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
     });
     

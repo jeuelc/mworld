@@ -29,7 +29,7 @@
                     <p>What would happen if a black hole hit the Earth? If it was a big black hole, it would swallow the Earth. Luckily, this is very unlikely to ever happen.</p>
                     <p>If a small black hole hit the Earth it would pass straight through the Earth, and keep on going.  The Universe really is a strange place too!</p>
                 </div>
-                <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
+                <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/5-8/bottomhome.png"></a></div>
             </div><!--end of content-->
         </div>
     </div><!--/anisold-->
@@ -71,7 +71,7 @@
                 $('#sagittarius').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Sagittarius A*, the site of the supermassive black hole ath the center of our galaxy... Can you see the black hole?');")
             });
         })();
-        $('#homelinkbh-bhingalaxy').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause(); bgsoundbh.currentTime = 0;});
+        $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause(); bgsoundbh.currentTime = 0;});
         function goBack() {
             $.mobile.changePage("sub-space-bh-galaxies.html");
         }

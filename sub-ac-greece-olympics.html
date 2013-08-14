@@ -22,7 +22,7 @@
           <p>Do you like sports?  Maybe one day you will compete in the modern Olympic Games.  You might be competing in a sport that the ancient Greeks played too!</p>
         </div><!--/node-content/half-->
         
-        <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div> 
+        <div class="botlogoholder"><a href="home.html" class="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div> 
         
       </div><!--/.kidzcontent-->
     </div><!--/acgreecechar-->
@@ -70,7 +70,7 @@
       olympicsaudiobg.pause();
       agsoundbg.play();
     }
-    $('#homelinkag-olympics').on('tap', function() { 
+    $('.homelinkag').on('tap', function() { 
       mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
     });
     

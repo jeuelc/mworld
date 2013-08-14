@@ -41,7 +41,7 @@
         <!--<p style="margin-top:20px;"><a href="sub-ac-greece-xenophon.html" data-role="button" data-transition="slide">Hear the story of Xenophon <br>and the education of the Persian King!</a></p>-->
       </div>
       
-      <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
+      <div class="botlogoholder"><a href="home.html" class="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
       
     </div> <!-- end content -->  
   </div></div><!--/anisold-->
@@ -75,7 +75,7 @@
     function goBack() {
       $.mobile.changePage("sub-ac-greece-aroundag.html");
     }
-    $('#homelinkag-persians').on('tap', function() { 
+    $('.homelinkag').on('tap', function() { 
       mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
     });
 	

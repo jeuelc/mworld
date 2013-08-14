@@ -33,7 +33,7 @@
         <p>Why do you think Persian education focused on these three things?  What do you learn at school?”</p>
       </div>
       
-      <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
+      <div class="botlogoholder"><a href="home.html" class="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
       
     </div> <!--end of content-->
   </div></div><!--/anisold-->
@@ -81,7 +81,7 @@
       var newHeight = oldHeight - $('#actualaudio-temples').height();
       $('#node-body-holder').height(newHeight);
     });
-    $('#homelinkag-temples').on('tap', function() { 
+    $('.homelinkag').on('tap', function() { 
       mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
     });
     $("#polb1").on('tap', function() {

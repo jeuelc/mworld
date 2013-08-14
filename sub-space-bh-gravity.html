@@ -7,7 +7,7 @@
   <div class="buildbtnholder"><img class="buildbtn" src="css/images/5-8/Ancient_Civilizations/Greece/buildbtn.png"></div>
   <div class="mpbtnholder"><img class="mpbtn" src="css/images/5-8/Ancient_Civilizations/Greece/mpbtn.png"></div>
   <div class="menubtnholder"><img class="menubtn" src="css/images/5-8/Ancient_Civilizations/Greece/menubtn.png"></div>
-  <div class="navtitleholder" style="padding-top:14px;"><h1>Gravity</h1></div>
+  <div class="bptitleholderbh" style="padding-top:14px;"><h1>Gravity</h1></div>
   <div id="spacechar">&nbsp;
     <div data-role="content" class="kidzcontent">
       <div class="v-spacer"></div>
@@ -18,9 +18,16 @@
         <p>You might be wondering why the pull of gravity exists at all.  You may be surprised to know that scientists still do not understand why gravity exists.  Maybe one day you can become a scientist and help us to solve the puzzle of gravity!</p>
       </div>
       
-      <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/5-8/bottomhome.png"></a></div>
     </div><!--end of content-->
   </div><!--/spacechar-->
+  <div class="audiopanel">
+    <div class="bbh"><img id="gravityaudiobbtn" src="css/images/audio/audio-back.png"></div>
+    <div class="plbh"><img id="gravityaudioplbtn" src="css/images/audio/audio-play.png"></div>
+    <div class="psbh"><img id="gravityaudiopsbtn" src="css/images/audio/audio-pause.png"></div>
+    <div class="fbh"><img id="gravityaudiofbtn" src="css/images/audio/audio-forw.png"></div>
+    <div id="actualaudio-gravity" style="visibility:hidden;"></div>
+  </div>
   <script>
     sound = new Audio(); // 'sound' is now an audio object
     (function() {
@@ -31,7 +38,7 @@
       $("#gravity").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     
     })();
-    $('#homelinkbh-gravity').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause();bgsoundbh.currentTime = 0; });
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause();bgsoundbh.currentTime = 0; });
     $('#start-gravity').on('click', function() {
     	$('#actualaudio-gravity').show();
       var oldHeight = $('#node-body-holder').height();
@@ -50,5 +57,25 @@
     function pausebg() {
       bgsoundbh.pause();
     }
+    /* ******************** */
+    $("#gravityaudioplbtn").on('tap', function() {
+      gravityaudio.play();
+      $(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#gravityaudiofbtn").on('tap', function() {
+      var ctime = gravityaudio.currentTime;
+      gravityaudio.currentTime = ctime + 10;
+    });
+    
+    $("#gravityaudiobbtn").on('tap', function() {
+      var ctime = gravityaudio.currentTime;
+      gravityaudio.currentTime = ctime - 10;
+    });
+    
+    $("#gravityaudiopsbtn").on('tap', function() {
+      gravityaudio.pause();
+      $(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
   </script>
 </div>

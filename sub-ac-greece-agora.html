@@ -24,7 +24,7 @@
         <p>The Agora was also the place where people met to discuss politics and to debate ways of thinking about the world.  Athenians were proud of their system of politics, which they called demoskratos (democracy).  Democracy in Athens meant people could vote about decisions in their society.  But democracy in Athens was quite limited. Only some men could vote, and women were not allowed to vote at all!</p>
       </div>
       
-      <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
+      <div class="botlogoholder"><a href="home.html" class="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
       
     </div><!-- end of content -->
   </div></div><!--/anisold-->
@@ -63,7 +63,7 @@
     function goBack() {
       $.mobile.changePage("sub-ac-greece-lifeinag.html");
     }
-    $('#homelinkag-agora').on('tap', function() { 
+    $('.homelinkag').on('tap', function() { 
       mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
     });
     

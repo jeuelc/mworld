@@ -28,7 +28,7 @@
                     <p>When this happens with the really large black holes at the centre of galaxies, the particles falling towards the black hole release so much energy that the surrounding area can be brighter than a million Suns!  These spectacularly bright objects are called quasars.</p>
                     <p>Quasars can be so bright that they can be seen from very, very far away.  One quasar, called Quasar ULAS J1120+0641, is so bright that we can see its light in telescopes on the Earth, even though it has taken 13 billion years for that light to reach the Earth!</p>
                 </div>
-                <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
+                <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/5-8/bottomhome.png"></a></div>
 
             </div><!--end of content-->
         </div>
@@ -56,7 +56,7 @@
             $("#quasars").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     
         })();
-        $('#homelinkbh-quasars').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause();bgsoundbh.currentTime = 0; });
+        $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause();bgsoundbh.currentTime = 0; });
         function goBack() {
             $.mobile.changePage("sub-space-bh-lifeabh.html");
         }

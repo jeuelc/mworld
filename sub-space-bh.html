@@ -33,7 +33,7 @@
         <p><a href="sub-space-bh-lifeabh.html" data-transition="slide" ><img src="css/images/5-8/Space/Black_Holes/lifebtn.png"></a></p>
       </div>
         
-      <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/5-8/bottomhome.png"></a></div>
     </div> <!-- end content -->  
     
   </div><!--/spacechar-->
@@ -54,7 +54,7 @@
       $("#blackholes").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     })();
     
-    $('#homelinkbh-blackholes').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause(); bgsoundbh.currentTime = 0;});
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause(); bgsoundbh.currentTime = 0;});
     
     function goBack() {
       $.mobile.changePage("sub-space.html");

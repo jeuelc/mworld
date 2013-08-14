@@ -28,7 +28,7 @@
         <p>What type of coins do you use at home? Can you explain to your parents where coins came from? </p>
       </div>
       
-      <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
+      <div class="botlogoholder"><a href="home.html" class="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
       
     </div> <!-- end content -->  
    </div></div><!--/anisold-->
@@ -62,7 +62,7 @@
       $.mobile.changePage("sub-ac-greece-lydians.html");
     }
     
-    $('#homelinkag-lydiansmoney').on('tap', function() { 
+    $('.homelinkag').on('tap', function() { 
       mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
     });
     $(".trade").on('tap', function() {

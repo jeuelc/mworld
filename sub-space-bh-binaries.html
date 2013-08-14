@@ -27,7 +27,7 @@
                     <p>The Cygnus X-1 black hole is sucking gas from the star beside it. As the gas falls towards the black hole, the gas gets so hot that X-rays are produced.</p>
                     <p>We can see these X-rays with satellites, and make images of what it might look like if we could see it up close. It would be scary but very beautiful!</p>
                 </div>
-                <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
+                <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/5-8/bottomhome.png"></a></div>
 
             </div><!--end of content-->
         </div>
@@ -61,7 +61,7 @@
             $("#binaries").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     
         })();
-        $('#homelinkbh-binaries').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause(); bgsoundbh.currentTime = 0;});
+        $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause(); bgsoundbh.currentTime = 0;});
         function goBack() {
             $.mobile.changePage("sub-space-bh-lifeabh.html");
         }

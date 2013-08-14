@@ -36,7 +36,7 @@
         <!--<p style="margin:auto;"><a href="#" data-role="button" id="spartancall">Hear the Spartan call to arms!</a></p>-->
       </div>
       
-      <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
+      <div class="botlogoholder"><a href="home.html" class="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
       
     </div> <!--end of content-->
   </div></div><!--/anisold-->
@@ -110,7 +110,7 @@
       sound2.pause();
       agsoundbg.play();
     }
-    $('#homelinkag-spartans').on('tap', function() { 
+    $('.homelinkag').on('tap', function() { 
       mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
     });
     $("#polb3").on('tap', function() {

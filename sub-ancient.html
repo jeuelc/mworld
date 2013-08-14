@@ -18,7 +18,7 @@
       <div class="aclink"><a href="#" data-transition="slide"><img src="css/images/5-8/Ancient_Civilizations/incasbtn.png"></a></div>
     </div>
     
-    <div class="botlogoholder"><a href="home.html" id="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
+    <div class="botlogoholder"><a href="home.html" class="homelinkag"><img src="css/images/5-8/bottomhome.png"></a></div>
     
     <div id="pre-ag" style="width:1024px;height:748px;position:absolute;left:0px;top:0px;visibility:hidden;background:#000000;">
       <div class="previdcontainer">
@@ -58,7 +58,7 @@
       agvideo.play();
       //agvideo.webkitEnterFullscreen();
     });
-    $('#homelinkancient').on('tap', function() { 
+    $('.homelinkag').on('tap', function() { 
       mainaudiobg.play(); ancientsoundbg.pause(); ancientsoundbg.currentTime = 0; 
     });
     $('#proceedtoag').on('tap', function() {

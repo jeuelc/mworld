@@ -360,10 +360,10 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
   width:1024px !important;
 }
 
-#blackholes2, #whatisbh2, #gravity2, #bhcomefrom2, #supergiant2, #supernova2, #snexplosion2, #formgold2, #neutron2, 
-#blackhole2, #nscollide2, #lifeabh2, #galaxies2, #bhingalaxy2, #quasars2, #binaries2, #bhgo2 {
-  background:url('images/9-12/Space/Black_Holes/bhbg.png') no-repeat;
-  height:748px;
+#seebh {
+  background:url('images/5-8/Space/Black_Holes/bhbg.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
   width:1024px !important;
 }
 
@@ -920,7 +920,27 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
   left:194px;
 }
 
+.bptitleholderbh {
+  width:627px;
+  height:68px;
+  text-align:center;
+  line-height:28px;
+  position:absolute;
+  top:169px;
+  left:194px;
+}
+
 .navtitleholder {
+  width:410px;
+  height:68px;
+  position:absolute;
+  top:169px;
+  left:305px;
+  text-align:center;
+  line-height:32px;
+}
+
+.navtitleholderbh {
   width:410px;
   height:68px;
   position:absolute;
