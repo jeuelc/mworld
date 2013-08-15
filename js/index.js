@@ -663,4 +663,3 @@ $('#originsofgreece2').live( 'pagehide',function(event, ui){
 $('#ancientgreece').live( 'pagehide',function(event, ui){
   animateAGS =  false;
 });
-

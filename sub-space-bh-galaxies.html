@@ -41,6 +41,13 @@
             </div><!--end of content-->
         </div>
     </div><!--/anisold-->
+  <div class="audiopanel">
+    <div class="bbh"><img id="galaxiesaudiobbtn" src="css/images/audio/audio-back.png"></div>
+    <div class="plbh"><img id="galaxiesaudioplbtn" src="css/images/audio/audio-play.png"></div>
+    <div class="psbh"><img id="galaxiesaudiopsbtn" src="css/images/audio/audio-pause.png"></div>
+    <div class="fbh"><img id="galaxiesaudiofbtn" src="css/images/audio/audio-forw.png"></div>
+    <div id="actualaudio-galaxies" style="visibility:hidden;"></div>
+  </div>
     <script>
         sound = new Audio();
         (function() {
@@ -49,7 +56,7 @@
             $('div#polb1').css("z-index", 2);
             $('div#polb2').css("z-index", 1);
             $('div#polb2 > img').css("-webkit-transform", "rotate(5deg)");
-            $('div#polb3 > img').css("-webkit-transform", "rotate(-5deg)");
+            $('div#polb3 > img').css("-webkit-transform", "rotate(-3deg)");
            
              if(sound.canPlayType('audio/mpeg')) {
                  $('#actualaudio-galaxies').html('<audio controls preload id="galaxiesaudio" onpause="pausedaudio()" onplay="pausebg()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page18_0.mp3" type="audio/mpeg"></audio>');
@@ -63,7 +70,7 @@
     
     
         function goBack() {
-            $.mobile.changePage("sub-space-bh-galaxies.html");
+            $.mobile.changePage("sub-space-bh-lifeabh.html");
         }
     
        function pausedaudio() {
@@ -84,9 +91,27 @@
        
        $("#polb1").on('tap', function() {
          $('#andromedalink')[0].click();
-         
        });
-
+    /* ******************** */
+    $("#galaxiesaudioplbtn").on('tap', function() {
+      galaxiesaudio.play();
+      $(".galaxiesaudiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#galaxiesaudiofbtn").on('tap', function() {
+      var ctime = galaxiesaudio.currentTime;
+      galaxiesaudio.currentTime = ctime + 10;
+    });
+    
+    $("#galaxiesaudiobbtn").on('tap', function() {
+      var ctime = galaxiesaudio.currentTime;
+      galaxiesaudio.currentTime = ctime - 10;
+    });
+    
+    $("#galaxiesaudiopsbtn").on('tap', function() {
+      galaxiesaudio.pause();
+      $(".galaxiesaudiopanel").css({"backgroundPosition":"0px 0px"});
+    });
     </script>
    <script src="js/threecardLogicb.js"></script>
 </div>

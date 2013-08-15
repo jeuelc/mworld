@@ -15,6 +15,22 @@
       <div class="sidebarleft-half">
         <a id="snremainslink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Space/Black_Holes/Where_BH_Come/snremains.jpg', 'The remains of a supernova explosion');">click here</a>
         <a id="goldbarslink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Space/Black_Holes/Where_BH_Come/snremains.jpg', 'Gold... it looks great and costs a lot, but did you know it comes from the inside of a supernova?');">click here</a>
+        <div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f1_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/5-8/Space/Black_Holes/Where_BH_Come/quiztime2pol.jpg">
+            </div>
+            <div id="backofcard" class="back face center" style="background:url(css/images/5-8/Space/Black_Holes/Where_BH_Come/quiztime2back.jpg) no-repeat;">
+              <div style="width:100px;height:40px;position:relative;top:157px;left:200px;">
+                <input type="text" id="tfanswer1" style="background:rgba(255, 255, 255, 0.25);border:none;text-align:center;">
+              </div>
+              <div style="width:324px;height:62px;position:relative;top:156px;left:5x;">
+                <img id="backbtn1" src="css/images/5-8/Space/Black_Holes/Where_BH_Come/backbtn.png">
+                <img id="submitans" src="css/images/5-8/Space/Black_Holes/Where_BH_Come/submitbtn.png">
+              </div>
+            </div>
+          </div><!--/f1+card-->
+        </div><!--/f1_container-->
         <div id="zoomwrapper">    
           <div id="polb1" class="pPiece" style="left:100px;top:270px;">
              <img src="css/images/5-8/Space/Black_Holes/Where_BH_Come/snremainspol.jpg" alt="" />
@@ -54,7 +70,8 @@
       $('div#polb1').css("z-index", 2);      
       $('div#polb2').css("z-index", 1);      
       $('div#polb2 > img').css("-webkit-transform", "rotate(5deg)");      
-      $('div#polb3 > img').css("-webkit-transform", "rotate(-3deg)"); 
+      $('div#polb3 > img').css("-webkit-transform", "rotate(-5deg)"); 
+      $('#f1_container').css({"visibility":"hidden", "z-index":0});
       
       if(sound.canPlayType('audio/mpeg')) {        
         $('#actualaudio-formgold').html('<audio controls preload id="formgoldaudio" onpause="pausedaudio()" onplay="pausebg()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/GoldFormation.mp3" type="audio/mpeg"></audio>');
@@ -77,7 +94,39 @@
     function pausebg() {
       bgsoundbh.pause();
     }		
-    $("#polb3").on('tap', function() {           });
+    
+    $("#submitans").on('tap', function() {
+      var tfans1 = $('#tfanswer1').val();
+      if(tfans1.toLowerCase() == "true") {
+        alert("That's right... nice job, you've earned 100 MPoints.");
+      } else {
+        alert("Sorry, that's not right, try again...");
+      }
+    });
+    
+    $("#backbtn1").on('tap', function() {
+      $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"transform": "rotateY(0deg)"});
+      setTimeout(function() {
+        $("#polb3").css({"visibility":"visible", "z-index":3});
+        $('#f1_container').css({"visibility":"hidden", "z-index":0});
+      }, 1000);
+      //$("#hittites").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+      //$("#hittites").swipe("enable");
+    });
+    
+    $("#polb3").on('tap', function() {
+      $('#f1_container').css({"visibility":"visible", "z-index":10});
+      $(this).css({"visibility":"hidden"});
+      $('#f1_card').css({"-webkit-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"transform": "rotateY(180deg)"});
+      //$("#hittites").swipe("disable");
+      //$("#dopple").css({"visibility":"hidden"});
+    });
     $("#polb2").on('tap', function() {      $('#goldbarslink')[0].click();    });        
     $("#polb1").on('tap', function() {      $('#snremainslink')[0].click();    });  
     

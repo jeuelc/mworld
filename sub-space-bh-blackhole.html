@@ -9,7 +9,7 @@
   <div class="buildbtnholder"><img class="buildbtn" src="css/images/5-8/Ancient_Civilizations/Greece/buildbtn.png"></div>
   <div class="mpbtnholder"><img class="mpbtn" src="css/images/5-8/Ancient_Civilizations/Greece/mpbtn.png"></div>
   <div class="menubtnholder"><img class="menubtn" src="css/images/5-8/Ancient_Civilizations/Greece/menubtn.png"></div>
-    
+  <div id="bonus-bh" class="talkbubble" style="background:url(css/images/5-8/Space/Black_Holes/game/bonustalk.png) no-repeat; width:473px;height:296px;position:absolute;left:300px;top:40px;visibility:hidden;"></div><!--/bonus-msm-->
   <div class="bptitleholder" style="padding-top:14px;"><h1>From Supergiant to Black Hole...</h1></div>
         <div id="spacechar">&nbsp;
             <div data-role="content" class="kidzcontent">
@@ -41,6 +41,9 @@
 
             </div><!--end of content-->
     </div>
+    <section class="container" style="height:670px;margin-top:-600px;">
+      <div class="spriteComing" style="z-index:10;"></div>
+    </section>
    <div class="audiopanel">
     <div class="bbh"><img id="blackholeaudiobbtn" src="css/images/audio/audio-back.png"></div>
     <div class="plbh"><img id="blackholeaudioplbtn" src="css/images/audio/audio-play.png"></div>
@@ -48,6 +51,8 @@
     <div class="fbh"><img id="blackholeaudiofbtn" src="css/images/audio/audio-forw.png"></div>
     <div id="actualaudio-blackhole" style="visibility:hidden;"></div>
   </div>
+  <script src="js/spritespin.js" type="text/javascript"></script>
+  <script language="javascript" type="text/javascript" src="js/scriptblackhole.js"></script>
     <script>
         sound = new Audio(); // 'sound' is now an audio object
         soundpop = new Audio(); // 'sound' is now an audio object
@@ -96,7 +101,11 @@
             
             });
         })();
-    
+        
+        $("#bonus-bh").on('tap', function() {
+          $.mobile.changePage("game-bh2.html", {transition: "flip"});
+        })
+      
         function goBack() {
             $.mobile.changePage("sub-space-bh-comefrom.html");
         }

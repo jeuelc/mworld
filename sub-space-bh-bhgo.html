@@ -7,56 +7,43 @@
   <div class="buildbtnholder"><img class="buildbtn" src="css/images/5-8/Ancient_Civilizations/Greece/buildbtn.png"></div>
   <div class="mpbtnholder"><img class="mpbtn" src="css/images/5-8/Ancient_Civilizations/Greece/mpbtn.png"></div>
   <div class="menubtnholder"><img class="menubtn" src="css/images/5-8/Ancient_Civilizations/Greece/menubtn.png"></div>
-    <script src="js/hammer.js"></script>
-    <script src="js/jquery.hammer.js"></script>
-    <div id="bonus-ags" class="talkbubble" style="background:url(css/images/5-8/Space/Black_Holes/game/bonustalk.png) no-repeat; width:473px;height:296px;position:absolute;left:500px;top:40px;visibility:hidden;"></div><!--/bonus-ags-->
-    <div class="bptitleholder" style="padding-top:14px;"><h1>Where do Black Holes Go?</h1></div>
-    <div id="anisold">
-        <div id="spacechar">&nbsp;
-            <div data-role="content" class="kidzcontent">
-                <div class="v-spacer"></div>
-                <div class="sidebarleft-half">
-                    <div id="eal1short-oag" style="position:absolute;left:100px;top:235px;">
-                        <p><a href='#' data-transition="slide" id="bhphoto"><img src="css/images/5-8/Space/Black_Holes/Where_BH_Go/blackholebtn.png"></a></p>
-                    </div>
-                </div>
-                <div class="bpcontent">
-                    <p>Where do black holes go?  If you keep feeding them with gas and dust from nearby stars, they just keep getting bigger and bigger.  But what if you just leave them alone?</p>
-                    <p>The astrophysicist Stephen Hawking has proposed that black holes can very gradually leak energy, and thus lose mass. This process, called Hawking radiation, would result in black holes evaporating away. </p>
-                    <p>The smallest black holes would disappear almost instantly, while black holes the mass of the Sun would survive for a very long time. Not a billion years, not a trillion years, but far far longer!</p>
-                    <p>Maybe you can become an astrophysicist one day and learn more about the mysteries of black holes!</p>
-                </div>
-                <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/5-8/bottomhome.png"></a></div>
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Where do Black Holes Go?</h1></div>
+  <div id="anisold">
+      <div id="spacechar">&nbsp;
+          <div data-role="content" class="kidzcontent">
+              <div class="v-spacer"></div>
+              <div class="sidebarleft-half">
+              </div>
+              <div class="bpcontent">
+                  <p>Where do black holes go?  If you keep feeding them with gas and dust from nearby stars, they just keep getting bigger and bigger.  But what if you just leave them alone?</p>
+                  <p>The astrophysicist Stephen Hawking has proposed that black holes can very gradually leak energy, and thus lose mass. This process, called Hawking radiation, would result in black holes evaporating away. </p>
+                  <p>The smallest black holes would disappear almost instantly, while black holes the mass of the Sun would survive for a very long time. Not a billion years, not a trillion years, but far far longer!</p>
+                  <p>Maybe you can become an astrophysicist one day and learn more about the mysteries of black holes!</p>
+              </div>
+              <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/5-8/bottomhomebh.png"></a></div>
 
-            </div><!--end of content-->
-        </div>
-    </div><!--/anisold-->
-    <section class="container" style="height:670px;margin-top:0px;">
-        <div class="spriteComing"></div>
+          </div><!--end of content-->
+      </div>
+  </div><!--/anisold-->
+    <section class="container" style="height:670px;margin-top:-600px;">
+      <div class="spriteComing"></div>
     </section>
+    <div class="audiopanel">
+      <div class="bbh"><img id="bhgoaudiobbtn" src="css/images/audio/audio-back.png"></div>
+      <div class="plbh"><img id="bhgoaudioplbtn" src="css/images/audio/audio-play.png"></div>
+      <div class="psbh"><img id="bhgoaudiopsbtn" src="css/images/audio/audio-pause.png"></div>
+      <div class="fbh"><img id="bhgoaudiofbtn" src="css/images/audio/audio-forw.png"></div>
+      <div id="actualaudio-bhgo" style="visibility:hidden;"></div>
+    </div>
+    
     <script src="js/spritespin.js" type="text/javascript"></script>
-    <script language="javascript" type="text/javascript" src="js/script.js"></script>    
+    <script language="javascript" type="text/javascript" src="js/scriptbhgo.js"></script>
     <script>
         sound = new Audio(); // 'sound' is now an audio object
         (function() {
-            var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=58";
-            $.getJSON( url, function( data ) {
-                if(sound.canPlayType('audio/mpeg')) {
-                    /*sound.src = data[0].Audio;*/
-                    $('#psbutton-bhgo').show();
-                    $('#actualaudio-bhgo').html('<audio controls preload id="wherebhgoaudio" onpause="pausedaudio()" onplay="pausebg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-                } else {
-                    sound.src = null;
-                    $('#psbutton-bhgo').html('Your system does not support HTML5 Audio.');
-                    $('#psbutton-bhgo').show();
-                }
-            
-                var html = data[0].Images;
-                var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-                var results = re.exec(html);
-                var source = results[1];
-                $('#bhphoto').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Black Hole');")
-            });
+          if(sound.canPlayType('audio/mpeg')) {
+              $('#actualaudio-bhgo').html('<audio controls preload id="bhgoaudio" onpause="pausedaudio()" onplay="pausebg()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page22_0.mp3" type="audio/mpeg"></audio>');
+          } 
     
             $("#bhgo").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     
@@ -73,12 +60,26 @@
         function pausebg() {
             bgsoundbh.pause();
         }
+        
+/* ******************** */
+    $("#bhgoaudioplbtn").on('tap', function() {
+      bhgoaudio.play();
+      $(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
     
-        $('#start-bhgo').on('click', function() {
-            $('#actualaudio-bhgo').show();
-            var oldHeight = $('#node-body-holder').height();
-            var newHeight = oldHeight - $('#actualaudio-bhgo').height();
-            $('#node-body-holder').height(newHeight);
-        });
+    $("#bhgoaudiofbtn").on('tap', function() {
+      var ctime = bhgoaudio.currentTime;
+      bhgoaudio.currentTime = ctime + 10;
+    });
+    
+    $("#bhgoaudiobbtn").on('tap', function() {
+      var ctime = bhgoaudio.currentTime;
+      bhgoaudio.currentTime = ctime - 10;
+    });
+    
+    $("#bhgoaudiopsbtn").on('tap', function() {
+      bhgoaudio.pause();
+      $(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
     </script>
 </div>

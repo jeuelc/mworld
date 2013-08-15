@@ -14,14 +14,19 @@
     <div data-role="content" class="kidzcontent">
       <div class="v-spacer"></div>
       <div class="sidebarleft-half">
-        <a id="supergiantlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Space/Black_Holes/Where_BH_Come/supergiantstar.jpg', 'How big can a supergiant be...');">click here</a>
         <div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
           <div id="f1_card">
             <div class="front face">
               <img id="dopple" src="css/images/5-8/Space/Black_Holes/Where_BH_Come/quiztimepol.jpg">
             </div>
-            <div id="backofcard" class="back face center">
-              <p>Any content can go here.</p>
+            <div id="backofcard" class="back face center" style="background:url(css/images/5-8/Space/Black_Holes/Where_BH_Come/quiztime3back.jpg) no-repeat;">
+              <div style="width:100px;height:40px;position:relative;top:157px;left:200px;">
+                <input type="text" id="tfanswer3" style="background:rgba(255, 255, 255, 0.25);border:none;text-align:center;">
+              </div>
+              <div style="width:324px;height:62px;position:relative;top:156px;left:5x;">
+                <img id="backbtn3" src="css/images/5-8/Space/Black_Holes/Where_BH_Come/backbtn.png">
+                <img id="submitans3" src="css/images/5-8/Space/Black_Holes/Where_BH_Come/submitbtn.png">
+              </div>
             </div>
           </div><!--/f1+card-->
         </div><!--/f1_container-->
@@ -49,9 +54,10 @@
         </div>
       </div>
       
-      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/5-8/bottomhome.png"></a></div>
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/5-8/bottomhomebh.png"></a></div>
     </div><!--end of content-->
   </div><!--/spacechar-->
+  
   <div class="audiopanel">
     <div class="bbh"><img id="supergiantaudiobbtn" src="css/images/audio/audio-back.png"></div>
     <div class="plbh"><img id="supergiantaudioplbtn" src="css/images/audio/audio-play.png"></div>
@@ -59,12 +65,14 @@
     <div class="fbh"><img id="supergiantaudiofbtn" src="css/images/audio/audio-forw.png"></div>
     <div id="actualaudio-supergiant" style="visibility:hidden;"></div>
   </div>
+  
   <script>
     sound = new Audio(); // 'sound' is now an audio object
     (function() {
       $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");      
-      $('div#pol1').css("z-index", 1);      
-      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");      
+      $('div#pol1').css("z-index", 1);
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $("#f1_container").css("z-index", 0);      
       
            /* $('#node-body-minoans').html(data[0].Body);*/
       if(sound.canPlayType('audio/mpeg')) {
@@ -89,6 +97,15 @@
     	$('#actualaudiopop').show();
     });
     
+    $("#submitans3").on('tap', function() {
+      var tfans3 = $('#tfanswer3').val();
+      if(tfans3.toLowerCase() == "true") {
+        alert("Correct, you've earned 100 MPoints.");
+      } else {
+        alert("Sorry, that's not right, try again...");
+      }
+    });
+    
     function goBack() {
       $.mobile.changePage("sub-space-bh-comefrom.html");
     }
@@ -101,7 +118,7 @@
       bgsoundbh.pause();
     }
     $("#pol1").on('tap', function() {
-      $('#supergiantlink')[0].click();
+      $.mobile.changePage("sub-space-bh-supergiantpage.html", {transition: "slide"});
     });
     $("#pol2").on('tap', function() {
       $('#f1_container').css({"visibility":"visible", "z-index":10});
@@ -113,7 +130,7 @@
       //$("#hittites").swipe("disable");
       //$("#dopple").css({"visibility":"hidden"});
     });
-    $("#f1_container").on('tap', function() {
+    $("#backbtn3").on('tap', function() {
       $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
       $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
       $('#f1_card').css({"-o-transform": "rotateY(0deg)"});

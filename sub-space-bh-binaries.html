@@ -7,18 +7,16 @@
   <div class="buildbtnholder"><img class="buildbtn" src="css/images/5-8/Ancient_Civilizations/Greece/buildbtn.png"></div>
   <div class="mpbtnholder"><img class="mpbtn" src="css/images/5-8/Ancient_Civilizations/Greece/mpbtn.png"></div>
   <div class="menubtnholder"><img class="menubtn" src="css/images/5-8/Ancient_Civilizations/Greece/menubtn.png"></div>
-    <script src="js/hammer.js"></script>
-    <script src="js/jquery.hammer.js"></script>
-    <div id="bonus-ags" class="talkbubble" style="background:url(css/images/5-8/Space/Black_Holes/game/bonustalk.png) no-repeat; width:473px;height:296px;position:absolute;left:500px;top:40px;visibility:hidden;"></div><!--/bonus-ags-->
     <div class="bptitleholder" style="padding-top:14px;"><h1>Binaries</h1></div>
     <div id="anisold">
         <div id="spacechar">&nbsp;
             <div data-role="content" class="kidzcontent">
                 <div class="v-spacer"></div>
                 <div class="sidebarleft-half">
-                    <div id="eal3short" style="position:absolute;left:100px;top:250px;">
-                        <a href="#" id="cygnus"><img src="css/images/5-8/Space/Black_Holes/Life_Around_BH/cygnusbtn.png"></a>
-                    </div>
+                  <a id="cygnus-x1link" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/5-8/Space/Black_Holes/Life_Around_BH/cygnus-x1.jpg', 'The beautiful Cygnus X-1 black hole sucking gas from its nearby star...');">click here</a>
+                  <div id="polb1" class="pPiece" style="left:100px;top:270px;">
+                     <img src="css/images/5-8/Space/Black_Holes/Life_Around_BH/cygnus-x1pol.jpg" alt="" />
+                  </div>
                 </div>
                 <div class="bpcontent">
                     <p>Many of the stars in the night sky are binaries. Binary means two pieces or parts. It this case, binaries are two stars that are locked into orbit around each other. </p>
@@ -27,36 +25,27 @@
                     <p>The Cygnus X-1 black hole is sucking gas from the star beside it. As the gas falls towards the black hole, the gas gets so hot that X-rays are produced.</p>
                     <p>We can see these X-rays with satellites, and make images of what it might look like if we could see it up close. It would be scary but very beautiful!</p>
                 </div>
-                <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/5-8/bottomhome.png"></a></div>
+                <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/5-8/bottomhomebh.png"></a></div>
 
             </div><!--end of content-->
         </div>
     </div><!--/anisold-->
-    <section class="container" style="height:670px;margin-top:0px;">
-        <div class="spriteComing"></div>
-    </section>
-    <script src="js/spritespin.js" type="text/javascript"></script>
-    <script language="javascript" type="text/javascript" src="js/script.js"></script>    
+     <div class="audiopanel">
+      <div class="bbh"><img id="binariesaudiobbtn" src="css/images/audio/audio-back.png"></div>
+      <div class="plbh"><img id="binariesaudioplbtn" src="css/images/audio/audio-play.png"></div>
+      <div class="psbh"><img id="binariesaudiopsbtn" src="css/images/audio/audio-pause.png"></div>
+      <div class="fbh"><img id="binariesaudiofbtn" src="css/images/audio/audio-forw.png"></div>
+      <div id="actualaudio-binaries" style="visibility:hidden;"></div>
+    </div>
     <script>
         sound = new Audio(); // 'sound' is now an audio object
         (function() {
-            var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=51";
-            $.getJSON( url, function( data ) {
-                var html = data[0].Images;
-                var re = /<img[^>]+src="http:\/\/([^">]+)/g;
-                var results = re.exec(html);
-                var source = results[1];
-                $('#cygnus').attr('href', "JavaScript:html5Lightbox.showLightbox(0, 'http://"+source+"', 'Cygnus X-1');")
+                
             
-                if(sound.canPlayType('audio/mpeg')) {
-                    $('#psbutton-binaries').show();
-                    $('#actualaudio-binaries').html('<audio controls preload id="binariesaudio" onpause="pausedaudio()" onplay="pausebg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-                } else {
-                    sound.src = null;
-                    $('#psbutton-binaries').html('Your system does not support HTML5 Audio.');
-                    $('#psbutton-binaries').show();
-                }
-            });
+            if(sound.canPlayType('audio/mpeg')) {
+                $('#actualaudio-binaries').html('<audio controls preload id="binariesaudio" onpause="pausedaudio()" onplay="pausebg()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page21.mp3" type="audio/mpeg"></audio>');
+            } 
+            
     
             $("#binaries").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     
@@ -65,12 +54,37 @@
         function goBack() {
             $.mobile.changePage("sub-space-bh-lifeabh.html");
         }
-    
-        $('#start-binaries').on('click', function() {
-            $('#actualaudio-binaries').show();
-            var oldHeight = $('#node-body-holder').height();
-            var newHeight = oldHeight - $('#actualaudio-binaries').height();
-            $('#node-body-holder').height(newHeight);
+        
+        function pausedaudio() {
+          bgsoundbh.play();
+        }
+         
+        function pausebg() {
+          bgsoundbh.pause();
+        }
+        
+        $("#polb1").on('tap', function() {
+          $('#cygnus-x1link')[0].click();
         });
+        /* ******************** */
+    $("#binariesaudioplbtn").on('tap', function() {
+      binariesaudio.play();
+      $(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#binariesaudiofbtn").on('tap', function() {
+      var ctime = binariesaudio.currentTime;
+      binariesaudio.currentTime = ctime + 10;
+    });
+    
+    $("#binariesaudiobbtn").on('tap', function() {
+      var ctime = binariesaudio.currentTime;
+      binariesaudio.currentTime = ctime - 10;
+    });
+    
+    $("#binariesaudiopsbtn").on('tap', function() {
+      binariesaudio.pause();
+      $(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
     </script>
 </div>

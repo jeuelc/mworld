@@ -30,7 +30,7 @@
         <p>A black hole warps not just space but even time!  If you fell into a black hole, time would slow down and eventually grind to a halt!!  You would age slowly, but could never escape to tell anyone about your adventure.  Nothing, not even light, escapes a black hole.</p>
       </div>
       
-      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/5-8/bottomhome.png"></a></div>
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/5-8/bottomhomebh.png"></a></div>
     </div><!--end of content-->
   </div><!--/spacechar-->
   <div class="audiopanel">
@@ -72,11 +72,6 @@
     })();
     
     $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause(); bgsoundbh.currentTime = 0;});
-    
-    
-    $('#vidbtn').on('tap', function() { bgsoundbh.pause(); });
-    $('#html5-lightbox-overlay').on('tap', function() { bgsoundbh.play(); });
-    $('#html5-close').on('tap', function() { bgsoundbh.play(); });
     
     function goBack() {
       $.mobile.changePage("sub-space-bh.html");
