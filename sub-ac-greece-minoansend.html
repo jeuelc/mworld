@@ -1,4 +1,4 @@
-﻿<!-- i-C-a -->
+<!-- i-C-a -->
 <div id="minoansend" data-role="page">
     <script src="js/hammer.js"></script>
     <script src="js/jquery.hammer.js"></script>
@@ -19,10 +19,17 @@
                     <div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
                         <div id="f1_card">
                             <div class="front face">
-                                <img id="dopple" src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/quiztimepol.jpg" alt="" />
+                                <img id="dopple" src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/santoriniquiztimepol.jpg" alt="" />
                             </div>
                             <div id="backofcard" class="back face center">
-                                <p>Any content can go here.</p>
+                                <p class="quizquestion">
+                                    Which country is the island of<br/>
+                                    Santorini part of today?<br/><br/>
+                                    <a class="quizanswerselection">(a) Greece</a>
+                                    <a class="quizanswerselection">(b) Turkey</a>
+                                    <a class="quizanswerselection">(c) Italy</a><br/>
+                                    <a class="quizanswerselection">(d) Crete</a>
+                                </p>
                             </div>
                         </div><!--/f1+card-->
                     </div>
@@ -31,7 +38,7 @@
                             <img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/santorinipol.jpg" alt="" />
                         </div>
                         <div id="polb2"class="pPiece" style="left:75px;top:290px;">
-                            <img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/quiztimepol.jpg" alt="" />
+                            <img src="css/images/5-8/Ancient_Civilizations/Greece/Origins_of_Ancient_Greece/santoriniquiztimepol.jpg" alt="" />
                         </div>
                     </div><!--/zoomwrapper-->
                 </div>
@@ -127,6 +134,19 @@
     
         $("#minoansendaudiopsbtn").on('tap', function() {
             minoansendaudio.pause();
+        });
+        
+        $(".quizanswerselection").click(function() {
+            var answer = $(this).text().substr(1, 1);
+            if (answer == "a") {
+                alert("Correct");
+            } else if (answer == "b") {
+                alert("Wrong");
+            } else if (answer == "c") {
+                alert("Wrong");
+            } else if (answer == "d") {
+                alert("Wrong");
+            }
         });
     </script>
     <script src="js/twocardLogicb.js"></script>
