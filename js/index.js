@@ -1,4 +1,12 @@
 /* i-C-a */
+var bhcreator = new Audio();
+bhcreator.src = "http://back.uvmate.com/sites/default/files/subjectsaudio/bhcreator.mp3";
+bhcreator.addEventListener('ended', function() { bhcreator.play(); });
+
+var whatamimp3 = new Audio();
+whatamimp3.src = "http://back.uvmate.com/sites/default/files/subjectsaudio/whatami.mp3";
+whatamimp3.addEventListener('ended', function() { whatamimp3.play(); });
+
 var mapmakerbg = new Audio();
 mapmakerbg.src = "audio/mapmaker.mp3";
 mapmakerbg.addEventListener('ended', function() { mapmakerbg.play(); });
@@ -71,8 +79,15 @@ odysseyaudiobg.src = "http://back.uvmate.com/sites/default/files/subjectsaudio/O
 var olympicsaudiobg = new Audio();
 olympicsaudiobg.src = "http://back.uvmate.com/sites/default/files/subjectsaudio/Olympics.mp3";
 
-function pauseagbg() { agsoundbg.pause() }
-function playagbg() { agsoundbg.play(); $(".audiopanel").css({"backgroundPosition":"0px 0px"}); }
+function pauseagbg() { 
+  //agsoundbg.volume = 0.1;
+  agsoundbg.pause();
+}
+function playagbg() { 
+  //agsoundbg.volume = 1.0; 
+  agsoundbg.play();
+  $(".audiopanel").css({"backgroundPosition":"0px 0px"}); 
+}
 
 function pausebh() { bgsoundbh.pause() }
 function playbh() { bgsoundbh.play(); $(".audiopanel").css({"backgroundPosition":"0px 0px"}); }

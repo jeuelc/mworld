@@ -10,14 +10,7 @@
   <div id="anisold">
     <div data-role="content" class="kidzcontent">
       <div class="storypagetitle"><h1>Theseus and the Minotaur</h1></div>
-      <div id="node-body-holder" class="storypage">
-        <!--<div id="psbutton-theseus" style="margin-top:400px;">
-          <div id="audiobuttonholder-theseus"><a href="#" id="start-theseus"><img src="css/images/sound.png" height="30px" width="30px"></a></div>
-          <div id="actualaudio-theseus" style="display: none;">
-            <audio controls preload  onpause="playthbg()" onplay="pausethbg()"><source src="audio/theseuminotaur.mp3" type="audio/mpeg"></audio>
-          </div>
-        </div><!-- end of psbutton -->
-        
+      <div id="node-body-holder" class="storypage" style="margin-top:32px;">
             <p>Myths were very important to the ancient Greeks.  They used myths to explain their past, their customs and their way of life. Here is one of ancient Greece's most famous myths.  If you like mazes and labyrinths, you may have heard it before...!</p>
             <p>After his defeat of Athens, King Minos imposed a terrible punishment upon the city. Every nine years the Athenians were required to send seven boys and seven girls to Crete to be devoured by the Minotaur.  The Minotaur was the half man-half bull son of King Minos, who lived in the Labyrinth, an elaborate, underground maze from which no one could escape.</p>
             <p>Nine years passed and everyone at Athens was sad at the thought of having to send their dear children to be devoured by the Minotaur. Theseus, son of the Greek King Aegeus, decided to go to Crete with the children and kill the Minotaur. The Athenian ship left for Crete with black sails to indicate the sad fate of the children it carried.  Theseus promised to change the sails to white if he was able to kill the Minotaur.</p>
@@ -43,7 +36,7 @@
       
             //$('#node-body').html(data[0].Body);
     if(sound.canPlayType('audio/mpeg')) {
-      $('#actualaudio-theseus').html('<audio id="theseusaudio" controls preload  onpause="playthbg()" onplay="pausethbg()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page9.mp3" type="audio/mpeg"></audio>');
+      $('#actualaudio-theseus').html('<audio id="theseusaudio" controls preload  onpause="playagbg()" onplay="pauseagbg()"><source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page9.mp3" type="audio/mpeg"></audio>');
     } 
     
     $("#theseus").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
@@ -69,7 +62,6 @@
     /* ******************** */
     $("#theseusaudioplbtn").on('tap', function() {
       theseusaudio.play();
-      agsoundbg.pause(); agsoundbg.currentTime = 0; 
       $(".audiopanel").css({"backgroundPosition":"-197px 0px"});
     });
     

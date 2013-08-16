@@ -56,6 +56,7 @@
     
     $('#backbtn').on('tap', function() {
       $.mobile.changePage("sub-space-bh-bhgo.html", {transition:"flip"});
+      bgsoundbh.play();bhcreator.pause();
     });
     
     $('#resetbtn').on('tap', function() {

@@ -39,11 +39,15 @@
                 </div>
                 <div data-role="popup" id="imongnawong" data-position-to="window" data-overlay-theme="a" style="text-align:center;">
                     <div id="node-pop">
+                        <div id="psbutton">
+                          <div id="audiobuttonholder"><a href="#" id="start"><img id="playhomernar" src="css/images/sound.png" height="30px" width="30px"></a></div>
+                          <div id="actualaudio-homer" style="display: none;">
+                            <audio id="homernar" controls preload style="visibility: hidden" onpause="playagbg()" onplay="pauseagbg()">
+                                <source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page6mycene.mp3" type="audio/mpeg">
+                            </audio>
+                          </div>
+                        </div><!-- end of psbutton -->
                         <p>Homer is perhaps the most important ancient Greek poet. He lived and composed his verses in the first half of the eight century BCE. He was probably a travelling bard from ancient Chios or Smyrna who offered his services for a fee. He may also have been a member of a guild of singers. He wrote the Iliad and the Odyssey, famous stories that have inspired poets, artists, and storytellers ever since" including modern movie makers!"</p>
-                        <!--<audio controls autoplay style="visibility: hidden">
-                            <source src="http://back.uvmate.com/sites/default/files/subjectsaudio/Page6mycene.mp3" type="audio/mpeg">
-                        </audio> -->
-		     
                     </div>
                 </div>
 
@@ -81,31 +85,9 @@
             $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
       
         })();
-    
-        (function() {
-            var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=62";
-            $.getJSON( url, function( data ) {
-                $('#node-pop').html(data[0].Body);
-                if(soundpop.canPlayType('audio/mpeg')) {
-                    $('#psbuttonpop').show();
-                    $('#actualaudiopop').html('<audio controls><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-                } else {
-                    soundpop.src = null;
-                    $('#psbuttonpop').html('Your system does not support HTML5 Audio.');
-                    $('#psbuttonpop').show();
-                }
-            });
-        })();
-    
-        $('#start-hittites').on('click', function() {
-            $('#actualaudio-hittites').show();
-            var oldHeight = $('#node-body-holder-mycenaeans').height();
-            var newHeight = oldHeight - $('#actualaudio-hittites').height();
-            $('#node-body-holder-mycenaeans').height(newHeight);
-        });
-    
-        $('#startpop').on('click', function() {
-            $('#actualaudiopop').show();
+        
+        $("#playhomernar").on('tap', function() {
+          homernar.play();
         });
     
         function goBack() {

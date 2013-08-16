@@ -21,7 +21,11 @@
               <img id="dopple" src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/hearinbabpol.jpg" alt="" />
             </div>
             <div id="backofcard" class="back face center">
-              <p>Babylonian audio here.</p>
+              <p>Gilgamesh in Babylonian</p>
+                <audio id="gilgab" controls preload onpause="playagbg()" onplay="pauseagbg()">
+                    <source src="http://back.uvmate.com/sites/default/files/subjectsaudio/gilgameshbabylonian.mp3" type="audio/mpeg">
+                </audio>
+                <p><a href="#" id="donegiglgababy">Done</a></p>
             </div>
           </div><!--/f1+card-->
         </div>
@@ -31,7 +35,11 @@
               <img id="dopple" src="css/images/5-8/Ancient_Civilizations/Greece/World_around_Greece/hearinengpol.jpg" alt="" />
             </div>
             <div id="backofcard2" class="back face center">
-              <p>English vesrion audio here.</p>
+              <p>Gilgamesh in English</p>
+                <audio id="gilgae" controls preload onpause="playagbg()" onplay="pauseagbg()">
+                    <source src="http://back.uvmate.com/sites/default/files/subjectsaudio/gilgameshenglish.mp3" type="audio/mpeg">
+                </audio>
+                <p><a href="#" id="donegiglgaeng">Done</a></p>
             </div>
           </div><!--/f1+card-->
         </div>
@@ -57,8 +65,6 @@
   </div></div><!--/anisold-->
   
   <script>
-    gilgab = new Audio(); // 'sound' is now an audio object
-    gilgae = new Audio(); // 'sound' is now an audio object
     
     (function() {
       $('div#polb1 > img').css("-webkit-transform", "rotate(0deg)");
@@ -78,33 +84,6 @@
       $("#gilgamesh").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
     
     })();
-    (function() {
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=109";
-     $.getJSON( url, function( data ) {
-            if(gilgab.canPlayType('audio/mpeg')) {
-              $('#actualaudio-gilgababy').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            }
-         });
-    })();
-    
-    (function() {
-      var url = "http://back.uvmate.com/jeuel_services/educ.json?nid=110";
-     $.getJSON( url, function( data ) {
-            if(gilgae.canPlayType('audio/mpeg')) {
-              $('#actualaudio-gilgaeng').html('<audio controls preload onpause="playagbg()" onplay="pauseagbg()"><source src="'+ data[0].Audio +'" type="audio/mpeg"></audio>');
-            }
-         });
-    })();
-    
-    $('#gilgababy').on('click', function() {
-      $('#actualaudio-gilgababy').show();
-      agsoundbg.pause();
-    });
-    
-    $('#gilgaeng').on('click', function() {
-      $('#actualaudio-gilgaeng').show();
-      agsoundbg.pause();
-    });
     
     function goBack() {
       $.mobile.changePage("sub-ac-greece-babylonians.html");
@@ -121,11 +100,13 @@
       mainaudiobg.play(); agsoundbg.pause(); agsoundbg.currentTime = 0; 
     });
 	
-	$("#f1_container").on('tap', function() {
+	$("#donegiglgababy").on('tap', function() {
       $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
       $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
       $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
       $('#f1_card').css({"transform": "rotateY(0deg)"});
+      gilgab.pause();
+      agsoundbg.play();
       setTimeout(function() {
         $("#polb1").css({"visibility":"visible", "z-index":3});
         $('#f1_container').css({"visibility":"hidden", "z-index":0});
@@ -145,11 +126,13 @@
       //$("#dopple").css({"visibility":"hidden"});
     });
     
-    $("#f2_container").on('tap', function() {
+    $("#donegiglgaeng").on('tap', function() {
       $('#f2_card').css({"-webkit-transform": "rotateY(0deg)"});
       $('#f2_card').css({"-moz-transform": "rotateY(0deg)"});
       $('#f2_card').css({"-o-transform": "rotateY(0deg)"});
       $('#f2_card').css({"transform": "rotateY(0deg)"});
+      gilgae.pause();
+      agsoundbg.play();
       setTimeout(function() {
         $("#polb2").css({"visibility":"visible", "z-index":3});
         $('#f2_container').css({"visibility":"hidden", "z-index":0});
