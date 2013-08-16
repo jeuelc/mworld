@@ -71,6 +71,14 @@
     
     })();
     
+    $("#eatinggas").on('tap', function() {
+      $("#eatinggasholder").css({"visibility":"hidden", "z-index":-1});
+      $("#eatinggas").css({"z-index":-1});
+      bgsoundbh.play();
+      eatinggas.pause();
+      eatinggas.currentTime = 0;
+    });
+    
     $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause(); bgsoundbh.currentTime = 0;});
     
     function goBack() {
@@ -91,7 +99,7 @@
     $("#pol2").on('tap', function() {
       $("#eatinggasholder").css({"visibility":"visible", "z-index":10});
       $("#eatinggas").css({"z-index":9});
-      pauseagbg();
+      bgsoundbh.pause();
       eatinggas.play();
     });
     /* ******************** */

@@ -261,6 +261,8 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
 
 #titleb-holder, #title-holder { text-align:center; }
 
+#titleb-holder h1 { color:#FFFFFF; }
+
 #node-content-theseus {
   width:80%;
   margin:140px auto 50px auto;
@@ -359,7 +361,7 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
   width:1024px !important;
 }
 
- #whatisbh, #supergiant, #supernova, #snexplosion, #formgold, #neutron, #blackhole,
+#seebh, #whatisbh, #supergiant, #supernova, #snexplosion, #formgold, #neutron, #blackhole,
 #nscollide, #lifeabh, #galaxies, #bhingalaxy, #quasars, #binaries, #bhgo {
   background:url('images/5-8/Space/Black_Holes/bhbg.jpg') no-repeat;
   height:748px !important;

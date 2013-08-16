@@ -34,7 +34,7 @@
         <p>The core of the star collapses during the supernova, leaving behind either a dense neutron star or a black hole...</p>
       </div>
       
-      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/5-8/bottomhome.png"></a></div>
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/5-8/bottomhomebh.png"></a></div>
     </div><!--end of content-->
   </div><!--/spacechar-->
   <div class="audiopanel">
@@ -100,6 +100,14 @@
       bgsoundbh.pause();
     }			
     
+    $("#supernovaeso").on('tap', function() {
+      $("#supernovaesoholder").css({"visibility":"hidden", "z-index":-1});
+      $("#supernovaeso").css({"z-index":-1});
+      bgsoundbh.play();
+      supernovaeso.pause();
+      supernovaeso.currentTime = 0;
+    });
+    
     $("#pol3").on('tap', function() {
       $.mobile.changePage("sub-space-bh-snexplosion.html", {transition: "slide"});
     });
@@ -111,7 +119,7 @@
     $("#pol1").on('tap', function() {
       $("#supernovaesoholder").css({"visibility":"visible", "z-index":10});
       $("#supernovaeso").css({"z-index":9});
-      pauseagbg();
+      bgsoundbh.pause();
       supernovaeso.play();
     });
     /* ******************** */

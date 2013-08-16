@@ -33,7 +33,7 @@
           <p>These types of light can be very useful here on Earth.  For example, if you have fallen over, a doctor can use x-rays to see inside your body and check if you have broken any bones!</p>
         </div>
       </div>
-      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/5-8/bottomhome.png"></a></div>
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/5-8/bottomhomebh.png"></a></div>
     </div><!--end of content-->
   </div><!--/spacechar-->
   <div class="audiopanel">
@@ -89,8 +89,16 @@
     $("#polb1").on('tap', function() {
       $("#supernovahubbleholder").css({"visibility":"visible", "z-index":10});
       $("#supernovahubble").css({"z-index":9});
-      pauseagbg();
+      bgsoundbh.pause();
       supernovahubble.play();
+    });
+    
+    $("#supernovahubble").on('tap', function() {
+      $("#supernovahubbleholder").css({"visibility":"hidden", "z-index":-1});
+      $("#supernovahubble").css({"z-index":-1});
+      bgsoundbh.play();
+      supernovahubble.pause();
+      supernovahubble.currentTime = 0;
     });
     /* ******************** */
     $("#snexplosionaudioplbtn").on('tap', function() {

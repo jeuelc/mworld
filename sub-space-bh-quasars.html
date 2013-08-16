@@ -20,7 +20,7 @@
                   </div>
                 </div>
                 
-                <div class="bpcontent">
+                <div class="bpcontentbh">
                     <p>When particles fall towards a black hole, they gain speed and energy. Near the black-hole itself, particles move close to the speed of light. When the particles smash into each other at this speed, they release vast amounts of energy.</p>
                     <p>When this happens with the really large black holes at the centre of galaxies, the particles falling towards the black hole release so much energy that the surrounding area can be brighter than a million Suns!  These spectacularly bright objects are called quasars.</p>
                     <p>Quasars can be so bright that they can be seen from very, very far away.  One quasar, called Quasar ULAS J1120+0641, is so bright that we can see its light in telescopes on the Earth, even though it has taken 13 billion years for that light to reach the Earth!</p>
@@ -78,9 +78,17 @@
       $("#polb1").on('tap', function() {
          $("#quasarvidholder").css({"visibility":"visible", "z-index":10});
          $("#quasarvid").css({"z-index":9});
-         pauseagbg();
+         bgsoundbh.pause();
          quasarvid.play();
       });
+      
+    $("#quasarvid").on('tap', function() {
+      $("#quasarvidholder").css({"visibility":"hidden", "z-index":-1});
+      $("#quasarvid").css({"z-index":-1});
+      bgsoundbh.play();
+      quasarvid.pause();
+      quasarvid.currentTime = 0;
+    });
         /* ******************** */
     $("#quasarsaudioplbtn").on('tap', function() {
       quasarsaudio.play();

@@ -23,7 +23,7 @@
                  </div><!--/zoomwrapper-->
                 
                 </div>
-                <div class="bpcontent">
+                <div class="bpcontentbh">
                     <p>When two neutron stars collide, incredible things happen. </p>
                     <p>The new object weighs much more than the Sun but cannot support its own weight. In a fraction of a second, it collapses to form a new black hole. </p>
                     <p>This creation of a new black hole can be very violent, producing jets of particles and bursts of gamma rays. These gamma ray bursts can be seen by satellites orbiting the Earth. </p>
@@ -83,9 +83,17 @@
        $("#polb1").on('tap', function() {
          $("#collidingnsholder").css({"visibility":"visible", "z-index":10});
          $("#collidingns").css({"z-index":9});
-         pauseagbg();
+         bgsoundbh.pause();
          collidingns.play();
        });
+       
+    $("#collidingns").on('tap', function() {
+      $("#collidingnsholder").css({"visibility":"hidden", "z-index":-1});
+      $("#collidingns").css({"z-index":-1});
+      bgsoundbh.play();
+      collidingns.pause();
+      collidingns.currentTime = 0;
+    });
 /* ******************** */
     $("#nscollideaudioplbtn").on('tap', function() {
       nscollideaudio.play();
