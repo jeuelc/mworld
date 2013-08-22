@@ -1155,3 +1155,27 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
   margin-left:3px;
 }
 /************* /new rules ***********/
+
+/*************mzone-space***********/
+div#spacegallery {
+	background:url(images/spacegallery/spacegallerybg.jpg) no-repeat;
+	width:1024px;
+	height:748px;
+	margin:0 auto;
+}
+
+.slider-wrapper {
+	width:83%;
+	position:absolute;
+	top:620px;
+}
+
+ul.slides {
+	background:#000;
+}
+
+.flexslider {
+	width:81%;
+	margin:0 auto !important;
+}
+/************* /mzone-space*********/
