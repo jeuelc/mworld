@@ -8,24 +8,24 @@
       <div id="arrow1" style="width:82px;height:87px;position:relative;overflow:hidden;top:121px;left:347px;">&nbsp;</div>
       <div id="arrow2" style="width:82px;height:87px;position:relative;overflow:hidden;top:82px;left:538px;">&nbsp;</div>
       <div id="arrow3" style="width:82px;height:87px;position:relative;overflow:hidden;top:106px;left:531px;">&nbsp;</div>
-      <div style="width:151px;height:63px;position:absolute;top:40px;left:50px;z-index:999"><img src="css/images/5-8/Space/Black_Holes/game/backbtn.png" id="backbtn"></div>
-      <div style="width:151px;height:63px;position:absolute;top:110px;left:50px;z-index:999"><img src="css/images/5-8/Space/Black_Holes/game/resetbtn.png" id="resetbtn"></div>
-      <div style="width:151px;height:63px;position:absolute;top:40px;left:800px;z-index:999"><img src="css/images/5-8/Space/Black_Holes/game/submitsoln.png" id="submitsoln"></div>
+      <div style="width:151px;height:63px;position:absolute;top:40px;left:50px;z-index:999"><img src="images/5-8/Space/Black_Holes/game/backbtn.png" id="backbtn"></div>
+      <div style="width:151px;height:63px;position:absolute;top:110px;left:50px;z-index:999"><img src="images/5-8/Space/Black_Holes/game/resetbtn.png" id="resetbtn"></div>
+      <div style="width:151px;height:63px;position:absolute;top:40px;left:800px;z-index:999"><img src="images/5-8/Space/Black_Holes/game/submitsoln.png" id="submitsoln"></div>
       <div id="bqlink" style="width:102px;height:112px;position:absolute;top:620px;left:700px;z-index:998;">&nbsp;
-        <div id="lock" style="position:relative;top:10px;left:7px;"><img src="css/images/5-8/Space/Black_Holes/game/lock.png"></div>
+        <div id="lock" style="position:relative;top:10px;left:7px;"><img src="images/5-8/Space/Black_Holes/game/lock.png"></div>
       </div>
       <div id="zoomwrapper">
           <div id="jpiece1" class="bhgame1Piece" style="left:15px;top:585px;">
-             <img src="css/images/5-8/Space/Black_Holes/game/supernova.png" alt="" width="173" height="186" />
+             <img src="images/5-8/Space/Black_Holes/game/supernova.png" alt="" width="173" height="186" />
           </div>
           <div id="jpiece2"class="bhgame1Piece" style="left:139px;top:585px;">
-             <img src="css/images/5-8/Space/Black_Holes/game/neutronstar.png" alt="" width="173" height="186" />
+             <img src="images/5-8/Space/Black_Holes/game/neutronstar.png" alt="" width="173" height="186" />
           </div>
           <div id="jpiece3" class="bhgame1Piece" style="left:259px;top:585px;">
-             <img src="css/images/5-8/Space/Black_Holes/game/blackhole.png" alt="" width="173" height="186" />
+             <img src="images/5-8/Space/Black_Holes/game/blackhole.png" alt="" width="173" height="186" />
           </div>
           <div id="jpiece4" class="bhgame1Piece" style="left:389px;top:585px;">
-             <img src="css/images/5-8/Space/Black_Holes/game/supergiant.png" alt="" width="173" height="186" />
+             <img src="images/5-8/Space/Black_Holes/game/supergiant.png" alt="" width="173" height="186" />
           </div>
       </div><!--/zoomwrapper-->
     </div>
@@ -43,6 +43,10 @@
   <script>
     $(function() {
       animatearrows = setTimeout(moveArrows, 500);
+
+      //change images path
+      changeImageSrc();
+      findElementsWithBgImage();
     });
     
     $('#bqlink').on('tap', function() {

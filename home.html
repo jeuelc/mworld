@@ -23,62 +23,44 @@
     </map>
   </div> <!-- end content --> 
   <script>
-    /*$('#spacelink2').on('tap', function() {  });
-    $('#ancientlink2').on('tap', function() { });
-    $('#animalslink2').on('tap', function() { });
-    $('#naturalworldlink2').on('tap', function() { });
-    $('#peopleplaceslink2').on('tap', function() { });
-    $('#langcultlink2').on('tap', function() { });
-    $('#wondersciencelink2').on('tap', function() { });
-    $('#humanbodylink2').on('tap', function() { });
-    $('#artmusiclink2').on('tap', function() { });
-    $('#modernworldlink2').on('tap', function() { }); */
-    
     $(document).ready(function(e) {
       $('area').on('tap', function(event) {
-        $("#homepageimg").hide();
-        $("#spacecraft").hide();
-        $("#waterfall").hide();
-        $("#fountain").hide();
+        
         var subjectId = $(this).attr("id");
-        //naturalworldlink2
-        //alert(subjectId);
         if(subjectId == "naturalworldlink2") {
               naturalsoundbg.play(); mainaudiobg.pause(); mainaudiobg.currentTime = 0;
-              $.mobile.changePage( "sub-naturalworld2.html", { transition: "flip" });
+              $.mobile.changePage( "sub-naturalworld.html", { transition: "flip" });
         } else if(subjectId == "spacelink2") {
+          //navigator.notification.alert('clicked');
               spacesoundbg.play(); mainaudiobg.pause(); mainaudiobg.currentTime = 0;
-              $.mobile.changePage( "sub-space.html", { transition: "flip" });
+              $.mobile.changePage("sub-space.html", { transition: "flip" });
         } else if(subjectId == "langcultlink2") {
               langcultsoundbg.play(); mainaudiobg.pause(); mainaudiobg.currentTime = 0;
-              $.mobile.changePage( "sub-languageculture2.html", { transition: "flip" });
+              $.mobile.changePage( "sub-languageculture.html", { transition: "flip" });
         } else if(subjectId == "animalslink2") {
               animalsoundbg.play(); mainaudiobg.pause(); mainaudiobg.currentTime = 0;
-              $.mobile.changePage( "sub-animals2.html", { transition: "flip" });
+              $.mobile.changePage( "sub-animals.html", { transition: "flip" });
         } else if(subjectId == "peopleplaceslink2") {
               peopleplacessoundbg.play(); mainaudiobg.pause(); mainaudiobg.currentTime = 0;
-              $.mobile.changePage( "sub-peopleplaces2.html", { transition: "flip" });
+              $.mobile.changePage( "sub-peopleplaces.html", { transition: "flip" });
         } else if(subjectId == "wondersciencelink2") {
               sciencesoundbg.play(); mainaudiobg.pause(); mainaudiobg.currentTime = 0;
-              $.mobile.changePage( "sub-wonderscience2.html", { transition: "flip" });
+              $.mobile.changePage( "sub-wonderscience.html", { transition: "flip" });
         } else if(subjectId == "humanbodylink2") {
               humanbodysoundbg.play(); mainaudiobg.pause(); mainaudiobg.currentTime = 0;
-              $.mobile.changePage( "sub-humanbody2.html", { transition: "flip" });
+              $.mobile.changePage( "sub-humanbody.html", { transition: "flip" });
         } else if(subjectId == "modernworldlink2") {
               modernsoundbg.play(); mainaudiobg.pause(); mainaudiobg.currentTime = 0;
-              $.mobile.changePage( "sub-modernworld2.html", { transition: "flip" });
+              $.mobile.changePage( "sub-modernworld.html", { transition: "flip" });
         } else if(subjectId == "ancientlink2") {
               ancientsoundbg.play(); mainaudiobg.pause(); mainaudiobg.currentTime = 0;
               $.mobile.changePage( "sub-ancient.html", { transition: "flip" });
         } else if(subjectId == "artmusiclink2") {
               artmusicsoundbg.play(); mainaudiobg.pause(); mainaudiobg.currentTime = 0;
-              $.mobile.changePage( "sub-artmusic2.html", { transition: "flip" });
+              $.mobile.changePage( "sub-artmusic.html", { transition: "flip" });
         } 
-              //event.preventDefault();
-              //var sel = $(this).attr('href');
-              //$.mobile.changePage(sel, {transition: "slide"});
-          });
       });
+    });
     
     $(function() {
       animateblast = setTimeout(fireBooster, 100);

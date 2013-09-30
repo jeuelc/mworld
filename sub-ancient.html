@@ -51,8 +51,16 @@
     
     $('#agmovielink').on('tap', function() { 
       ancientsoundbg.pause(); ancientsoundbg.currentTime = 0;  
-      $("#pre-ag").css({"visibility":"visible"});
-      agvideo.play();
+
+      if(app.firstRun.ancient.greece){        
+        sessionStorage.assetsName = 'greece';
+        sessionStorage.nextPage = "sub-ancient.html";
+        $.mobile.changePage('spaceloading.html');
+      }
+      else {
+        $("#pre-ag").css({"visibility":"visible"});
+        agvideo.play();
+      }
       //agvideo.webkitEnterFullscreen();
     });
     $('.homelinkag').on('tap', function() { 
@@ -61,6 +69,15 @@
     $('#proceedtoag').on('tap', function() {
         agsoundbg.play();
         $.mobile.changePage("sub-ac-greece.html");
+    });
+
+    $('#ancient').live('pagebeforeshow', function(evt, data){
+      if(data.prevPage.attr('id') == 'spaceLoading'){
+        if(!app.firstRun.ancient.greece){
+          $("#pre-ag").css({"visibility":"visible"});
+          agvideo.play();
+        }
+      }
     });
 			</script>
 </div>

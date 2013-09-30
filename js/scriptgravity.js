@@ -28,6 +28,11 @@ $(function(){
       	"sprites/jae13.png",
       	"sprites/jae14.png"
     ];
+
+    $.each(framesComing , function(k,v){
+		framesComing[k] = appBasePath + v;
+	});
+    
 	timeoutID = window.setTimeout(startAnimation, 2000);
 });
 function startAnimation(){

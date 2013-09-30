@@ -27,6 +27,9 @@
   </div><!--end of content-->
   <script>
     $(function() {
+      changeVideoSrc();
+      // changeImageSrc();
+      // findElementsWithBgImage();
       $("#space").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
       
       bhvideo.addEventListener('ended', function() { 
@@ -48,8 +51,22 @@
     
     $('#bhmovielink').on('tap', function() { 
       spacesoundbg.pause(); spacesoundbg.currentTime = 0;
-      $("#pre-bh").css({"visibility":"visible", "z-index":2});
-      bhvideo.play();
+      
+      //var spacepage = "sub-space.html";
+      if(app.firstRun.space.bh){
+        if(!checkConnection()){
+          navigator.notification.alert('Device is not connected to Internet!', function(){}, 'Error', 'ok');
+          return false;
+        }
+        var spacepage = "spaceloading.html";
+        sessionStorage.assetsName = 'bh';
+        sessionStorage.nextPage = "sub-space.html";
+        $.mobile.changePage(spacepage);
+      }
+      else {
+        $("#pre-bh").css({"visibility":"visible", "z-index":2});
+        bhvideo.play();        
+      }
       //agvideo.webkitEnterFullscreen();
     });
     
@@ -60,5 +77,14 @@
       $.mobile.changePage("sub-space-bh.html");
     });
     
-			</script>
+
+    $('#space').live('pagebeforeshow', function(evt, data){
+      if(data.prevPage.attr('id') == 'spaceLoading'){
+        if(!app.firstRun.space.bh){
+          $("#pre-bh").css({"visibility":"visible", "z-index":2});
+          bhvideo.play();
+        }
+      }
+    });
+      </script>
 </div>

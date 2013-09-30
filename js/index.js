@@ -1,680 +1,200 @@
-/* i-C-a */
-var bhcreator = new Audio();
-bhcreator.src = "http://back.uvmate.com/sites/default/files/subjectsaudio/bhcreator.mp3";
-bhcreator.addEventListener('ended', function() { bhcreator.play(); });
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
 
-var whatamimp3 = new Audio();
-whatamimp3.src = "http://back.uvmate.com/sites/default/files/subjectsaudio/whatami.mp3";
-whatamimp3.addEventListener('ended', function() { whatamimp3.play(); });
+var app = {
+    // Application Constructor
+    network : false,
 
-var mapmakerbg = new Audio();
-mapmakerbg.src = "audio/mapmaker.mp3";
-mapmakerbg.addEventListener('ended', function() { mapmakerbg.play(); });
+    firstRun : {  
+        space : { bh : true},
+        peopleAndPlaces : true,
+        naturalWorld : true,
+        ancient : { greece : true},
+        languages : true,
+        wonders : true,
+        humanBody : true,
+        artAndMusic : true,
+        modrenWorld : true,
+        animals : true
+    },
 
-var civscrambg = new Audio();
-civscrambg.src = "audio/civilizationscramble.mp3";
-civscrambg.addEventListener('ended', function() { civscrambg.play(); });
+    initialize: function() {
+        this.bindEvents();
+    },
+    // Bind Event Listeners
+    //
+    // Bind any events that are required on startup. Common events are:
+    // 'load', 'deviceready', 'offline', and 'online'.
+    bindEvents: function() {
+        document.addEventListener('deviceready', onDeviceReady, false);
+    },
+    // deviceready Event Handler
+    //
+    // The scope of 'this' is the event. In order to call the 'receivedEvent'
+    // function, we must explicity call 'app.receivedEvent(...);'
+    /*onDeviceReady: function() {navigator.notification.alert('sdfsf');
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, this.gotFS, this.fail);
+        //app.receivedEvent('deviceready');//
+        //navigator.notification.alert('dfdsfs');
+    },*/
+    // Update DOM on a Received Event
+    receivedEvent: function(id) {
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
 
-var animalsoundbg = new Audio();
-animalsoundbg.src = "audio/animals.mp3";
-animalsoundbg.addEventListener('ended', function() { animalsoundbg.play(); });
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
 
-var artmusicsoundbg = new Audio();
-artmusicsoundbg.src = "audio/artmusic.mp3";
-artmusicsoundbg.addEventListener('ended', function() { artmusicsoundbg.play(); });
+        console.log('Received Event: ' + id);
+    },
+    fail : function() {navigator.notification.alert('documentRoot');
+        console.log("oh! There is something wrong with fileSystem");
+    }
+};
 
-var humanbodysoundbg = new Audio();
-humanbodysoundbg.src = "audio/humanbody.mp3";
-humanbodysoundbg.addEventListener('ended', function() { humanbodysoundbg.play(); });
+document.addEventListener("deviceready", onDeviceReady, false);
 
-var langcultsoundbg = new Audio();
-langcultsoundbg.src = "audio/langcult.mp3";
-langcultsoundbg.addEventListener('ended', function() { langcultsoundbg.play(); });
-
-var modernsoundbg = new Audio();
-modernsoundbg.src = "audio/modern.mp3";
-modernsoundbg.addEventListener('ended', function() { modernsoundbg.play(); });
-
-var naturalsoundbg = new Audio();
-naturalsoundbg.src = "audio/natural.mp3";
-naturalsoundbg.addEventListener('ended', function() { naturalsoundbg.play(); });
-
-var peopleplacessoundbg = new Audio();
-peopleplacessoundbg.src = "audio/peopleplaces.mp3";
-peopleplacessoundbg.addEventListener('ended', function() { peopleplacessoundbg.play(); });
-
-var sciencesoundbg = new Audio();
-sciencesoundbg.src = "audio/science.mp3";
-sciencesoundbg.addEventListener('ended', function() { sciencesoundbg.play(); });
-
-var ancientsoundbg = new Audio();
-ancientsoundbg.src = "audio/ancientcivbg.mp3";
-ancientsoundbg.addEventListener('ended', function() { ancientsoundbg.play(); });
-
-var agsoundbg = new Audio();
-agsoundbg.src = "audio/ancientgreece.mp3";
-agsoundbg.addEventListener('ended', function() { agsoundbg.play(); });
-
-var spacesoundbg = new Audio();
-spacesoundbg.src = "audio/space.mp3";
-spacesoundbg.addEventListener('ended', function() { spacesoundbg.play(); });
-
-var bgsoundbh = new Audio();
-bgsoundbh.src = "audio/blackhole.mp3";
-bgsoundbh.addEventListener('ended', function() { bgsoundbh.play(); });
-
-var mainaudiobg = new Audio();
-mainaudiobg.src = "http://back.uvmate.com/sites/default/files/subjectsaudio/mainbg.mp3";
-mainaudiobg.addEventListener('ended', function() { mainaudiobg.play(); });
-
-var iliadaudiobg = new Audio();
-iliadaudiobg.src = "http://back.uvmate.com/sites/default/files/subjectsaudio/Hector_vs_Achilles.mp3";
-
-var theseusaudiobg = new Audio();
-theseusaudiobg.src = "http://back.uvmate.com/sites/default/files/subjectsaudio/Theseus_and_the_Minotaur.mp3";
-
-var odysseyaudiobg = new Audio();
-odysseyaudiobg.src = "http://back.uvmate.com/sites/default/files/subjectsaudio/Odyssey.mp3";
-
-var olympicsaudiobg = new Audio();
-olympicsaudiobg.src = "http://back.uvmate.com/sites/default/files/subjectsaudio/Olympics.mp3";
-
-function pauseagbg() { 
-  //agsoundbg.volume = 0.1;
-  agsoundbg.pause();
-}
-function playagbg() { 
-  //agsoundbg.volume = 1.0; 
-  agsoundbg.play();
-  $(".audiopanel").css({"backgroundPosition":"0px 0px"}); 
+// device APIs are available
+//
+function onDeviceReady() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    checkConnection();
 }
 
-function pausebh() { bgsoundbh.pause() }
-function playbh() { bgsoundbh.play(); $(".audiopanel").css({"backgroundPosition":"0px 0px"}); }
-
-function startolympicsaudiobg() {
-  olympicsaudiobg.play();
-  olympicsaudiobg.pause();
-  setTimeout(function(){ olympicsaudiobg.play();}, 2000);
+function gotFS(fileSystem) {
+    FS.fs = fileSystem;
+    $(document).trigger('fsready');
 }
-
-function startodysseyaudiobg() {
-  odysseyaudiobg.play();
-  odysseyaudiobg.pause();
-  setTimeout(function(){ odysseyaudiobg.play();}, 2000);
-}
-
-function starttheseusaudiobg() {
-  theseusaudiobg.play();
-  theseusaudiobg.pause();
-  setTimeout(function(){ theseusaudiobg.play();}, 2000);
-}
-
-function startiliadaudiobg() {
-  iliadaudiobg.play();
-  iliadaudiobg.pause();
-  setTimeout(function(){ iliadaudiobg.play();}, 2000);
+function fail(evt) {
+    console.log(evt.target.error.code);
 } 
 
-var animateAGS = true;
+function checkConnection() {
+    var networkState = navigator.connection.type;
+    var states = {};
+    states[Connection.UNKNOWN]  = false;
+    states[Connection.ETHERNET] = true;
+    states[Connection.WIFI]     = true;
+    states[Connection.CELL_2G]  = true;
+    states[Connection.CELL_3G]  = true;
+    states[Connection.CELL_4G]  = true;
+    states[Connection.CELL]     = true;
+    states[Connection.NONE]     = false;
 
-function jAnimate(divIdAnimate) {
-  var frameWidth = 340;
-  var frameHeight = 145;
-  var spriteWidth = 4080;
-  var spriteHeight = 145;
-  var curxPx = 0;
-  var ti;
-  var animateObject = divIdAnimate;
-  var spriteElement = document.getElementById(animateObject);
-  
-  function animateSprite() {
-      spriteElement.style.backgroundPosition = '-' + curxPx + 'px 0px';
-      curxPx = curxPx + frameWidth;
-      if (curxPx >= spriteWidth) { curxPx = 0; }
-      if(animateAGS) { ti = setTimeout(animateSprite, 160); }
-   }
-   
-   animateSprite();  
+    app.network = states[networkState];
+    return app.network;
 }
 
-$('#mov').live( 'pageshow',function(event, ui){ });
 
-$('#gilgamesh').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#gilgamesh').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#gilgamesh2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#gilgamesh2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#babylonians').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#babylonians').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#babylonians2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#babylonians2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#phoenicians').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#phoenicians').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#phoenicians2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#phoenicians2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#egyptians').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#egyptians').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#egyptians2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#egyptians2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#xenophon').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#xenophon').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#xenophon2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#xenophon2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#persians').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#persians').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#persians2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#persians2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#romans').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#romans').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#romans2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#romans2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#legacyofgreece2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#legacyofgreece2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#legacyofgreece2-2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#legacyofgreece2-2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#tribesofgreece').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#tribesofgreece').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#tribesofgreece2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#tribesofgreece2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#odyssey').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#odyssey').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#odyssey2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#odyssey2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#templesofgreece').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#templesofgreece').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#templesofgreece2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#templesofgreece2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#spartans').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#spartans').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#spartans2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#spartans2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#storytelling').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#storytelling').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#storytelling2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#storytelling2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#legacyofgreece').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#legacyofgreece').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#legacyofgreece-2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#legacyofgreece-2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#agintro').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#agintro').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#agintro2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#agintro2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#ancientgreece').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#ancientgreece').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#ancientgreece2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#ancientgreece2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#agora').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#agora').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#agora2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#agora2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#agschool').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#agschool').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#agschool2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#agschool2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#aroundag').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#aroundag2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#aroundag2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#hittites').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#hittites').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#hittites2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#hittites2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#kinghatpray').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#kinghatpray').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#kinghatpray2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#kinghatpray2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#lifeinag').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#lifeinag').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#lifeinag2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#lifeinag2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#lydians').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#lydians').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#lydians2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#lydians2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#lydiansmoney').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#lydiansmoney').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#lydiansmoney2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#lydiansmoney2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#minoans').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#minoans').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#minoans2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#minoans2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#minoansend').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#minoansend').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#minoansend2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#minoansend2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#mycenaeans').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#mycenaeans').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#mycenaeans2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#mycenaeans2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#olympics').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#olympics').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#olympics2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#olympics2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#panathenai').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#panathenai').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#panathenai2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#panathenai2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#originsofgreece').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#originsofgreece').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#originsofgreece2').live( 'pageshow',function(event, ui){
-    animateAGS =  true;
-    jAnimate("animatedsoldier");
-});
-
-$('#originsofgreece2').live( 'pagehide',function(event, ui){
-    animateAGS =  false;
-});
-
-$('#ancientgreece').live( 'pagehide',function(event, ui){
-  animateAGS =  false;
-});
+function changeImageSrc() {
+    $('img').each(function(){
+        var $this = $(this);
+        $this.attr('src',appBasePath + $this.attr('src'));
+    });
+}
+
+function changeVideoSrc() {
+    $('video').each(function(){
+        var videoSrcEle = $(this).find('source');
+        videoSrcEle.each(function(){
+            var $this = $(this);
+            var fileSrc = $this.attr('src');
+            if(fileSrc.indexOf(appBasePath) == -1) {
+                $this.attr('src',appBasePath + fileSrc);
+            }
+        });
+    });
+}
+
+function changeAudioSrc() {
+    $('audio').find('source').each(function(){
+        var $this = $(this),
+        fileSrc = $this.attr('src');
+        if(fileSrc.indexOf(appBasePath) == -1) {
+            $this.attr('src', appBasePath+fileSrc);
+        }
+    });
+}
+
+function changeAudioVideoSrc() {
+    changeAudioSrc();
+    changeVideoSrc();
+}
+
+function findElementsWithBgImage() {
+    var tags = document.getElementsByTagName('*'),
+    el;
+
+    for (var i = 0, len = tags.length; i < len; i++) {
+        el = tags[i];
+        if (el.currentStyle) {
+            if( el.currentStyle['backgroundImage'] !== 'none' ) {
+                var oldsrc = extractBgUrl($(el).css('background-image'));
+                changeBgImage($(el), oldsrc)
+            }
+        }
+        else if (window.getComputedStyle) {
+            if( document.defaultView.getComputedStyle(el, null).getPropertyValue('background-image') !== 'none' ) {
+                var oldsrc = extractBgUrl($(el).css('background-image'));
+                changeBgImage($(el), oldsrc);                
+            }
+        }
+    }
+}
+
+function changeBgImage(ele, src) {
+    if(src != '' && src.indexOf(appBasePath) == -1) {
+        var newSrc = 'url("'+appBasePath+src+'")';
+        ele.css('background-image', newSrc);
+    }
+}
+
+function extractBgUrl(bgStyle) {
+    if(bgStyle.indexOf('url') != -1 && bgStyle.indexOf('(',bgStyle.indexOf('url')) ){
+        var startPos = bgStyle.indexOf('(',bgStyle.indexOf('url')),
+        endPos = bgStyle.indexOf(')', startPos);
+        var imageFullPath = bgStyle.substring(startPos+1,endPos);
+        if(imageFullPath.indexOf('images/')) {
+            return imageFullPath.substring(imageFullPath.indexOf('images/'));
+        }
+    }
+
+    return '';
+}
+
+
+function appendDocumentRootPath(src) {
+    return appBasePath+src;
+}
+
+function htmlLightbox(src, content) {
+    html5Lightbox.showLightbox(0, appBasePath+src, content);
+}
+
+
+/*function extractLastPart(bgStyle) {
+    if(bgStyle.indexOf('url') != -1 && bgStyle.indexOf('(',bgStyle.indexOf('url')) ){
+        var startPos = bgStyle.indexOf('(',bgStyle.indexOf('url'));
+        startPos = bgStyle.indexOf(')',startPos);
+        if(startPos != -1){
+            return bgStyle.substring(startPos+1);
+        }
+    }
+}*/

@@ -4,7 +4,7 @@ body { background:#FFFFFF; font-size:17px;}
 
 #kid {
   width:1024px;
-  height:720px !important;
+  height:740px !important;
   margin:auto;
   background:url('images/5-8/Home_Screen/final_world_background.png') no-repeat;
   overflow: hidden !important;
@@ -13,7 +13,7 @@ body { background:#FFFFFF; font-size:17px;}
 
 #kid2 {
   width:1024px;
-  height:720px !important;
+  /*height:740px !important;*/
   margin:auto;
   background:url('images/9-12/Home_Screen/homepage.jpg') no-repeat;
   /*overflow: hidden !important;*/
@@ -344,19 +344,19 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
 
 #space {
   background:url('images/5-8/Space/spacebg.png') no-repeat;
-  height:748px;
+  /*height:748px;*/
   width:1024px !important;
 }
 
 #space2 {
   background:url('images/9-12/Space/spacebg.png') no-repeat;
-  height:748px;
+  /*height:748px;*/
   width:1024px !important;
 }
 
 #blackholes {
   background:url('images/5-8/Space/Black_Holes/bhnavbg.jpg') no-repeat;
-  height:748px !important;
+  /*height:748px !important;*/
   overflow:hidden !important;
   width:1024px !important;
 }
@@ -364,7 +364,7 @@ a.fun.bsubjectlink { background:url("images/5-8/Home_Screen/bfun.png") no-repeat
 #whatisbh, #supergiant, #supernova, #snexplosion, #formgold, #neutron, #blackhole,
 #nscollide, #lifeabh, #galaxies, #bhingalaxy, #quasars, #binaries, #bhgo {
   background:url('images/5-8/Space/Black_Holes/bhbg.jpg') no-repeat;
-  height:748px !important;
+  /*height:748px !important;*/
   overflow:hidden !important;
   width:1024px !important;
 }
@@ -1179,3 +1179,17 @@ ul.slides {
 	margin:0 auto !important;
 }
 /************* /mzone-space*********/
+
+[data-role="page"], [data-role="content"] {
+    height: 100% !important;
+    padding:0 !important;
+}
+
+/* loading page */
+.loading-status {
+  width:400px;margin:0 auto;text-align:center;
+} 
+
+.loading-page-loader {
+  width:60px;margin:0 auto;
+}
